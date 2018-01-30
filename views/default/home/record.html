@@ -1,0 +1,82 @@
+<!--=== 个人方案 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <div class="config-part">
+                            <div class="search_box">
+                                <input type="button" value="搜索" class="btn" onclick="ajaxGetAction()">
+                                <div class="search_fl">
+                                    <input id="keyword" type="text" name="" class="search_txt" placeholder="请输入基站名称">
+                                </div>
+                            </div>
+
+                            <div class="op-config">
+                                <div id="records-list" class="major-pad">
+                                    <!--=== 个人记录信息 开始  ===-->
+                                    <script id="j-records-list" type="text/html">
+                                        <% if (data.length > 0) { %>
+                                            <%for(i = 0; i < data.length; i ++) {%>
+                                            <% var d = data[i]; %>
+                                            <div class="assist-div show notes-div">
+                                                <div class="notes rec">
+                                                    <ul id="rec" class="rec_ul">
+                                                        <li>
+                                                            <a target="_blank" href="<%if(role >= 2 && d.status >= 1) {%>/home/design.html?recordId=<%=d._id%><%}else{%>/home/selector.html?recordId=<%=d._id%><%}%>">
+                                                                <b><i class="fa fa-map-marker <%if(d.status == 0) {%>i-red <%}else if(d.status == 1){%>i-yellow<%}else if(d.status >= 2){%>i-green<%}%> "></i> <%=d.stationName%> </b>
+                                                                <div class="scheme change">
+                                                                    <p><span>所在地</span> : <%=d.province%><%=d.city%><%=d.county%><%=d.address%></p>
+                                                                    <p><span>状态</span> :
+                                                                        <%if(d.status == 0) {%>
+                                                                        <span class="i-red">已选址</span>
+                                                                        <%}else if(d.status == 1){%>
+                                                                        <span class="i-yellow">已选型</span>
+                                                                        <%}else if(d.status >= 2){%>
+                                                                        <span class="i-green">已设计</span>
+                                                                        <%}%>
+                                                                        <span style="float: right;color: #ccc;"><%=dateFormat(d.time, 'yyyy-MM-dd hh:mm:ss')%></span>
+                                                                    </p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        <%}%>
+                                        <%} else { %>
+                                            <div class="not_data_t">
+                                                <img src="/common/img/nodata.png" alt="">
+                                                <span>暂无数据</span>
+                                            </div>
+                                        <%}%>
+                                    </script>
+                                    <!--=== 个人记录信息 结束  ===-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=== 个人方案 结束 ===-->
+
+<script>
+    $(function () {
+        // 请求方案记录接口
+        ajaxGetAction()
+    })
+
+    // 异步请求数据
+    function ajaxGetAction(){
+        console.log('异步请求数据')
+        var keyword = $('#keyword').val()
+        var url = globalApiUrl + '/api/record/find.html';
+        $('#records-list').infinite({url: url, keyword: keyword, template:'j-records-list'}).onload();
+    }
+
+
+</script>

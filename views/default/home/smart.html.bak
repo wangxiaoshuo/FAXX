@@ -1,0 +1,956 @@
+<!--=== 智选方案 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <div class="config-part">
+                            <form id="formId" name="formName">
+                                <div class="op-config">
+                                    <div class="major-pad">
+                                        <!--=== 基站信息 开始 ===-->
+                                        <div class="cell-pos">
+                                            <div class="explain">
+                                                <b>基站信息</b>
+                                                <span>此操作必填，请谨慎操作</span>
+                                            </div>
+
+                                            <div class="pkg-display text-field">
+                                                <div>
+                                                    <input type="text" class="data" id="name" name="name"/>
+                                                    <label><b>基站名称</b><span>（必填）</span></label>
+                                                </div>
+                                            </div>
+                                            <em id="msg_name" class="msg"></em>
+
+                                            <section class="selection">
+                                                <div class="mode">
+                                                    <div id="cityId" data-type="city" data-next="area" class="picker">
+                                                        <div class="box disabled">
+                                                            <label>所在城市</label>
+                                                            <span class="js-picker-text">请选择</span>
+                                                        </div>
+                                                        <div class="container table">
+                                                            <div class="overlay"></div>
+                                                            <div class="cell">
+                                                                <div class="popup">
+                                                                    <div data-id="0" class="list-wrap">
+                                                                        <ul id="cityItems">
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="cover upper"></div>
+                                                                    <div class="cover lower"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input id="province_id" name="province" type="hidden"
+                                                               value="四川"/>
+                                                        <input class="js-picker-value" id="city_id" name="city"
+                                                               type="hidden" value=""/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="dot">
+                                                    <div id="areaId" data-type="area" data-next="scenario"
+                                                         class="picker">
+                                                        <div class="box disabled">
+                                                            <label>所在县/区</label>
+                                                            <span class="js-picker-text">请选择</span>
+                                                        </div>
+                                                        <div class="container table">
+                                                            <div class="overlay"></div>
+                                                            <div class="cell">
+                                                                <div class="popup">
+                                                                    <div data-id="0" class="list-wrap">
+                                                                        <ul id="areaItems">
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="cover upper"></div>
+                                                                    <div class="cover lower"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input class="js-picker-value" id="area_id" name="area"
+                                                               type="hidden" value=""/>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <div id="addressId" class="pkg-display text-field disabled"
+                                                 style="margin-top: 1.5rem;">
+                                                <div>
+                                                    <input type="text" class="data" id="address" name="address"/>
+                                                    <label><b>详细地址</b><span>（必填）</span></label>
+                                                </div>
+                                            </div>
+                                            <em id="msg_address" class="msg"></em>
+
+                                            <!--<div id="coordinateId" class="pkg-display text-field disabled" style="margin-top: 1.5rem;">-->
+                                            <!--<div>-->
+                                            <!--<input type="text" class="data" id="coordinate" name="coordinate" />-->
+                                            <!--<label><b>经纬度</b><span>（必填）</span></label>-->
+                                            <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<em id="msg_coordinate" class="msg"></em>-->
+                                            <!--</div>-->
+                                        </div>
+                                        <!--=== 基站信息 结束 ===-->
+
+                                        <!--=== 方案模糊选项 开始 ===-->
+                                        <section class="selection">
+                                            <div class="explain">
+                                                <b>模糊化方案</b>
+                                                <span>此操作比较耗时，请谨慎操作</span>
+                                            </div>
+                                            <div class="area">
+                                                <div id="scenarioId" data-type="scenario" data-next="type"
+                                                     class="picker">
+                                                    <div class="box disabled">
+                                                        <label>应用场景</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="scenarioItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="scenario_id" name="scenario"
+                                                           type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="mode">
+                                                <div id="typeId" data-type="type" data-next="beautify" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>建设类型</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="typeItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="type_id" name="type"
+                                                           type="hidden" value=""/>
+                                                </div>
+                                            </div>
+
+                                            <div class="dot">
+                                                <div id="beautifyId" data-type="beautify" data-next="hang"
+                                                     class="picker">
+                                                    <div class="box disabled">
+                                                        <label>是否美化</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="beautifyItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="beautify_id" name="beautify"
+                                                           type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="area">
+                                                <div id="hangId" data-type="hang" data-next="build" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>天线挂高</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="hangItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="hang_id" name="hang"
+                                                           type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="area">
+                                                <div id="buildId" data-type="build" data-next="" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>共建信息</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="buildItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="build_id" name="build"
+                                                           type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!--=== 方案模糊选项 结束 ===-->
+                                    </div>
+
+                                    <!--=== 推介方案 开始  ===-->
+                                    <div class="notes-div">
+                                        <div class="notes item">
+                                            <b><i class="fa fa-send-o i-green"></i> 推介方案 : </b>
+                                            <section class="selection">
+                                                <div>
+                                                    <ul id="referralItems"></ul>
+                                                    <!--<input class="js-example-value" id="example_id" name="example_id" type="hidden" value=""/>-->
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <!--=== 推介方案 结束  ===-->
+
+                                    <!--=== 按钮 开始 ===-->
+                                    <div class="btns-div" style="float: left; margin-bottom: 2rem;">
+                                        <div class="btns btns-left">
+                                            <button type="button" id="btnSubmit">
+                                                <i class="fa fa-send-o i-green"></i> 推送
+                                            </button>
+                                        </div>
+                                        <div class="btns btns-right">
+                                            <button type="reset" id="btnReset">
+                                                <i class="fa fa-undo i-red"></i> 重填
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--=== 按钮 结束 ===-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=== 智选方案 结束 ===-->
+
+
+<script>
+    var responseData = {}
+
+    var cityObj = {}
+    var areaObj = {}
+    var scenarioObj = {}
+    var typeObj = {}
+    var beautifyObj = {}
+    var antennaHeightsObj = {}
+    var buildObj = {}
+
+    var citiesArry = []
+    var countiesArry = []
+    var applyScenesArry = []
+    var typeArry = []
+    var beautifiesArry = []
+    var antennaHeightsArry = []
+    var buildInformationsArry = []
+    var buildInformationForRecordsArry = []
+
+    var projectId = []
+    var exampleArry = []
+    var exampleIdArry = []
+
+    var picker_items = ['city', 'area', 'scenario', 'type', 'beautify', 'hang', 'build']
+    var picker_indexs = {'city': -1, 'area': -1, 'scenario': -1, 'type': -1, 'beautify': -1, 'hang': -1, 'build': -1}
+    var picker_indexs_last = {}
+
+    $(function () {
+        // 请求方案数据接口
+        callSelections()
+
+        // 基站名称为空时提示
+        $('#name').keyup(function () {
+            if ($(this).val() == '') {
+                $("#msg_name").text('请输入基站名称')
+                return;
+            }
+            $("#msg_name").text('')
+        })
+
+        // 详细地址为空时提示
+        $('#address').keyup(function () {
+            if ($(this).val() == '') {
+                $("#msg_address").text('请输入详细地址')
+                return;
+            }
+            $("#msg_address").text('')
+        })
+    })
+
+    // 请求方案数据接口
+    function callSelections() {
+        $.ajax({
+            url: globalApiUrl + '/api/form/load.html',
+            contentType: 'application/x-www-form-urlencoded',
+            type: 'post',
+            data: {
+                data: '{}'
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                // 请求前
+                setLoading('')
+            },
+            complete: function () {
+                // 请求后
+                hideLoading()
+            },
+            success: function (response) {
+                // 响应成功
+//                console.log('response=>' + JSON.stringify(response))
+                if (response.state == 1) {
+                    responseData = response
+                    cityItem()
+                } else {
+                    // TODO 正常响应, 但服务器返回错误时, 提示用户
+                    alert(response.message)
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+//                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                showModal('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+            }
+        })
+    }
+
+    // 初始化城市选项
+    function cityItem() {
+        var cityHtml = ''
+        citiesArry = responseData.data.cities
+        if (citiesArry.length > 0) {
+            for (var i = 0; i < citiesArry.length; i++) {
+                var cities = citiesArry[i]
+                cityHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + cities.city + '</li>'
+            }
+            $('#cityId').find('.box').removeClass('disabled')
+            $('#cityItems').html(cityHtml)
+
+            // 城市选项设置点击事件
+            $('#cityId .list-wrap ul li').click(function () {
+                var height = $(this).height()
+                picker_indexs.city = parseInt($(this).attr('data-index'))
+                clearTimer()
+                handleDataForPicker($(this))
+                $('.list-wrap').animate({scrollTop: height * picker_indexs.city}, 500, function () {
+                    // 动画回调函数
+                    setPickerStatus()
+                })
+                return false
+            })
+        } else {
+            showModal('抱歉, 城市信息不全[ref:city]', 2)
+        }
+    }
+
+    // 响应城市选项
+    var timer = null
+    var timer_available = false
+    $('.list-wrap').scroll(function () {
+        // 计时器回调函数
+        if ($(this).parents('.picker').find('.container, .popup').hasClass('show')) {
+            var li_height = $(this).find('ul li').height()
+            var data_type = $(this).parents('.picker').attr('data-type')
+            picker_indexs[data_type] = Math.round(parseInt($(this).scrollTop()) / li_height)
+            if (!timer_available) return
+            timer = setTimeout(function (target) {
+                if (!timer_available) return
+                // 计时器回调函数
+                if (target.parents('.picker').find('.container, .popup').hasClass('show')) {
+                    setPickerStatus()
+                    handleDataForPicker(target)
+                }
+            }, 800, $(this))
+        }
+    })
+    $('.overlay').click(function () {
+        if ($(this).parents('.picker').find('.container, .popup').hasClass('show')) {
+            // 防止初始化-1导致下标有误
+            var data_type = $(this).parents('.picker').attr('data-type')
+            if (picker_indexs[data_type] == -1) {
+                picker_indexs[data_type] = 0
+            }
+            clearTimer()
+            handleDataForPicker($(this))
+        }
+    })
+    function clearTimer() {
+        if (timer) {
+            clearTimeout(timer)
+        }
+        timer_available = false
+    }
+
+    // 更新界面数据
+    function handleDataForPicker(target) {
+        var data_type = target.parents('.picker').attr('data-type')
+        if (data_type == 'city') {
+            cityObj = citiesArry[picker_indexs.city]
+            countiesArry = cityObj.counties
+            // 初始化区域选项
+            if (countiesArry.length > 0) {
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                target.parents('.picker').find('.js-picker-text').html(cityObj.city)
+                target.parents('.picker').find('.js-picker-value').val(cityObj.city)
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                $('#addressId').addClass('disabled')
+                $('#address').attr('disabled', 'disabled')
+                resetDataForPicker(data_next)
+
+                var areaHtml = ''
+                for (var i = 0; i < countiesArry.length; i++) {
+                    var area = countiesArry[i]
+                    areaHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + area.county + '</li>'
+                }
+                $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                $('#' + data_next + 'Items').html(areaHtml)
+                // 放在HTML元素生成之后设置点击事件
+                $('#' + data_next + 'Id .list-wrap ul li').click(function () {
+                    var height = $(this).height()
+                    picker_indexs.area = parseInt($(this).attr('data-index'))
+                    clearTimer()
+                    handleDataForPicker($(this))
+                    $('.list-wrap').animate({scrollTop: height * picker_indexs.area}, 500, function () {
+                        // 动画回调函数
+                        setPickerStatus()
+                    })
+                    return false
+                })
+            } else {
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+                showModal('抱歉, 区域信息不全[ref:' + data_next + ']', 2)
+            }
+        } else if (data_type == 'area') {
+            areaObj = countiesArry[picker_indexs.area]
+            $('#addressId').removeClass('disabled')
+            $('#address').removeAttr('disabled')
+
+            // 初始化应用场景选项
+            applyScenesArry = areaObj.applyScenes
+            if (applyScenesArry.length > 0) {
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                target.parents('.picker').find('.js-picker-text').html(areaObj.county)
+                target.parents('.picker').find('.js-picker-value').val(areaObj.county)
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+
+                var scenarioHtml = ''
+                for (var i = 0; i < applyScenesArry.length; i++) {
+                    var scenario = applyScenesArry[i]
+                    scenarioHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + scenario.applyScene + '</li>'
+                }
+                $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                $('#' + data_next + 'Items').html(scenarioHtml)
+                // 放在HTML元素生成之后设置点击事件
+                $('#' + data_next + 'Id .list-wrap ul li').click(function () {
+                    var height = $(this).height()
+                    picker_indexs.scenario = parseInt($(this).attr('data-index'))
+                    clearTimer()
+                    handleDataForPicker($(this))
+                    $('.list-wrap').animate({scrollTop: height * picker_indexs.scenario}, 500, function () {
+                        // 动画回调函数
+                        setPickerStatus()
+                    })
+                    return false
+                })
+            } else {
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+                showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+            }
+        } else if (data_type == 'scenario') {
+            scenarioObj = applyScenesArry[picker_indexs.scenario]
+            typeArry = scenarioObj.constructionTypes
+
+            // 初始化建设类型
+            if (typeArry.length > 0) {
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                target.parents('.picker').find('.js-picker-text').html(scenarioObj.applyScene)
+                target.parents('.picker').find('.js-picker-value').val(scenarioObj.applyScene)
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+
+                var typeHtml = ''
+                for (var i = 0; i < typeArry.length; i++) {
+                    var type = typeArry[i]
+                    typeHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + type.constructionType + '</li>'
+                }
+                $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                $('#' + data_next + 'Items').html(typeHtml)
+                // 放在HTML元素生成之后设置点击事件
+                $('#' + data_next + 'Id .list-wrap ul li').click(function () {
+                    var height = $(this).height()
+                    picker_indexs.type = parseInt($(this).attr('data-index'))
+                    clearTimer()
+                    handleDataForPicker($(this))
+                    $('.list-wrap').animate({scrollTop: height * picker_indexs.type}, 500, function () {
+                        // 动画回调函数
+                        setPickerStatus()
+                    })
+                    return false
+                })
+            } else {
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+                showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+            }
+        } else if (data_type == 'type') {
+            typeObj = typeArry[picker_indexs.type]
+            beautifiesArry = typeObj.isBeautifies
+
+            // 初始化是否美化
+            if (beautifiesArry.length > 0) {
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                target.parents('.picker').find('.js-picker-text').html(typeObj.constructionType)
+                target.parents('.picker').find('.js-picker-value').val(typeObj.constructionType)
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+
+                var beautifyHtml = ''
+                for (var i = 0; i < beautifiesArry.length; i++) {
+                    var beautify = beautifiesArry[i]
+                    beautifyHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + beautify.isBeautify + '</li>'
+                }
+                $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                $('#' + data_next + 'Items').html(beautifyHtml)
+                // 放在HTML元素生成之后设置点击事件
+                $('#' + data_next + 'Id .list-wrap ul li').click(function () {
+                    var height = $(this).height()
+                    picker_indexs.beautify = parseInt($(this).attr('data-index'))
+                    clearTimer()
+                    handleDataForPicker($(this))
+                    $('.list-wrap').animate({scrollTop: height * picker_indexs.beautify}, 500, function () {
+                        // 动画回调函数
+                        setPickerStatus()
+                    })
+                    return false
+                })
+            } else {
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+                showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+            }
+        } else if (data_type == 'beautify') {
+            beautifyObj = beautifiesArry[picker_indexs.beautify]
+            antennaHeightsArry = beautifyObj.antennaHeights
+
+            // 初始化天线挂高
+            if (antennaHeightsArry.length > 0) {
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                target.parents('.picker').find('.js-picker-text').html(beautifyObj.isBeautify)
+                target.parents('.picker').find('.js-picker-value').val(beautifyObj.isBeautify)
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+
+                var hangHtml = ''
+                for (var i = 0; i < antennaHeightsArry.length; i++) {
+                    var hang = antennaHeightsArry[i]
+                    hangHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + hang.antennaHeight + '</li>'
+                }
+                $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                $('#' + data_next + 'Items').html(hangHtml)
+                // 放在HTML元素生成之后设置点击事件
+                $('#' + data_next + 'Id .list-wrap ul li').click(function () {
+                    var height = $(this).height()
+                    picker_indexs.hang = parseInt($(this).attr('data-index'))
+                    clearTimer()
+                    handleDataForPicker($(this))
+                    $('.list-wrap').animate({scrollTop: height * picker_indexs.hang}, 500, function () {
+                        // 动画回调函数
+                        setPickerStatus()
+                    })
+                    return false
+                })
+            } else {
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+                showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+            }
+        } else if (data_type == 'hang') {
+            antennaHeightsObj = antennaHeightsArry[picker_indexs.hang]
+            buildInformationsArry = antennaHeightsObj.buildInformations
+
+            // 初始化共建信息
+            if (buildInformationsArry.length > 0) {
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                target.parents('.picker').find('.js-picker-text').html(antennaHeightsObj.antennaHeight)
+                target.parents('.picker').find('.js-picker-value').val(antennaHeightsObj.antennaHeight)
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+
+                var buildHtml = ''
+                for (var i = 0; i < buildInformationsArry.length; i++) {
+                    var build = buildInformationsArry[i]
+                    buildHtml += '<li data-index="' + i + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + build.buildInformation + '</li>'
+                }
+                $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                $('#' + data_next + 'Items').html(buildHtml)
+                // 放在HTML元素生成之后设置点击事件
+                $('#' + data_next + 'Id .list-wrap ul li').click(function () {
+                    var height = $(this).height()
+                    picker_indexs.build = parseInt($(this).attr('data-index'))
+                    clearTimer()
+                    handleDataForPicker($(this))
+                    $('.list-wrap').animate({scrollTop: height * picker_indexs.build}, 500, function () {
+                        // 动画回调函数
+                        setPickerStatus()
+                    })
+                    return false
+                })
+            } else {
+                var data_next = target.parents('.picker').attr('data-next')
+                // 重置下一个的数据
+                resetDataForPicker(data_next)
+                showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+            }
+        } else if (data_type == 'build') {
+            var id = ''
+            buildObj = buildInformationsArry[picker_indexs.build]
+            buildInformationForRecordsArry = buildObj.buildInformationForRecords
+
+            // 防止重复点击
+            if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+            picker_indexs_last = cloneAll(picker_indexs)
+
+            target.parents('.picker').find('.js-picker-text').html(buildObj.buildInformation)
+            target.parents('.picker').find('.js-picker-value').val(buildObj.buildInformation)
+
+            for (var i = 0; i < buildInformationForRecordsArry.length; i++) {
+                id = buildInformationForRecordsArry[i]._id
+            }
+            projectId.push('"' + id + '"')
+            callRecommends(projectId)
+
+            exampleArry.push(id);
+//            $('.js-example-value').val(exampleArry)
+        }
+    }
+
+    // 请求方案推荐接口
+    function callRecommends(projectId) {
+        $.ajax({
+            url: globalApiUrl + '/api/form/find.html',
+            contentType: 'application/x-www-form-urlencoded',
+            type: 'post',
+            data: {
+                data: '[' + projectId + ']'
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                // 请求前
+                setLoading('')
+            },
+            complete: function () {
+                // 请求后
+                hideLoading()
+            },
+            success: function (response) {
+                // 响应成功
+                if (response.state == 1) {
+                    console.log('response=>' + JSON.stringify(response))
+
+                    $('.op-config .notes-div').addClass('show')
+                    var recommendHtml = ''
+                    for (var i = 0; i < response.data.length; i++) {
+                        var recommend = response.data[i]
+                        var index = i + 1
+                        recommendHtml += '<li>' +
+                                '<label> <input type="radio" class="option-input radio" name="example" value="' + recommend._id + '" /> </label>' +
+                                '<span class="label">方案' + index + '</span>' +
+                                '<div class="scheme">' +
+                                '<p><span>名称</span> : ' + recommend.output + '</p>' +
+                                '<p><span>造价综合差异率</span> : ' + recommend.differenceRate + '%</p>' +
+                                '<p><span>百元投资租金(元)</span> : <span class="money">&#65509;' + recommend.investmentRent + '</span></p>' +
+                                '</div>' +
+                                '</li>'
+                    }
+                    $('#referralItems').html(recommendHtml)
+
+                } else {
+                    // TODO 正常响应, 但服务器返回错误时, 提示用户
+                    alert(response.message)
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+//                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                showModal('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+            }
+        })
+    }
+
+    // 请求入库接口
+    function callPostRecord() {
+
+        // 检查表单数据
+        var name = $('#name').val()
+//        if (Utils.isEmpty(name)) {
+//            showModal('上传方案必须填写基站名称[ref:name]', 2)
+//            $('#name').focus()
+//            return
+//        }
+
+        var province = $('input[name=province]').val()
+
+        var city = $('input[name=city]').val()
+//        if (Utils.isEmpty(city)) {
+//            showModal('上传方案必须选择所在城市[ref:city]', 2)
+//            return
+//        }
+
+        var area = $('input[name=area]').val()
+//        if (Utils.isEmpty(area)) {
+//            showModal('上传方案必须选择所在县/区[ref:area]', 2)
+//            return
+//        }
+
+        var address = $('#address').val()
+//        if (Utils.isEmpty(address)) {
+//            showModal('上传方案必须填写详细地址[ref:address]', 2)
+//            $('#address').focus()
+//            return
+//        }
+
+        var scenario = $('input[name=scenario]').val()
+//        if (Utils.isEmpty(scenario)) {
+//            showModal('上传方案必须选择应用场景[ref:scenario]', 2)
+//            return
+//        }
+
+        var type = $('input[name=type]').val()
+//        if (Utils.isEmpty(type)) {
+//            showModal('上传方案必须选择建设类型[ref:type]', 2)
+//            return
+//        }
+
+        var beautify = $('input[name=beautify]').val()
+//        if (Utils.isEmpty(beautify)) {
+//            showModal('上传方案必须选择是否美化[ref:beautify]', 2)
+//            return
+//        }
+
+        var hang = $('input[name=hang]').val()
+//        if (Utils.isEmpty(hang)) {
+//            showModal('上传方案必须选择天线挂高[ref:hang]', 2)
+//            return
+//        }
+
+        var build = $('input[name=build]').val()
+//        if (Utils.isEmpty(build)) {
+//            showModal('上传方案必须选择共建信息[ref:build]', 2)
+//            return
+//        }
+
+        var example = $('input[name=example]:checked').val()
+//        if (Utils.isEmpty(example)) {
+//            showModal('上传方案必须选择推介方案[ref:example]', 2)
+//            return
+//        }
+
+        var example_id = {}
+        for (var i = 0; i < exampleArry.length; i++) {
+            var exampleId = exampleArry[i]
+
+
+        }
+
+        exampleIdArry.push(example_id)
+
+        console.log('exampleIdArry===>', exampleIdArry)
+
+        var fromData = {
+            planIndex: 0,
+            accountId: "5881624230d4503d693e1ca2",
+            recordId: "59020b96b00aa614153276ee",
+            stationName: name,
+            province: province,
+            city: city,
+            county: area,
+            address: address,
+            longitude: "",
+            latitude: "",
+            planList: [
+                {
+                    _id: "5905cf7c55bc61a44f611fab",
+                    status: 1
+                },
+                {
+                    _id: "5905cf7c55bc61a44f611fac",
+                    status: 0
+                },
+                {
+                    _id: "5905cf7c55bc61a44f611fad",
+                    status: 0
+                }
+            ]
+        }
+
+
+        console.log('fromData ===》', fromData)
+
+        $('#msg_address').html('')
+//        $.ajax({
+//            url: globalApiUrl + '/api/form/save.html',
+//            type: 'post',
+//            data: {'name':name,'area_id':area_id,'address':address,'category_id':category_id,'antenna_id':antenna_id,'tower_id':tower_id,'room_id':room_id,'suit_id':suit_id,'remark_id':remark_id},
+//            dataType: 'json',
+//            beforeSend: function() {
+//                setLoading('正在上传中, 请稍候...')
+//                $("#btnSubmit").attr('disabled', 'disabled')
+//            },
+//            complete: function() {
+//                hideLoading()
+//                $('#btnSubmit').removeAttr('disabled')
+//            },
+//            success: function(response) {
+////                    console.log('response=>' + JSON.stringify(response))
+//                showModal(response.msg, 1)
+//                if(response.status == 200) {
+//                    resetUI()
+//                    // 完全替换当前连接为记录的连接
+//                    window.location.replace('<?php echo SITE_URL; ?>front/record?record_id=' + response.data.record_id)
+//                } else {
+//
+//                }
+//            },
+//            error: function(xhr, ajaxOptions, thrownError) {
+////                    console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+//                showModal('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+//            }
+//        })
+    }
+    $('#btnSubmit').click(function () {
+        // 请求api
+        callPostRecord()
+    })
+
+
+    // 选择器控制处理
+    $('.picker .overlay').click(function () {
+        setPickerStatus()
+        return false
+    })
+    $('.popup').click(function () {
+        return false
+    })
+    $('.picker').click(function () {
+        if ($(this).find('.disabled').length <= 0) {
+            timer_available = true
+            setPickerStatus($(this))
+        }
+    })
+
+    // 重置数据
+    function resetDataForPicker(next) {
+        // 重置下一个和它以下的所有节点
+        for (var i = picker_items.indexOf(next); i < picker_items.length; i++) {
+            // picker reset
+            var picker = picker_items[i]
+            $('#' + picker + 'Id').find('.box').addClass('disabled')
+            $('#' + picker + 'Items').html('')
+            $('#' + picker + 'Id').find('.js-picker-text').html('请选择')
+            $('#' + picker + 'Id').find('.js-picker-value').val('')
+            // remark reset
+            $('#remarkId').find('.js-price-text').html('--')
+            $('#remarkId').find('.js-cost-text').html('--')
+            $('#remarkId').find('.js-spread-text').html('--')
+            $('#remarkId').find('.js-remark-text').html('--')
+            picker_indexs[picker] = -1
+            picker_indexs_last[picker] = -1
+
+            // 重置推介方案(隐藏)
+            $('.op-config .notes-div').removeClass('show')
+        }
+    }
+
+    // 实现重置按钮
+    function resetUI() {
+        $('#cityId').find('.js-picker-text').html('请选择')
+        $('#cityId').find('.js-picker-value').val('')
+        picker_indexs['city'] = -1
+        picker_indexs_last['city'] = -1
+        $('#addressId').addClass('disabled')
+        $('#address').attr('disabled', 'disabled')
+        resetDataForPicker('area')
+        $('body').animate({scrollTop: 0}, 500, function () {
+        })
+    }
+    $('#btnReset').click(function () {
+        resetUI()
+    })
+
+
+</script>

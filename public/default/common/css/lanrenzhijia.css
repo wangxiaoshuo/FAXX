@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+.inbtn {
+	border: none;
+	color: white;
+	overflow: hidden;
+	margin: 1rem;
+	padding: 0;
+	text-transform: uppercase;
+	width: 150px;
+	height: 40px;
+}
+
+.inbtn.incolor-1 {
+	background-color: #426fc5;
+}
+
+.inbtn.incolor-2 {
+	background-color: #00897b;
+}
+.inbtn.incolor-3 {
+	background-color: #f6774f;
+}
+
+.inbtn.incolor-4 {
+	background-color: #e94043;
+}
+
+.inbtn-border.incolor-1 {
+	background-color: transparent;
+	border: 2px solid #426fc5;
+	color: #426fc5;
+}
+
+.inbtn-border.incolor-2 {
+	background-color: transparent;
+	border: 2px solid #00897b;
+	color: #00897b;
+}
+
+.inbtn-border.incolor-3 {
+	background-color: transparent;
+	border: 2px solid #f6774f;
+	color: #f6774f;
+}
+
+.inbtn-border.incolor-4 {
+	background-color: transparent;
+	border: 2px solid #e94043;
+	color: #e94043;
+}
+
+.inbtn-round {
+	border-radius: 10em;
+}
+
+.inmaterial-design {
+	position: relative;
+}
+
+.inmaterial-design canvas {
+	opacity: 0.25;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.incontainer {
+	align-content: center;
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 46rem;
+}
+
+.blackoverlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 8010;
+	background: url('../img/fancyBox/fancybox_overlay.png');
+}
+
+#close {
+	display: none;
+	position: absolute;
+	z-index: 9999;
+	left: 32%;
+	top: 50%;
+}
+
+#forbid {
+	display: none;
+	position: absolute;
+	z-index: 9999;
+	left: 55%;
+	top: 50%;
+}
+
+.dealwith {
+	display: none;
+	position: absolute;
+	z-index: 9999;
+	left: 33%;
+	top: 22%;
+	font-size: 50px;
+	color: rgb(1,23,256);
+}
+
+
+/* 代码整理：懒人之家 www.lanrenzhijia.com */

@@ -1,0 +1,304 @@
+<!--=== 账号编辑 开始 ===-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li><a href="list.html">用户管理</a></li>
+            <li id="account_location" class="active"></li>
+        </ol>
+        <h4 id="account_title"></h4>
+        <p id="account_prompt"></p>
+
+        <div class="row m-top-30">
+            <!--=== 用户信息 开始 ===-->
+            <div class="col-md-12 plan_area">
+                <label id="account_view"></label>
+                <div>
+                    <div class="plan_div">
+                        <label>基本信息</label>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户账号</label>
+                        <div class="col-sm-9 ">
+                            <input id="username" class="form-control" type="text" name="username" value="" placeholder="请输入用户账号">
+                            <small for="username" class="help-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户密码</label>
+                        <div class="col-sm-9 ">
+                            <input id="password" class="form-control" type="password" name="password" value="" placeholder="请输入用户密码">
+                            <small for="password" class="help-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户名称</label>
+                        <div class="col-sm-9 ">
+                            <input id="name" class="form-control" type="text" name="name" value="" placeholder="请输入用户名称">
+                            <small for="name" class="help-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">联系电话</label>
+                        <div class="col-sm-9 ">
+                            <input id="tel" class="form-control" type="text" name="tel" value="" placeholder="请输入联系电话">
+                            <small for="tel" class="help-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户角色</label>
+                        <div class="col-sm-9 ">
+                            <select id="role" class="form-control" name="role">
+                                <option value="" selected="selected">==请选择==</option>
+                                <option name="siteSelection" value="0">选址人员</option>
+                                <option name="selection" value="1">选型人员</option>
+                                <option name="design" value="2">设计人员</option>
+                                <option name="admin" value="10">管理员</option>
+                            </select>
+                            <i class="form-control-feedback" style="display: none;"></i>
+                            <small for="role" class="help-block"></small>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户状态</label>
+                        <div class="col-sm-9 ">
+                            <select id="status" class="form-control" name="status">
+                                <option value="" selected="selected">==请选择==</option>
+                                <option name="unaudited" value="0">待审核</option>
+                                <option name="normal" value="1">已通过</option>
+                                <option name="refused" value="2">已拒绝</option>
+                            </select>
+                            <i class="form-control-feedback" style="display: none;"></i>
+                            <small for="status" class="help-block"></small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12">
+                    <a class="save" href="javascript:void(0);" onclick="saveAccounts()">保 存
+                    </a>
+                </div>
+            </div>
+            <!--=== 用户信息 结束 ===-->
+        </div>
+
+    </div>
+</div>
+<!--=== 账号编辑 结束 ===-->
+
+<script src="/common/js/admin/moment-with-locales.js?v={{APPVersion}}"></script>
+<script src="/common/js/admin/bootstrap-datetimepicker.js?v={{APPVersion}}"></script>
+<script>
+    var accountId = getQueryString('id')
+    var accountParameter = getQueryString('parameter')
+    $(function () {
+        if(accountId){
+            // 请求用户信息接口
+            findAccounts()
+        }
+    })
+
+
+    // 输入Url参数的名字获取对应值
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    if(accountParameter == 'view') {
+        $('input').attr("disabled","disabled")
+        $('select').attr("disabled","disabled")
+        $('.save').hide()
+        $('#account_location').text('用户信息')
+        $('#account_title').text('用户信息')
+        $('#account_prompt').text('快捷查看详细用户信息。')
+        $('#account_view').text('查看详细')
+    }else if(accountParameter == 'modify') {
+        $('#account_location').text('编辑用户')
+        $('#account_title').text('编辑用户')
+        $('#account_prompt').text('快捷编辑用户详细信息。')
+        $('#account_view').text('编辑用户')
+    }else if(accountParameter == 'new') {
+        $('#account_location').text('新增用户')
+        $('#account_title').text('新增用户')
+        $('#account_prompt').text('快捷新增用户详细信息。')
+        $('#account_view').text('新增用户')
+    }
+
+    // 请求用户信息接口
+    function findAccounts() {
+        var formData = {
+            _id: accountId
+        }
+
+        $.ajax({
+            url: globalApiUrl + '/api/account/find.html',
+            contentType: 'application/x-www-form-urlencoded',
+            type: 'post',
+            data: {
+                data: JSON.stringify(formData),
+                page: 0,
+                limit: 20
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                // 请求前
+                setLoading('正在查找中, 请稍候...')
+            },
+            complete: function () {
+                // 请求后
+                hideLoading()
+            },
+            success: function (response) {
+                // 响应成功
+                if(response.state == 1) {
+                    showMessage(response.message)
+
+                    console.log('response ==>',JSON.stringify(response))
+                    for (var i = 0; i < response.data.length; i++) {
+                        var data = response.data[i]
+                    }
+
+                    $('input[name=username]').val(data.username)
+                    $('input[name=password]').val(data.password)
+                    $('input[name=name]').val(data.name)
+                    $('input[name=tel]').val(data.tel)
+
+                    if(data.role == '0'){
+                        $('option[name=siteSelection]').attr("selected","selected")
+                    }else if(data.role == '1'){
+                        $('option[name=selection]').attr("selected","selected")
+                    }else if(data.role == '2'){
+                        $('option[name=design]').attr("selected","selected")
+                    }else if(data.role == '10'){
+                        $('option[name=admin]').attr("selected","selected")
+                    }
+
+                    if(data.status == '0'){
+                        $('option[name=unaudited]').attr("selected","selected")
+                    }else if(data.status == '1'){
+                        $('option[name=normal]').attr("selected","selected")
+                    }else if(data.status == '2'){
+                        $('option[name=refused]').attr("selected","selected")
+                    }
+                }else {
+                    // TODO 正常响应, 但服务器返回错误时, 额外操作处理
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                showMessage('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+            }
+        })
+    }
+
+
+    // 保存用户信息接口
+    function saveAccounts() {
+        // 检查表单数据
+        var username = $('#username').val()
+        if (!Utils.isEmail(username))
+        {
+            $("small[for='username']").text('邮箱格式不对，请输入正确的邮箱。')
+            $('#username').focus();
+            return
+        } else {
+            $("small[for='username']").text('')
+        }
+
+        var password = $('#password').val()
+        if(!Utils.isPassword(password))
+        {
+            $("small[for='password']").text('密码必须由6-16个英文字母和数字的字符串组成。')
+            $('#nPwd').focus();
+            return
+        } else {
+            $("small[for='password']").text('')
+        }
+
+        var name = $('#name').val()
+        if(name.length < 2 || name.length > 32 || name.replace(/\s+/,'') == '')
+        {
+            $("small[for='name']").text('公司/个人名称必须为2-32字符。')
+            $('#name').focus();
+            return
+        } else {
+            $("small[for='name']").text('')
+        }
+
+        var tel = $('#tel').val()
+        if (!Utils.isTel(tel))
+        {
+            $("small[for='tel']").text('联系电话有误，请输入正确的固定电话号或手机号。')
+            $('#tel').focus();
+            return
+        } else {
+            $("small[for='tel']").text('')
+        }
+
+        var role = document.getElementById("role").value
+        if(role == ''){
+            $("small[for='role']").text('用户角色必须选择。')
+            return
+        }else {
+            $("small[for='role']").text('')
+        }
+
+        var status = document.getElementById("status").value
+        if(status == ''){
+            $("small[for='status']").text('用户状态必须选择。')
+            return
+        }else {
+            $("small[for='status']").text('')
+        }
+
+        var formData = [
+            {
+                username: username,
+                password: password,
+                name: name,
+                tel: tel,
+                role: role,
+                status: status
+            }
+        ]
+        $.ajax({
+            url: globalApiUrl + '/api/account/save.html',
+            contentType: 'application/x-www-form-urlencoded',
+            type: 'post',
+            data: {
+                data: JSON.stringify(formData),
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                // 请求前
+                setLoading('正在查找中, 请稍候...')
+            },
+            complete: function () {
+                // 请求后
+                hideLoading()
+            },
+            success: function (response) {
+                // 响应成功
+                if(response.state == 1) {
+                    showMessage(response.message)
+
+                    console.log('response ==>',JSON.stringify(response))
+
+                }else {
+                    // TODO 正常响应, 但服务器返回错误时, 额外操作处理
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                showMessage('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+            }
+        })
+    }
+</script>

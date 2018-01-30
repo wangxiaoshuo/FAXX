@@ -1,0 +1,1184 @@
+<!--=== 记录编辑 开始 ===-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li>数据管理</li>
+            <li><a href="list.html">方案记录</a></li>
+            <li id="record_location" class="active">方案修改或编辑</li>
+        </ol>
+        <h4 id="record_title"></h4>
+        <p id="record_prompt"></p>
+
+        <div class="row m-top-30">
+            <!--=== 方案记录 开始 ===-->
+            <div id="record-list" class="col-md-12 plan_area record">
+                <label id="record_view"></label>
+                <script id="j-record-list" type="text/html">
+                    <% if (data.length > 0) { %>
+                    <%for(i = 0; i < data.length; i ++) {%>
+                    <% var d = data[i]; %>
+                    <div>
+                        <div class="plan_div">
+                            <label>基本信息</label>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label form-control-static">用户名称</label>
+                            <div class="col-sm-9 ">
+                                <input id="name" class="form-control" type="text" name="name" value="<%=d.accountId%>" placeholder="请输入用户名称">
+                                <small for="name" class="help-block"></small>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label form-control-static">基站名称</label>
+                            <div class="col-sm-9 ">
+                                <input id="stationName" class="form-control" type="text" name="stationName" value="<%=d.stationName%>" placeholder="请输入基站名称">
+                                <small for="stationName" class="help-block"></small>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label form-control-static">所在城市</label>
+                            <div class="col-sm-9 ">
+                                <input id="city" class="form-control" type="text" name="city" value="<%=d.city%>" placeholder="请输入所在城市">
+                                <small for="city" class="help-block"></small>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label form-control-static">所在区、县</label>
+                            <div class="col-sm-9 ">
+                                <input id="county" class="form-control" type="text" name="county" value="<%=d.county%>" placeholder="请输入用户名称">
+                                <small for="county" class="help-block"></small>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label class="col-sm-2 control-label form-control-static">详细地址</label>
+                            <div class="col-sm-9 ">
+                                <input id="address" class="form-control" type="text" name="address" value="<%=d.address%>" placeholder="请输入详细地址">
+                                <small for="address" class="help-block"></small>
+                            </div>
+                        </div>
+                        <%for(j = 0; j < d.optionList.length; j ++) {%>
+                        <% var o = d.optionList[j]; %>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">应用场景</label>
+                                <div class="col-sm-9 ">
+                                    <input id="applyScene" class="form-control" type="text" name="applyScene" value="<%=o.applyScene%>" placeholder="请输入应用场景">
+                                    <small for="applyScene" class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">建设类型</label>
+                                <div class="col-sm-9 ">
+                                    <input id="constructionType" class="form-control" type="text" name="constructionType" value="<%=o.constructionType%>" placeholder="请输入建设类型">
+                                    <small for="constructionType" class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">是否美化</label>
+                                <div class="col-sm-9 ">
+                                    <input id="isBeautify" class="form-control" type="text" name="isBeautify" value="<%=o.isBeautify%>" placeholder="请输入是否美化">
+                                    <small for="isBeautify" class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">天线挂高</label>
+                                <div class="col-sm-9 ">
+                                    <input id="antennaHeight" class="form-control" type="text" name="antennaHeight" value="<%=o.antennaHeight%>" placeholder="请输入天线挂高">
+                                    <small for="antennaHeight" class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">共建信息</label>
+                                <div class="col-sm-9 ">
+                                    <input id="buildInformation" class="form-control" type="text" name="buildInformation" value="<%=o.buildInformation%>" placeholder="请输入共建信息">
+                                    <small for="buildInformation" class="help-block"></small>
+                                </div>
+                            </div>
+                        <%}%>
+                    </div>
+
+                    <div>
+                        <div class="plan_div">
+                            <label>高级信息</label>
+                        </div>
+                        <%for(j = 0; j < d.optionList.length; j ++) {%>
+                        <% var o = d.optionList[j]; %>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">关联铁塔</label>
+                                <div class="col-sm-9 ">
+                                    <input id="tower" class="form-control" type="text" name="tower" value="<%=o.tower%>" placeholder="请输入关联铁塔">
+                                    <small for="tower" class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">关联机房</label>
+                                <div class="col-sm-9 ">
+                                    <input id="room" class="form-control" type="text" name="room" value="<%=o.room%>" placeholder="请输入关联机房">
+                                    <small for="room" class="help-block"></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">关联配套</label>
+                                <div class="col-sm-9 ">
+                                    <input id="suit" class="form-control" type="text" name="suit" value="<%=o.suit%>" placeholder="请输入关联配套">
+                                    <small for="suit" class="help-block"></small>
+                                </div>
+                            </div>
+                        <%}%>
+                    </div>
+
+                    <div>
+                        <div class="plan_div">
+                            <label>附加信息</label>
+                        </div>
+
+                        <%for(j = 0; j < d.optionList.length; j ++) {%>
+                        <% var o = d.optionList[j]; %>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">造价综合差异率*100（单位%）</label>
+                                <div class="col-sm-9 ">
+                                    <input id="differenceRate" class="form-control" type="number" name="differenceRate" value="<%=o.differenceRate%>" placeholder="请输入造价综合差异率*100（单位%）">
+                                    <small for="differenceRate" class="help-block" ></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">百元投资租金/年（单位元）</label>
+                                <div class="col-sm-9 ">
+                                    <input id="investmentRent" class="form-control" type="number" name="investmentRent" value="<%=o.investmentRent%>" placeholder="请输入百元投资租金/年（单位元）">
+                                    <small for="investmentRent" class="help-block" ></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">实际建设成本合计（万元）</label>
+                                <div class="col-sm-9 ">
+                                    <input id="totalCost" class="form-control" type="number" name="totalCost" value="<%=o.totalCost%>" placeholder="请输入实际建设成本合计（万元）">
+                                    <small for="totalCost" class="help-block" ></small>
+                                </div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label class="col-sm-2 control-label form-control-static">标准建设成本（万元）</label>
+                                <div class="col-sm-9 ">
+                                    <input id="totalPrice" class="form-control" type="number" name="totalPrice" value="<%=o.totalPrice%>" placeholder="请输入标准建设成本（万元）">
+                                    <small for="totalPrice" class="help-block" ></small>
+                                </div>
+                            </div>
+                        <%}%>
+                    </div>
+
+                    <div>
+                        <div class="plan_div">
+                            <label>模块信息</label>
+                        </div>
+                        <%for(j = 0; j < d.optionList.length; j ++) {%>
+                        <% var o = d.optionList[j]; %>
+                            <%for(k = 0; k < o.planList.length; k ++) {%>
+                            <% var p = o.planList[k]; %>
+                                <%for(l = 0; l < p.moduleList.length; l ++) {%>
+                                <% var m = p.moduleList[l]; %>
+                                <div class="module_info mondule">
+                                    <p id="module_number">模块序号 <%=l+1%></p>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">物资编码</label>
+                                        <div class="col-sm-9 ">
+                                            <input id="materialCode" class="form-control" type="number" name="materialCode" value="<%=m.materialCode%>" placeholder="请输入物资编码">
+                                            <small for="materialCode" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">物资数量</label>
+                                        <div class="col-sm-9 ">
+                                            <input id="materialCount" class="form-control" type="number" name="materialCount" value="<%=m.materialCount%>" placeholder="物资数量">
+                                            <small for="materialCount" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">计量单位</label>
+                                        <div class="col-sm-9 ">
+                                            <input id="materialUnit" class="form-control" type="number" name="materialUnit" value="<%=m.materialUnit%>" placeholder="请输入单位计量">
+                                            <small for="materialUnit" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">物资说明 </label>
+                                        <div class="col-sm-9 ">
+                                            <input id="materialDescription" class="form-control" type="text" name="materialDescription" value="<%=m.materialDescription%>" placeholder="请输入物资说明">
+                                            <small for="materialDescription" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">服务编码 </label>
+                                        <div class="col-sm-9 ">
+                                            <input id="serviceCode" class="form-control" type="text" name="serviceCode" value="<%=m.serviceCode%>" placeholder="请输入服务编码">
+                                            <small for="serviceCode" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">服务数量 </label>
+                                        <div class="col-sm-9 ">
+                                            <input id="serviceCount" class="form-control" type="number" name="serviceCount" value="<%=m.serviceCount%>" placeholder="请输入服务数量">
+                                            <small for="serviceCount" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <label class="col-sm-2 control-label form-control-static">服务说明 </label>
+                                        <div class="col-sm-9 ">
+                                            <input id="serviceDescription" class="form-control" type="number" name="serviceDescription" value="<%=m.serviceDescription%>" placeholder="请输入服务说明">
+                                            <small for="serviceDescription" class="help-block" ></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <%}%>
+                            <%}%>
+                        <%}%>
+                    </div>
+                    <%}%>
+                    <!--<%} else { %>-->
+                    <!--<tr class="not_data_t">-->
+                        <!--<img src="/common/img/nodata.png" alt="">-->
+                        <!--<span>暂无数据</span>-->
+                    <!--</tr>-->
+                    <!--<%}%>-->
+                </script>
+
+               <div id="new_record">
+                   <div>
+                       <div class="plan_div">
+                           <label>基本信息</label>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">用户名称</label>
+                           <div class="col-sm-9 ">
+                               <input id="name" class="form-control" type="text" name="name" value="" placeholder="请输入用户名称">
+                               <small for="name" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">基站名称</label>
+                           <div class="col-sm-9 ">
+                               <input id="stationName" class="form-control" type="text" name="stationName" value="" placeholder="请输入基站名称">
+                               <small for="stationName" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">所在城市</label>
+                           <div class="col-sm-9 ">
+                               <input id="city" class="form-control" type="text" name="city" value="" placeholder="请输入所在城市">
+                               <small for="city" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">所在区、县</label>
+                           <div class="col-sm-9 ">
+                               <input id="county" class="form-control" type="text" name="county" value="" placeholder="请输入用户名称">
+                               <small for="county" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">详细地址</label>
+                           <div class="col-sm-9 ">
+                               <input id="address" class="form-control" type="text" name="address" value="" placeholder="请输入详细地址">
+                               <small for="address" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">应用场景</label>
+                           <div class="col-sm-9 ">
+                               <input id="applyScene" class="form-control" type="text" name="applyScene" value="" placeholder="请输入应用场景">
+                               <small for="applyScene" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">建设类型</label>
+                           <div class="col-sm-9 ">
+                               <input id="constructionType" class="form-control" type="text" name="constructionType" value="" placeholder="请输入建设类型">
+                               <small for="constructionType" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">是否美化</label>
+                           <div class="col-sm-9 ">
+                               <input id="isBeautify" class="form-control" type="text" name="isBeautify" value="" placeholder="请输入是否美化">
+                               <small for="isBeautify" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">天线挂高</label>
+                           <div class="col-sm-9 ">
+                               <input id="antennaHeight" class="form-control" type="text" name="antennaHeight" value="" placeholder="请输入天线挂高">
+                               <small for="antennaHeight" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">共建信息</label>
+                           <div class="col-sm-9 ">
+                               <input id="buildInformation" class="form-control" type="text" name="buildInformation" value="" placeholder="请输入共建信息">
+                               <small for="buildInformation" class="help-block"></small>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div>
+                       <div class="plan_div">
+                           <label>高级信息</label>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">关联铁塔</label>
+                           <div class="col-sm-9 ">
+                               <input id="tower" class="form-control" type="text" name="tower" value="" placeholder="请输入关联铁塔">
+                               <small for="tower" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">关联机房</label>
+                           <div class="col-sm-9 ">
+                               <input id="room" class="form-control" type="text" name="room" value="" placeholder="请输入关联机房">
+                               <small for="room" class="help-block"></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">关联配套</label>
+                           <div class="col-sm-9 ">
+                               <input id="suit" class="form-control" type="text" name="suit" value="" placeholder="请输入关联配套">
+                               <small for="suit" class="help-block"></small>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div>
+                       <div class="plan_div">
+                           <label>附加信息</label>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">造价综合差异率*100（单位%）</label>
+                           <div class="col-sm-9 ">
+                               <input id="differenceRate" class="form-control" type="number" name="differenceRate" value="<%=o.differenceRate%>" placeholder="请输入造价综合差异率*100（单位%）">
+                               <small for="differenceRate" class="help-block" ></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">百元投资租金/年（单位元）</label>
+                           <div class="col-sm-9 ">
+                               <input id="investmentRent" class="form-control" type="number" name="investmentRent" value="<%=o.investmentRent%>" placeholder="请输入百元投资租金/年（单位元）">
+                               <small for="investmentRent" class="help-block" ></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">实际建设成本合计（万元）</label>
+                           <div class="col-sm-9 ">
+                               <input id="totalCost" class="form-control" type="number" name="totalCost" value="<%=o.totalCost%>" placeholder="请输入实际建设成本合计（万元）">
+                               <small for="totalCost" class="help-block" ></small>
+                           </div>
+                       </div>
+                       <div class="form-group has-feedback">
+                           <label class="col-sm-2 control-label form-control-static">标准建设成本（万元）</label>
+                           <div class="col-sm-9 ">
+                               <input id="totalPrice" class="form-control" type="number" name="totalPrice" value="<%=o.totalPrice%>" placeholder="请输入标准建设成本（万元）">
+                               <small for="totalPrice" class="help-block" ></small>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div>
+                       <div class="plan_div" style="position: relative">
+                           <label>模块信息</label>
+                           <button id="bth" style="position: absolute;top: 12px;right: 9.3rem;background: #ffffff;border: 1px solid #ccc;border-radius: 4px;">添加更多</button>
+                       </div>
+                       <div class="module_info mondule1">
+                           <p id="module_number1">模块序号 1</p>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">物资编码</label>
+                               <div class="col-sm-9 ">
+                                   <input id="materialCode1" class="form-control" type="number" name="materialCode1" value="" placeholder="请输入物资编码">
+                                   <small for="materialCode1" class="help-block" ></small>
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">物资数量</label>
+                               <div class="col-sm-9 ">
+                                   <input id="materialCount1" class="form-control" type="number" name="materialCount1" value="" placeholder="物资数量">
+                                   <small for="materialCount1" class="help-block" ></small>
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">计量单位</label>
+                               <div class="col-sm-9 ">
+                                   <input id="measureUnit1" class="form-control" type="number" name="measureUnit1" value="" placeholder="请输入单位计量">
+                                   <small for="measureUnit1" class="help-block" ></small>
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">物资说明 </label>
+                               <div class="col-sm-9 ">
+                                   <input id="materialDescription1" class="form-control" type="text" name="materialDescription1" value="" placeholder="请输入物资说明">
+                                   <small for="materialDescription1" class="help-block" ></small>
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">服务编码 </label>
+                               <div class="col-sm-9 ">
+                                   <input id="serviceCode1" class="form-control" type="text" name="serviceCode1" value="" placeholder="请输入服务编码">
+                                   <small for="serviceCode1" class="help-block" ></small>
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">服务数量 </label>
+                               <div class="col-sm-9 ">
+                                   <input id="serviceCount1" class="form-control" type="number" name="serviceCount1" value="" placeholder="请输入服务数量">
+                                   <small for="serviceCount1" class="help-block" ></small>
+                               </div>
+                           </div>
+                           <div class="form-group has-feedback">
+                               <label class="col-sm-2 control-label form-control-static">服务说明 </label>
+                               <div class="col-sm-9 ">
+                                   <input id="serviceDescription1" class="form-control" type="number" name="serviceDescription1" value="" placeholder="请输入服务说明">
+                                   <small for="serviceDescription1" class="help-block" ></small>
+                               </div>
+                           </div>
+                       </div>
+
+
+
+                       <!--<div class="module_info mondule1">-->
+                           <!--<p id="module_number1">模块序号 1</p>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资编码</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCode1" class="form-control" type="number" name="materialCode1" value="" placeholder="请输入物资编码">-->
+                                   <!--<small for="materialCode1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资数量</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCount1" class="form-control" type="number" name="materialCount1" value="" placeholder="物资数量">-->
+                                   <!--<small for="materialCount1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">计量单位</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="measureUnit1" class="form-control" type="number" name="measureUnit1" value="" placeholder="请输入单位计量">-->
+                                   <!--<small for="measureUnit1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialDescription1" class="form-control" type="text" name="materialDescription1" value="" placeholder="请输入物资说明">-->
+                                   <!--<small for="materialDescription1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务编码 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCode1" class="form-control" type="text" name="serviceCode1" value="" placeholder="请输入服务编码">-->
+                                   <!--<small for="serviceCode1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务数量 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCount1" class="form-control" type="number" name="serviceCount1" value="" placeholder="请输入服务数量">-->
+                                   <!--<small for="serviceCount1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceDescription1" class="form-control" type="number" name="serviceDescription1" value="" placeholder="请输入服务说明">-->
+                                   <!--<small for="serviceDescription1" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                       <!--<div class="module_info mondule2">-->
+                           <!--<p id="module_number2">模块序号 2</p>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资编码</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCode2" class="form-control" type="number" name="materialCode2" value="" placeholder="请输入物资编码">-->
+                                   <!--<small for="materialCode2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资数量</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCount2" class="form-control" type="number" name="materialCount2" value="" placeholder="物资数量">-->
+                                   <!--<small for="materialCount2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">计量单位</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="measureUnit2" class="form-control" type="number" name="measureUnit2" value="" placeholder="请输入单位计量">-->
+                                   <!--<small for="measureUnit2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialDescription2" class="form-control" type="text" name="materialDescription2" value="" placeholder="请输入物资说明">-->
+                                   <!--<small for="materialDescription2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务编码 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCode2" class="form-control" type="text" name="serviceCode2" value="" placeholder="请输入服务编码">-->
+                                   <!--<small for="serviceCode2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务数量 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCount2" class="form-control" type="number" name="serviceCount2" value="" placeholder="请输入服务数量">-->
+                                   <!--<small for="serviceCount2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceDescription2" class="form-control" type="number" name="serviceDescription2" value="" placeholder="请输入服务说明">-->
+                                   <!--<small for="serviceDescription2" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                       <!--<div class="module_info mondule3">-->
+                           <!--<p id="module_number3">模块序号 3</p>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资编码</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCode3" class="form-control" type="number" name="materialCode3" value="" placeholder="请输入物资编码">-->
+                                   <!--<small for="materialCode3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资数量</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCount3" class="form-control" type="number" name="materialCount3" value="" placeholder="物资数量">-->
+                                   <!--<small for="materialCount3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">计量单位</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="measureUnit3" class="form-control" type="number" name="measureUnit3" value="" placeholder="请输入单位计量">-->
+                                   <!--<small for="measureUnit3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialDescription3" class="form-control" type="text" name="materialDescription3" value="" placeholder="请输入物资说明">-->
+                                   <!--<small for="materialDescription3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务编码 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCode3" class="form-control" type="text" name="serviceCode3" value="" placeholder="请输入服务编码">-->
+                                   <!--<small for="serviceCode3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务数量 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCount3" class="form-control" type="number" name="serviceCount3" value="" placeholder="请输入服务数量">-->
+                                   <!--<small for="serviceCount3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceDescription3" class="form-control" type="number" name="serviceDescription3" value="" placeholder="请输入服务说明">-->
+                                   <!--<small for="serviceDescription3" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                       <!--<div class="module_info mondule4">-->
+                           <!--<p id="module_number4">模块序号 4</p>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资编码</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCode4" class="form-control" type="number" name="materialCode4" value="" placeholder="请输入物资编码">-->
+                                   <!--<small for="materialCode4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资数量</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCount4" class="form-control" type="number" name="materialCount4" value="" placeholder="物资数量">-->
+                                   <!--<small for="materialCount4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">计量单位</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="measureUnit4" class="form-control" type="number" name="measureUnit4" value="" placeholder="请输入单位计量">-->
+                                   <!--<small for="measureUnit4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialDescription4" class="form-control" type="text" name="materialDescription4" value="" placeholder="请输入物资说明">-->
+                                   <!--<small for="materialDescription4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务编码 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCode4" class="form-control" type="text" name="serviceCode4" value="" placeholder="请输入服务编码">-->
+                                   <!--<small for="serviceCode4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务数量 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCount4" class="form-control" type="number" name="serviceCount4" value="" placeholder="请输入服务数量">-->
+                                   <!--<small for="serviceCount4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceDescription4" class="form-control" type="number" name="serviceDescription4" value="" placeholder="请输入服务说明">-->
+                                   <!--<small for="serviceDescription4" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                       <!--<div class="module_info mondule5">-->
+                           <!--<p id="module_number5">模块序号 5</p>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资编码</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCode5" class="form-control" type="number" name="materialCode5" value="" placeholder="请输入物资编码">-->
+                                   <!--<small for="materialCode5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资数量</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCount5" class="form-control" type="number" name="materialCount5" value="" placeholder="物资数量">-->
+                                   <!--<small for="materialCount5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">计量单位</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="measureUnit5" class="form-control" type="number" name="measureUnit5" value="" placeholder="请输入单位计量">-->
+                                   <!--<small for="measureUnit5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialDescription5" class="form-control" type="text" name="materialDescription5" value="" placeholder="请输入物资说明">-->
+                                   <!--<small for="materialDescription5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务编码 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCode5" class="form-control" type="text" name="serviceCode5" value="" placeholder="请输入服务编码">-->
+                                   <!--<small for="serviceCode5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务数量 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCount5" class="form-control" type="number" name="serviceCount5" value="" placeholder="请输入服务数量">-->
+                                   <!--<small for="serviceCount5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceDescription5" class="form-control" type="number" name="serviceDescription5" value="" placeholder="请输入服务说明">-->
+                                   <!--<small for="serviceDescription5" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                       <!--<div class="module_info mondule6">-->
+                           <!--<p id="module_number6">模块序号 6</p>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资编码</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCode6" class="form-control" type="number" name="materialCode6" value="" placeholder="请输入物资编码">-->
+                                   <!--<small for="materialCode6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资数量</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialCount6" class="form-control" type="number" name="materialCount6" value="" placeholder="物资数量">-->
+                                   <!--<small for="materialCount6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">计量单位</label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="measureUnit6" class="form-control" type="number" name="measureUnit6" value="" placeholder="请输入单位计量">-->
+                                   <!--<small for="measureUnit6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">物资说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="materialDescription6" class="form-control" type="text" name="materialDescription6" value="" placeholder="请输入物资说明">-->
+                                   <!--<small for="materialDescription6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务编码 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCode6" class="form-control" type="text" name="serviceCode6" value="" placeholder="请输入服务编码">-->
+                                   <!--<small for="serviceCode6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务数量 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceCount6" class="form-control" type="number" name="serviceCount6" value="" placeholder="请输入服务数量">-->
+                                   <!--<small for="serviceCount6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                           <!--<div class="form-group has-feedback">-->
+                               <!--<label class="col-sm-2 control-label form-control-static">服务说明 </label>-->
+                               <!--<div class="col-sm-9 ">-->
+                                   <!--<input id="serviceDescription6" class="form-control" type="number" name="serviceDescription6" value="" placeholder="请输入服务说明">-->
+                                   <!--<small for="serviceDescription6" class="help-block" ></small>-->
+                               <!--</div>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                   </div>
+               </div>
+
+                <div class="col-md-12">
+                    <!--<a class="save" href="javascript:void(0);" onclick="saveRecord()">保 存-->
+                    <a class="save" href="javascript:showMessage('尚处于开发中，请等待更新的版本发布！');">保 存
+                    </a>
+                </div>
+            </div>
+            <!--=== 方案记录 结束 ===-->
+        </div>
+
+    </div>
+</div>
+<!--=== 记录编辑 结束 ===-->
+
+<script src="/common/js/admin/moment-with-locales.js?v={{APPVersion}}"></script>
+<script src="/common/js/admin/bootstrap-datetimepicker.js?v={{APPVersion}}"></script>
+<script>
+    var recordId = getQueryString('id')
+    var recordParameter = getQueryString('parameter')
+
+    $(function () {
+        if(recordId){
+            // 请求记录信息接口
+            findRecord()
+        }
+    })
+
+    // 输入Url参数的名字获取对应值
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    if(recordParameter == 'view') {
+        $('input').attr("disabled","disabled")
+        $('select').attr("disabled","disabled")
+        $('.save').hide()
+        $('#record_location').text('记录信息')
+        $('#record_title').text('记录信息')
+        $('#record_prompt').text('快捷查看详细记录信息。')
+        $('#record_view').text('查看记录')
+        $('#new_record').css('display','none')
+    }else if(recordParameter == 'modify') {
+        $('#record_location').text('编辑记录')
+        $('#record_title').text('编辑记录')
+        $('#record_prompt').text('快捷编辑记录详细信息。')
+        $('#record_view').text('编辑记录')
+        $('#new_record').css('display','none')
+    }else if(recordParameter == 'new') {
+        $('#record_location').text('新增记录')
+        $('#record_title').text('新增记录')
+        $('#record_prompt').text('快捷新增记录详细信息。')
+        $('#record_view').text('新增记录')
+        $('#j-record-list').css('display','none')
+    }
+
+    // 请求记录信息接口
+    function findRecord() {
+        var formData = {
+            _id: recordId
+        }
+
+        $.ajax({
+            url: globalApiUrl + '/api/record/find.html',
+            contentType: 'application/x-www-form-urlencoded',
+            type: 'post',
+            data: {
+                data: JSON.stringify(formData),
+                page: 0,
+                limit: 20
+            },
+            dataType: 'json',
+            beforeSend: function () {
+                // 请求前
+                setLoading('正在查找中, 请稍候...')
+            },
+            complete: function () {
+                // 请求后
+                hideLoading()
+            },
+            success: function (response) {
+                // 响应成功
+                if(response.state == 1) {
+                    showMessage(response.message)
+
+                    console.log('response ==>',JSON.stringify(response))
+
+                    var html = template('j-record-list', response)
+                    $('#record-list').html(html)
+
+
+
+//                    for (var i = 0; i < response.data.length; i++) {
+//                        var data = response.data[i]
+//                        for (var j = 0; j < data.optionList.length; j++) {
+//                            var option = data.optionList[j]
+//                            for (var k = 0; k < option.planList.length; k++) {
+//                                var plan = option.planList[k]
+//                                for (var l = 0; l < plan.moduleList.length; l++) {
+////                                    var module = plan.moduleList[l]
+//                                    if(l = '0'){
+//                                        moduleObj1 = plan.moduleList[l]
+//                                    }else if(l = '1'){
+//                                        moduleObj2 = plan.moduleList[l]
+//                                    }else if(l = '2'){
+//                                        moduleObj3 = plan.moduleList[l]
+//                                    }else if(l = '3'){
+//                                        moduleObj4 = plan.moduleList[l]
+//                                    }else if(l = '4'){
+//                                        moduleObj5 = plan.moduleList[l]
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//
+//                    $('input[name=name]').val(data.accountId)
+//                    $('input[name=stationName]').val(data.stationName)
+//                    $('input[name=city]').val(data.city)
+//                    $('input[name=county]').val(data.county)
+//                    $('input[name=address]').val(data.address)
+//
+//                    $('input[name=applyScene]').val(option.applyScene)
+//                    $('input[name=constructionType]').val(option.constructionType)
+//                    $('input[name=isBeautify]').val(option.isBeautify)
+//                    $('input[name=antennaHeight]').val(option.antennaHeight)
+//                    $('input[name=buildInformation]').val(option.buildInformation)
+//
+//                    $('input[name=tower]').val(option.tower)
+//                    $('input[name=room]').val(option.room)
+//                    $('input[name=suit]').val(option.suit)
+//
+//                    $('input[name=differenceRate]').val(option.differenceRate)
+//                    $('input[name=investmentRent]').val(option.investmentRent)
+//                    $('input[name=totalCost]').val(option.totalCost)
+//                    $('input[name=totalPrice]').val(option.totalPrice)
+
+
+
+
+
+                }else {
+                    // TODO 正常响应, 但服务器返回错误时, 额外操作处理
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                showMessage('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+            }
+        })
+    }
+
+    // 保存记录信息接口
+//    function saveRecord() {
+//        // 检查表单数据
+//
+//        var name = $('#name').val()
+//        if(name == ''){
+//            $("small[for='name']").text('用户名称必须填入。')
+//            return
+//        }else {
+//            $("small[for='name']").text('')
+//        }
+//
+//        var stationName = $('#stationName').val()
+//        if(stationName == ''){
+//            $("small[for='stationName']").text('基站名称必须填入。')
+//            return
+//        }else {
+//            $("small[for='stationName']").text('')
+//        }
+//
+//        var city = $('#city').val()
+//        if(city == ''){
+//            $("small[for='city']").text('所在城市必须填入。')
+//            return
+//        }else {
+//            $("small[for='city']").text('')
+//        }
+//
+//        var county = $('#county').val()
+//        if(county == ''){
+//            $("small[for='county']").text('所在区、县必须填入。')
+//            return
+//        }else {
+//            $("small[for='county']").text('')
+//        }
+//
+//        var address = $('#address').val()
+//        if(address == ''){
+//            $("small[for='address']").text('详细地址必须填入。')
+//            return
+//        }else {
+//            $("small[for='address']").text('')
+//        }
+//
+//        var applyScene = $('#applyScene').val()
+//        if(applyScene == ''){
+//            $("small[for='applyScene']").text('应用场景必须填入。')
+//            return
+//        }else {
+//            $("small[for='applyScene']").text('')
+//        }
+//
+//        var constructionType = $('#constructionType').val()
+//        if(constructionType == ''){
+//            $("small[for='constructionType']").text('建设类型必须填入。')
+//            return
+//        }else {
+//            $("small[for='constructionType']").text('')
+//        }
+//
+//        var isBeautify = $('#isBeautify').val()
+//        if(isBeautify == ''){
+//            $("small[for='isBeautify']").text('是否美化必须填入。')
+//            return
+//        }else {
+//            $("small[for='isBeautify']").text('')
+//        }
+//
+//        var antennaHeight = $('#antennaHeight').val()
+//        if(antennaHeight == ''){
+//            $("small[for='antennaHeight']").text('天线挂高必须填入。')
+//            return
+//        }else {
+//            $("small[for='antennaHeight']").text('')
+//        }
+//
+//        var buildInformation = $('#buildInformation').val()
+//        if(buildInformation == ''){
+//            $("small[for='buildInformation']").text('共建信息必须填入。')
+//            return
+//        }else {
+//            $("small[for='buildInformation']").text('')
+//        }
+//
+//        var tower = $('#tower').val()
+//        if(tower == ''){
+//            $("small[for='tower']").text('关联铁塔必须填入。')
+//            return
+//        }else {
+//            $("small[for='tower']").text('')
+//        }
+//
+//        var room = $('#room').val()
+//        if(room == ''){
+//            $("small[for='room']").text('关联机房必须填入。')
+//            return
+//        }else {
+//            $("small[for='room']").text('')
+//        }
+//
+//        var suit = $('#suit').val()
+//        if(suit == ''){
+//            $("small[for='suit']").text('关联配套必须填入。')
+//            return
+//        }else {
+//            $("small[for='suit']").text('')
+//        }
+//
+//        var differenceRate = $('#differenceRate').val()
+//        if(differenceRate == ''){
+//            $("small[for='differenceRate']").text('造价综合差异率*100必须填入。')
+//            return
+//        }else {
+//            $("small[for='differenceRate']").text('')
+//        }
+//
+//        var investmentRent = $('#investmentRent').val()
+//        if(investmentRent == ''){
+//            $("small[for='investmentRent']").text('百元投资租金/年必须填入。')
+//            return
+//        }else {
+//            $("small[for='investmentRent']").text('')
+//        }
+//
+//        var totalCost = $('#totalCost').val()
+//        if(totalCost == ''){
+//            $("small[for='totalCost']").text('实际建设成本合计必须填入。')
+//            return
+//        }else {
+//            $("small[for='totalCost']").text('')
+//        }
+//
+//        var totalPrice = $('#totalPrice').val()
+//        if(totalPrice == ''){
+//            $("small[for='totalPrice']").text('标准建设成本必须填入。')
+//            return
+//        }else {
+//            $("small[for='totalPrice']").text('')
+//        }
+//
+//        var formData = [
+//            {
+//                accountId: name,
+//                stationName: stationName,
+//                province: "四川",
+//                city: city,
+//                county: county,
+//                address: address,
+//                longitude: "",
+//                latitude: "",
+//                status: 0,
+//                optionList: [
+//                    {
+//                        applyScene: applyScene,
+//                        constructionType: constructionType,
+//                        isBeautify: isBeautify,
+//                        antennaHeight: antennaHeight,
+//                        buildInformation: buildInformation,
+//                        tower: tower,
+//                        room: room,
+//                        suit: suit,
+//                        "output": "35米外爬式单管塔一体化平台1个1.8米电源设备柜+1个1.8米电池柜+2组200AH蓄电池+4个电源模块",
+//                        "towerCost": "13.70",
+//                        "roomCost": "0.58",
+//                        "suitCost": "2.99",
+//                        totalCost: totalCost,
+//                        totalPrice: totalPrice,
+//                        differenceRate: differenceRate,
+//                        investmentRent: investmentRent,
+//                        status: 1,
+//                        "planList": [
+//                            {
+//                                "recommendPlanCode": "SCFA1206",
+//                                "recommendPlanName": "2家各1制式：35米外爬支架式单管塔+1个1.8米电源设备柜+1个1.8米电池柜",
+//                                "recommendPlanDescription": "2家各1制式：外爬支架式单管塔-35米-0.35风压+地面站-1个1.8米电源设备柜+1个1.8米电池柜+1组500AH蓄电池+4个整流模块",
+//                                "_id": "590754e5d3c979cb0a08f4ae",
+//                                "moduleList": [
+//                                    {
+//                                        "serviceCode": "900101030400",
+//                                        "servicePrice": "1",
+//                                        "serviceRate": "0.1",
+//                                        "serviceCount": "3.96 ",
+//                                        "serviceDescription": "施工-一体化机柜基础-平原地面基础",
+//                                        "_id": "590754e5d3c979cb0a08f4b4"
+//                                    },
+//                                    {
+//                                        "serviceCode": "900101060603",
+//                                        "servicePrice": "1",
+//                                        "serviceRate": "0.1",
+//                                        "serviceCount": "1.00 ",
+//                                        "serviceDescription": "外市电引入-直供380V",
+//                                        "_id": "590754e5d3c979cb0a08f4b3"
+//                                    },
+//                                    {
+//                                        "serviceCode": "910000000000",
+//                                        "servicePrice": "1",
+//                                        "serviceRate": "0.1",
+//                                        "serviceCount": "1.00 ",
+//                                        "serviceDescription": "选址费",
+//                                        "_id": "590754e5d3c979cb0a08f4b2"
+//                                    },
+//                                    {
+//                                        "serviceCode": "900101020401",
+//                                        "servicePrice": "1",
+//                                        "serviceRate": "0.1",
+//                                        "serviceCount": "28.05 ",
+//                                        "serviceDescription": "施工-人工挖孔桩(各类岩石)",
+//                                        "_id": "590754e5d3c979cb0a08f4b1"
+//                                    },
+//                                    {
+//                                        "materialCode": "01010102020101",
+//                                        "materialPrice": "1",
+//                                        "materialRate": "0.1",
+//                                        "materialCount": "1",
+//                                        "materialDescription": "35米外爬支架式单管塔(0.35风压)",
+//                                        "serviceCode": "900103020101",
+//                                        "servicePrice": "1",
+//                                        "serviceRate": "0.1",
+//                                        "serviceCount": "1.00 ",
+//                                        "serviceDescription": "设计-地面塔标准化塔身",
+//                                        "_id": "590754e5d3c979cb0a08f4b0"
+//                                    },
+//                                    {
+//                                        "materialCode": "01210103100212",
+//                                        "materialPrice": "1",
+//                                        "materialRate": "0.1",
+//                                        "materialCount": "1 ",
+//                                        "materialDescription": "800*800*1800-设备柜(内置电源)[1500W交流空调、内置嵌入式高频开关电源、PU]",
+//                                        "serviceCode": "900101040200",
+//                                        "servicePrice": "1",
+//                                        "serviceRate": "0.1",
+//                                        "serviceCount": "1.00 ",
+//                                        "serviceDescription": "施工-室外机柜配套(第1个机柜)",
+//                                        "_id": "590754e5d3c979cb0a08f4af"
+//                                    }
+//                                ]
+//                            }
+//                        ]
+//                    }
+//                ]
+//            }
+//        ]
+//
+//        console.log('formData ==>',formData)
+////        $.ajax({
+////            url: globalApiUrl + '/api/record/save.html',
+////            contentType: 'application/x-www-form-urlencoded',
+////            type: 'post',
+////            data: {
+////                data: JSON.stringify(formData),
+////            },
+////            dataType: 'json',
+////            beforeSend: function () {
+////                // 请求前
+////                setLoading('正在查找中, 请稍候...')
+////            },
+////            complete: function () {
+////                // 请求后
+////                hideLoading()
+////            },
+////            success: function (response) {
+////                // 响应成功
+////                if(response.state == 1) {
+////                    showMessage(response.message)
+////
+////                    console.log('response ==>',JSON.stringify(response))
+////
+////                }else {
+////                    // TODO 正常响应, 但服务器返回错误时, 额外操作处理
+////                }
+////            },
+////            error: function (xhr, ajaxOptions, thrownError) {
+////                console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+////                showMessage('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+////            }
+////        })
+//    }
+</script>

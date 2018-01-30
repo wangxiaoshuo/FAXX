@@ -1,0 +1,78 @@
+<!--=== 设计方案 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <div class="config-part">
+                            <form id="formId" name="formName">
+                                <div class="op-config">
+                                    <div class="major-pad">
+                                        <!--=== 优化方案 开始  ===-->
+                                        <div class="notes-div">
+                                            <div class="notes item">
+                                                <b><i class="fa fa-file-excel-o i-green"></i>  优化方案 : </b>
+                                                <ul>
+                                                    <li>
+                                                        <div class="scheme change">
+                                                            <p><span>铁塔</span> : 30米外爬式单管塔</p>
+                                                            <p><span>机房</span> : 一体化平台</p>
+                                                            <p><span>配套</span> : 1个1.8米一体化综合柜+2组150AH蓄电池+4个电源模块</p>
+                                                            <p><span>标准建设成本(万)</span> : <span class="money">&#65509; 20</span></p>
+                                                            <p><span>实际建设成本合计(万)</span> : <span class="money">&#65509; 14.99</span></p>
+                                                            <p><span>造价综合差异率*100</span> : 74.951 %</p>
+                                                            <p><span>百元投资租金/年（元）</span> : <span class="money">&#65509; 21.399527691425</span></p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--=== 优化方案 结束  ===-->
+                                    </div>
+
+                                    <!--=== 方案设计 开始  ===-->
+                                    <div class="notes-div">
+                                        <div class="notes item">
+                                            <b><i class="fa fa-pie-chart i-green"></i>  方案设计 : </b>
+                                            <ul>
+                                                <li>
+                                                    <div class="scheme change">
+                                                        <p><span>站名</span> : 测试基站</p>
+                                                        <p><span>经纬度</span> : 74.951</p>
+                                                        <p><span>数量</span> : 1</p>
+                                                        <p><span>单价</span> : <span class="money">&#65509; 20</span></p>
+                                                        <p><span>合价</span> : <span class="money">&#65509; 14.99</span></p>
+                                                        <p><span>物资</span> : 01210105020200</p>
+                                                        <p><span>服务</span> : 900101030400</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--=== 方案设计 结束  ===-->
+
+                                    <!--=== 按钮 开始 ===-->
+                                    <div class="btns-div" style="float: left; margin-bottom: 2rem;">
+                                        <div class="btns btns-left">
+                                            <button type="button" id="btnSubmit">
+                                                <i class="fa fa-send-o i-green"></i> 推送
+                                            </button>
+                                        </div>
+                                        <div class="btns btns-right">
+                                            <button type="reset" id="btnReset">
+                                                <i class="fa fa-mail-reply-all i-red"></i> 退回
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--=== 按钮 结束 ===-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=== 设计方案 结束 ===-->

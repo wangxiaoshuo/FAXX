@@ -1,0 +1,76 @@
+{
+  "apps": [
+    {
+      "name": "FA-API1",
+      "script": "extension/api/app.js",
+      "max_memory_restart": "1G",
+      "instances": 1,
+      "exec_mode": "fork",
+      "merge_logs": true,
+      "env": {
+        "PORT": 4445,
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "FA-API2",
+      "script": "extension/api/app.js",
+      "max_memory_restart": "1G",
+      "instances": 1,
+      "exec_mode": "fork",
+      "merge_logs": true,
+      "env": {
+        "PORT": 4446,
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "FA-API3",
+      "script": "extension/api/app.js",
+      "max_memory_restart": "1G",
+      "instances": 1,
+      "exec_mode": "fork",
+      "merge_logs": true,
+      "env": {
+        "PORT": 4447,
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "FA-API4",
+      "script": "extension/api/app.js",
+      "max_memory_restart": "1G",
+      "instances": 1,
+      "exec_mode": "fork",
+      "merge_logs": true,
+      "env": {
+        "PORT": 4448,
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "FA-API-Entry",
+      "script": "extension/api/entry.js",
+      "max_memory_restart": "2G",
+      "instances": 1,
+      "exec_mode": "cluster",
+      "merge_logs": true,
+      "env": {
+        "PORT": 4242,
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "FA-APP",
+      "script": "app.js",
+      "max_memory_restart": "5G",
+      "instances": 1,
+      "exec_mode": "fork",
+      "merge_logs": true,
+      "env": {
+        "PORT": 4141,
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

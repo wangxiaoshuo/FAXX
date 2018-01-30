@@ -1,0 +1,1614 @@
+{
+  "status": 200,
+  "msg": "成功",
+  "data": [
+    {
+      "name": "地面塔",
+      "parent_id": "",
+      "category_id": "4",
+      "update_time": "2016-09-27 17:40:14",
+      "children": [
+        {
+          "name": "普通地面塔",
+          "parent_id": "4",
+          "category_id": "6",
+          "update_time": "2016-09-27 17:41:07",
+          "antennas": [
+            {
+              "name": "高度小于30米",
+              "category_id": "6",
+              "antenna_id": "3",
+              "description": "H&lt;30",
+              "update_time": "2016-09-28 10:39:06",
+              "towers": [
+                {
+                  "name": "25米三管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "3",
+                  "update_time": "2016-09-27 17:45:33",
+                  "tower_id": "3",
+                  "cost": "13.47",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "3",
+                      "update_time": "2016-09-27 17:46:21",
+                      "room_id": "3",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "25米三管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "3",
+                          "update_time": "2016-09-28 10:48:23",
+                          "suit_id": "3",
+                          "cost": "2.99",
+                          "price": "20.00",
+                          "remark": {
+                            "tower_id": "3",
+                            "room_id": "3",
+                            "suit_id": "3",
+                            "update_time": "2016-09-28 20:41:11",
+                            "remark_id": "3",
+                            "comment_1": "",
+                            "comment_2": "可用方案（无二搬）",
+                            "tower_cost": "13.47",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "20.00",
+                            "total_cost": "17.04",
+                            "total_price": "20.00"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "3",
+                      "update_time": "2016-09-27 18:40:05",
+                      "room_id": "4",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "25米三管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "4",
+                          "update_time": "2016-09-28 10:48:17",
+                          "suit_id": "4",
+                          "cost": "4.24",
+                          "price": "25.90",
+                          "remark": {
+                            "tower_id": "3",
+                            "room_id": "4",
+                            "suit_id": "4",
+                            "update_time": "2016-09-28 20:41:04",
+                            "remark_id": "4",
+                            "comment_1": "",
+                            "comment_2": "可用方案（无二搬）",
+                            "tower_cost": "13.47",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "25.90",
+                            "total_cost": "21.49",
+                            "total_price": "25.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "30米三管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "3",
+                  "update_time": "2016-09-27 18:45:03",
+                  "tower_id": "4",
+                  "cost": "15.81",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "4",
+                      "update_time": "2016-09-27 18:45:33",
+                      "room_id": "5",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米三管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "5",
+                          "update_time": "2016-09-28 10:48:08",
+                          "suit_id": "5",
+                          "cost": "2.99",
+                          "price": "20.00",
+                          "remark": {
+                            "tower_id": "4",
+                            "room_id": "5",
+                            "suit_id": "5",
+                            "update_time": "2016-09-28 14:12:13",
+                            "remark_id": "5",
+                            "comment_1": "",
+                            "comment_2": "如果挂高满足，优先选用25米，节省造价；有机房条件的，优先考虑机房；有机械组装条件的，优先考虑单管塔；有二搬情况的，谨慎可能会超",
+                            "tower_cost": "15.81",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "20.00",
+                            "total_cost": "19.38",
+                            "total_price": "20.00"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "4",
+                      "update_time": "2016-09-28 10:20:45",
+                      "room_id": "6",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米三管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "6",
+                          "update_time": "2016-09-28 10:48:02",
+                          "suit_id": "6",
+                          "cost": "4.24",
+                          "price": "25.90",
+                          "remark": {
+                            "tower_id": "4",
+                            "room_id": "6",
+                            "suit_id": "6",
+                            "update_time": "2016-09-28 14:12:08",
+                            "remark_id": "6",
+                            "comment_1": "",
+                            "comment_2": "如果挂高满足，优先选用25米，节省造价；有机房条件的，优先考虑机房；有机械组装条件的，优先考虑单管塔；有二搬情况的，谨慎可能会超",
+                            "tower_cost": "15.81",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "25.90",
+                            "total_cost": "23.83",
+                            "total_price": "25.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "30米外爬式单管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "3",
+                  "update_time": "2016-09-28 10:46:15",
+                  "tower_id": "5",
+                  "cost": "11.42",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "5",
+                      "update_time": "2016-09-28 10:46:41",
+                      "room_id": "7",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米外爬式单管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "7",
+                          "update_time": "2016-09-28 10:49:20",
+                          "suit_id": "7",
+                          "cost": "2.99",
+                          "price": "20.00",
+                          "remark": {
+                            "tower_id": "5",
+                            "room_id": "7",
+                            "suit_id": "7",
+                            "update_time": "2016-09-28 20:42:08",
+                            "remark_id": "7",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件，建议使用小机房方案，收益更高",
+                            "tower_cost": "11.42",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "20.00",
+                            "total_cost": "14.99",
+                            "total_price": "20.00"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "5",
+                      "update_time": "2016-09-28 10:50:35",
+                      "room_id": "8",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米外爬式单管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "8",
+                          "update_time": "2016-09-28 10:51:40",
+                          "suit_id": "8",
+                          "cost": "4.24",
+                          "price": "25.90",
+                          "remark": {
+                            "tower_id": "5",
+                            "room_id": "8",
+                            "suit_id": "8",
+                            "update_time": "2016-09-28 20:42:29",
+                            "remark_id": "8",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件",
+                            "tower_cost": "11.42",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "25.90",
+                            "total_cost": "19.44",
+                            "total_price": "25.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "30米插接式单管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "3",
+                  "update_time": "2016-09-28 10:53:11",
+                  "tower_id": "6",
+                  "cost": "14.24",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "6",
+                      "update_time": "2016-09-28 10:53:53",
+                      "room_id": "9",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米插接式单管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "9",
+                          "update_time": "2016-09-28 10:55:00",
+                          "suit_id": "9",
+                          "cost": "2.99",
+                          "price": "20.00",
+                          "remark": {
+                            "tower_id": "6",
+                            "room_id": "9",
+                            "suit_id": "9",
+                            "update_time": "2016-09-28 20:43:15",
+                            "remark_id": "9",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件；外爬式造价更低，建议改选；建议使用小机房方案，收益更高",
+                            "tower_cost": "14.24",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "20.00",
+                            "total_cost": "17.81",
+                            "total_price": "20.00"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "6",
+                      "update_time": "2016-09-28 10:56:30",
+                      "room_id": "10",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米插接式单管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "10",
+                          "update_time": "2016-09-28 10:57:07",
+                          "suit_id": "10",
+                          "cost": "4.24",
+                          "price": "25.90",
+                          "remark": {
+                            "tower_id": "6",
+                            "room_id": "10",
+                            "suit_id": "10",
+                            "update_time": "2016-09-28 20:44:06",
+                            "remark_id": "10",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件；外爬式造价更低，建议改选",
+                            "tower_cost": "14.24",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "25.90",
+                            "total_cost": "22.26",
+                            "total_price": "25.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "高度大于等于30并小于35米",
+              "category_id": "6",
+              "antenna_id": "4",
+              "description": "30≤H&lt;35",
+              "update_time": "2016-09-28 10:58:57",
+              "towers": [
+                {
+                  "name": "35米三管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "4",
+                  "update_time": "2016-09-28 10:59:48",
+                  "tower_id": "7",
+                  "cost": "16.04",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "7",
+                      "update_time": "2016-09-28 11:00:17",
+                      "room_id": "11",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米三管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "11",
+                          "update_time": "2016-09-28 11:01:07",
+                          "suit_id": "11",
+                          "cost": "2.99",
+                          "price": "22.30",
+                          "remark": {
+                            "tower_id": "7",
+                            "room_id": "11",
+                            "suit_id": "11",
+                            "update_time": "2016-09-28 20:46:45",
+                            "remark_id": "11",
+                            "comment_1": "",
+                            "comment_2": "可以使用，有二搬情况下，谨慎使用；有机械组装条件的推选单管塔",
+                            "tower_cost": "16.04",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "22.30",
+                            "total_cost": "19.61",
+                            "total_price": "22.30"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "7",
+                      "update_time": "2016-09-28 11:03:06",
+                      "room_id": "12",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米三管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "12",
+                          "update_time": "2016-09-28 11:03:55",
+                          "suit_id": "12",
+                          "cost": "4.24",
+                          "price": "28.20",
+                          "remark": {
+                            "tower_id": "7",
+                            "room_id": "12",
+                            "suit_id": "12",
+                            "update_time": "2016-09-28 20:47:06",
+                            "remark_id": "12",
+                            "comment_1": "",
+                            "comment_2": "有机房条件的建议使用，收益更高；有机械组装条件的推选单管塔",
+                            "tower_cost": "16.04",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "28.20",
+                            "total_cost": "24.06",
+                            "total_price": "28.20"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "35米外爬式单管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "4",
+                  "update_time": "2016-09-28 11:05:12",
+                  "tower_id": "8",
+                  "cost": "13.70",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "8",
+                      "update_time": "2016-09-28 11:05:37",
+                      "room_id": "13",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米外爬式单管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "13",
+                          "update_time": "2016-09-28 11:06:09",
+                          "suit_id": "13",
+                          "cost": "2.99",
+                          "price": "22.30",
+                          "remark": {
+                            "tower_id": "8",
+                            "room_id": "13",
+                            "suit_id": "13",
+                            "update_time": "2016-09-28 20:47:58",
+                            "remark_id": "13",
+                            "comment_1": "",
+                            "comment_2": "有机房条件的建议使用，收益更高",
+                            "tower_cost": "13.70",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "22.30",
+                            "total_cost": "17.27",
+                            "total_price": "22.30"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "8",
+                      "update_time": "2016-09-28 11:07:08",
+                      "room_id": "14",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米外爬式单管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "14",
+                          "update_time": "2016-09-28 11:07:48",
+                          "suit_id": "14",
+                          "cost": "4.24",
+                          "price": "28.20",
+                          "remark": {
+                            "tower_id": "8",
+                            "room_id": "14",
+                            "suit_id": "14",
+                            "update_time": "2016-09-28 20:48:13",
+                            "remark_id": "14",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件；优选方案",
+                            "tower_cost": "13.70",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "28.20",
+                            "total_cost": "21.72",
+                            "total_price": "28.20"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "35米插接式单管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "4",
+                  "update_time": "2016-09-28 11:09:13",
+                  "tower_id": "9",
+                  "cost": "16.27",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "9",
+                      "update_time": "2016-09-28 11:09:48",
+                      "room_id": "15",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米插接式单管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "15",
+                          "update_time": "2016-09-28 11:10:32",
+                          "suit_id": "15",
+                          "cost": "2.99",
+                          "price": "22.30",
+                          "remark": {
+                            "tower_id": "9",
+                            "room_id": "15",
+                            "suit_id": "15",
+                            "update_time": "2016-09-28 20:48:41",
+                            "remark_id": "15",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件；有机房条件的建议使用，收益更高",
+                            "tower_cost": "16.27",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "22.30",
+                            "total_cost": "19.84",
+                            "total_price": "22.30"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "9",
+                      "update_time": "2016-09-28 11:11:45",
+                      "room_id": "16",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米插接式单管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "16",
+                          "update_time": "2016-09-28 11:12:16",
+                          "suit_id": "16",
+                          "cost": "4.24",
+                          "price": "28.20",
+                          "remark": {
+                            "tower_id": "9",
+                            "room_id": "16",
+                            "suit_id": "16",
+                            "update_time": "2016-09-28 20:48:59",
+                            "remark_id": "16",
+                            "comment_1": "",
+                            "comment_2": "需机械组装条件；外爬式造价稍低，建议改选",
+                            "tower_cost": "16.27",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "28.20",
+                            "total_cost": "24.29",
+                            "total_price": "28.20"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "高度大于等于35并小于40米",
+              "category_id": "6",
+              "antenna_id": "5",
+              "description": "35≤H&lt;40",
+              "update_time": "2016-09-28 11:13:29",
+              "towers": [
+                {
+                  "name": "40米三管塔",
+                  "city_id": "3",
+                  "category_id": "6",
+                  "antenna_id": "5",
+                  "update_time": "2016-09-28 11:13:55",
+                  "tower_id": "10",
+                  "cost": "18.73",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "10",
+                      "update_time": "2016-09-28 11:14:40",
+                      "room_id": "17",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "40米三管塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "17",
+                          "update_time": "2016-09-28 11:15:16",
+                          "suit_id": "17",
+                          "cost": "2.99",
+                          "price": "25.40",
+                          "remark": {
+                            "tower_id": "10",
+                            "room_id": "17",
+                            "suit_id": "17",
+                            "update_time": "2016-09-28 11:15:31",
+                            "remark_id": "17",
+                            "comment_1": "",
+                            "comment_2": "可以使用",
+                            "tower_cost": "18.73",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "25.40",
+                            "total_cost": "22.30",
+                            "total_price": "25.40"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "10",
+                      "update_time": "2016-09-28 11:15:56",
+                      "room_id": "18",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "40米三管塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "18",
+                          "update_time": "2016-09-28 11:17:07",
+                          "suit_id": "18",
+                          "cost": "4.24",
+                          "price": "31.30",
+                          "remark": {
+                            "tower_id": "10",
+                            "room_id": "18",
+                            "suit_id": "18",
+                            "update_time": "2016-09-28 11:16:58",
+                            "remark_id": "18",
+                            "comment_1": "",
+                            "comment_2": "可以使用",
+                            "tower_cost": "18.73",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "31.30",
+                            "total_cost": "26.75",
+                            "total_price": "31.30"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "景观塔",
+          "parent_id": "4",
+          "category_id": "7",
+          "update_time": "2016-09-28 11:17:48",
+          "antennas": [
+            {
+              "name": "高度大于35米",
+              "category_id": "7",
+              "antenna_id": "7",
+              "description": "H&lt;35",
+              "update_time": "2016-09-28 14:08:56",
+              "towers": [
+                {
+                  "name": "35米双轮景观塔",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "7",
+                  "update_time": "2016-09-28 11:23:26",
+                  "tower_id": "12",
+                  "cost": "16.02",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "12",
+                      "update_time": "2016-09-28 11:23:45",
+                      "room_id": "21",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米双轮景观塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "21",
+                          "update_time": "2016-09-28 11:24:14",
+                          "suit_id": "21",
+                          "cost": "2.99",
+                          "price": "21.40",
+                          "remark": {
+                            "tower_id": "12",
+                            "room_id": "21",
+                            "suit_id": "21",
+                            "update_time": "2016-09-28 20:49:45",
+                            "remark_id": "21",
+                            "comment_1": "",
+                            "comment_2": "35米景观塔，双轮塔型最优，建议使用；优选机房方案",
+                            "tower_cost": "16.02",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "21.40",
+                            "total_cost": "19.59",
+                            "total_price": "21.40"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "12",
+                      "update_time": "2016-09-28 11:25:02",
+                      "room_id": "22",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米双轮景观塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "22",
+                          "update_time": "2016-09-28 11:25:40",
+                          "suit_id": "22",
+                          "cost": "4.24",
+                          "price": "26.90",
+                          "remark": {
+                            "tower_id": "12",
+                            "room_id": "22",
+                            "suit_id": "22",
+                            "update_time": "2016-09-28 20:50:03",
+                            "remark_id": "22",
+                            "comment_1": "",
+                            "comment_2": "35米景观塔，双轮塔型最优；建议使用",
+                            "tower_cost": "16.02",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "26.90",
+                            "total_cost": "24.04",
+                            "total_price": "26.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "高度小于20米",
+              "category_id": "7",
+              "antenna_id": "8",
+              "description": "H&lt;20",
+              "update_time": "2016-09-28 11:26:46",
+              "towers": [
+                {
+                  "name": "12米增高架",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "8",
+                  "update_time": "2016-09-28 11:27:31",
+                  "tower_id": "13",
+                  "cost": "9.15",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "13",
+                      "update_time": "2016-09-28 11:28:01",
+                      "room_id": "23",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "12米增高架配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "23",
+                          "update_time": "2016-09-28 11:28:29",
+                          "suit_id": "23",
+                          "cost": "2.99",
+                          "price": "13.40",
+                          "remark": {
+                            "tower_id": "13",
+                            "room_id": "23",
+                            "suit_id": "23",
+                            "update_time": "2016-09-28 14:28:30",
+                            "remark_id": "23",
+                            "comment_1": "",
+                            "comment_2": "属于极容易超标方案，谨慎使用（无二搬条件下）有二搬情况下不可用",
+                            "tower_cost": "9.15",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "13.40",
+                            "total_cost": "12.72",
+                            "total_price": "13.40"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "13",
+                      "update_time": "2016-09-28 11:29:51",
+                      "room_id": "24",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "12米增高架配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "24",
+                          "update_time": "2016-09-28 11:30:19",
+                          "suit_id": "24",
+                          "cost": "4.24",
+                          "price": "18.90",
+                          "remark": {
+                            "tower_id": "13",
+                            "room_id": "24",
+                            "suit_id": "24",
+                            "update_time": "2016-09-28 14:28:41",
+                            "remark_id": "24",
+                            "comment_1": "",
+                            "comment_2": "属于极容易超标方案，谨慎使用（无二搬条件下）有二搬情况下不可用",
+                            "tower_cost": "9.15",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "18.90",
+                            "total_cost": "17.17",
+                            "total_price": "18.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "18米增高架",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "8",
+                  "update_time": "2016-09-28 11:31:38",
+                  "tower_id": "14",
+                  "cost": "10.73",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "14",
+                      "update_time": "2016-09-28 11:31:59",
+                      "room_id": "25",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "18米增高架配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "25",
+                          "update_time": "2016-09-28 11:35:31",
+                          "suit_id": "25",
+                          "cost": "2.99",
+                          "price": "13.40",
+                          "remark": {
+                            "tower_id": "14",
+                            "room_id": "25",
+                            "suit_id": "25",
+                            "update_time": "2016-09-28 11:36:04",
+                            "remark_id": "25",
+                            "comment_1": "",
+                            "comment_2": "不建议使用",
+                            "tower_cost": "10.73",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "13.40",
+                            "total_cost": "14.30",
+                            "total_price": "13.40"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "14",
+                      "update_time": "2016-09-28 11:36:37",
+                      "room_id": "26",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "18米增高架配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "26",
+                          "update_time": "2016-09-28 11:37:07",
+                          "suit_id": "26",
+                          "cost": "4.24",
+                          "price": "18.90",
+                          "remark": {
+                            "tower_id": "14",
+                            "room_id": "26",
+                            "suit_id": "26",
+                            "update_time": "2016-09-28 14:28:07",
+                            "remark_id": "26",
+                            "comment_1": "",
+                            "comment_2": "谨慎使用（无二搬条件下）有二搬情况下不可用",
+                            "tower_cost": "10.73",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "18.90",
+                            "total_cost": "18.75",
+                            "total_price": "18.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "20米路灯杆塔",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "8",
+                  "update_time": "2016-09-28 11:38:11",
+                  "tower_id": "15",
+                  "cost": "8.94",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "15",
+                      "update_time": "2016-09-28 11:38:34",
+                      "room_id": "27",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "20米路灯杆塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "27",
+                          "update_time": "2016-09-28 11:39:15",
+                          "suit_id": "27",
+                          "cost": "2.99",
+                          "price": "13.40",
+                          "remark": {
+                            "tower_id": "15",
+                            "room_id": "27",
+                            "suit_id": "27",
+                            "update_time": "2016-09-28 11:39:43",
+                            "remark_id": "27",
+                            "comment_1": "",
+                            "comment_2": "可以使用",
+                            "tower_cost": "8.94",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "13.40",
+                            "total_cost": "12.51",
+                            "total_price": "13.40"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "15",
+                      "update_time": "2016-09-28 11:40:09",
+                      "room_id": "28",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "20米路灯杆塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "28",
+                          "update_time": "2016-09-28 11:40:48",
+                          "suit_id": "28",
+                          "cost": "4.24",
+                          "price": "18.90",
+                          "remark": {
+                            "tower_id": "15",
+                            "room_id": "28",
+                            "suit_id": "28",
+                            "update_time": "2016-09-28 14:27:50",
+                            "remark_id": "28",
+                            "comment_1": "",
+                            "comment_2": "可用方案（无二搬）",
+                            "tower_cost": "8.94",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "18.90",
+                            "total_cost": "16.96",
+                            "total_price": "18.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "高度大于等于20并小于25米",
+              "category_id": "7",
+              "antenna_id": "9",
+              "description": "20≤H&lt;25",
+              "update_time": "2016-09-28 11:41:52",
+              "towers": [
+                {
+                  "name": "25米路灯杆塔",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "9",
+                  "update_time": "2016-09-28 11:42:19",
+                  "tower_id": "16",
+                  "cost": "9.99",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "16",
+                      "update_time": "2016-09-28 11:42:39",
+                      "room_id": "29",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "25米路灯杆塔配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "29",
+                          "update_time": "2016-09-28 11:43:12",
+                          "suit_id": "29",
+                          "cost": "2.99",
+                          "price": "15.10",
+                          "remark": {
+                            "tower_id": "16",
+                            "room_id": "29",
+                            "suit_id": "29",
+                            "update_time": "2016-09-28 11:43:37",
+                            "remark_id": "29",
+                            "comment_1": "",
+                            "comment_2": "可以使用",
+                            "tower_cost": "9.99",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "15.10",
+                            "total_cost": "13.56",
+                            "total_price": "15.10"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "16",
+                      "update_time": "2016-09-28 11:44:01",
+                      "room_id": "30",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "25米路灯杆塔配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "30",
+                          "update_time": "2016-09-28 11:44:31",
+                          "suit_id": "30",
+                          "cost": "4.24",
+                          "price": "20.60",
+                          "remark": {
+                            "tower_id": "16",
+                            "room_id": "30",
+                            "suit_id": "30",
+                            "update_time": "2016-09-28 14:27:35",
+                            "remark_id": "30",
+                            "comment_1": "",
+                            "comment_2": "可用方案（无二搬）",
+                            "tower_cost": "9.99",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "20.60",
+                            "total_cost": "18.01",
+                            "total_price": "20.60"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "高度大于等于25并小于30米",
+              "category_id": "7",
+              "antenna_id": "10",
+              "description": "25≤H&lt;30",
+              "update_time": "2016-09-28 11:45:27",
+              "towers": [
+                {
+                  "name": "30米美化灯杆",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "10",
+                  "update_time": "2016-09-28 11:45:52",
+                  "tower_id": "17",
+                  "cost": "15.33",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "17",
+                      "update_time": "2016-09-28 11:46:10",
+                      "room_id": "31",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米美化灯杆配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "31",
+                          "update_time": "2016-09-28 11:46:42",
+                          "suit_id": "31",
+                          "cost": "2.99",
+                          "price": "17.00",
+                          "remark": {
+                            "tower_id": "17",
+                            "room_id": "31",
+                            "suit_id": "31",
+                            "update_time": "2016-09-28 11:47:00",
+                            "remark_id": "31",
+                            "comment_1": "",
+                            "comment_2": "超标塔形，建议使用外爬式，插接式，双轮景观塔或升级成35米景观塔",
+                            "tower_cost": "15.33",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "17.00",
+                            "total_cost": "18.90",
+                            "total_price": "17.00"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "17",
+                      "update_time": "2016-09-28 11:47:24",
+                      "room_id": "32",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "30米美化灯杆配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "32",
+                          "update_time": "2016-09-28 11:47:51",
+                          "suit_id": "32",
+                          "cost": "4.24",
+                          "price": "22.50",
+                          "remark": {
+                            "tower_id": "17",
+                            "room_id": "32",
+                            "suit_id": "32",
+                            "update_time": "2016-09-28 11:48:09",
+                            "remark_id": "32",
+                            "comment_1": "",
+                            "comment_2": "超标塔形，建议使用外爬式，插接式，双轮景观塔或升级成35米景观塔",
+                            "tower_cost": "15.33",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "22.50",
+                            "total_cost": "23.35",
+                            "total_price": "22.50"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "高度大于等于30并小于35米",
+              "category_id": "7",
+              "antenna_id": "11",
+              "description": "30≤H&lt;35",
+              "update_time": "2016-09-28 11:48:42",
+              "towers": [
+                {
+                  "name": "35米美化灯杆",
+                  "city_id": "3",
+                  "category_id": "7",
+                  "antenna_id": "11",
+                  "update_time": "2016-09-28 11:49:10",
+                  "tower_id": "18",
+                  "cost": "17.03",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "18",
+                      "update_time": "2016-09-28 11:49:29",
+                      "room_id": "33",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米美化灯杆配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "33",
+                          "update_time": "2016-09-28 11:50:06",
+                          "suit_id": "33",
+                          "cost": "2.99",
+                          "price": "21.40",
+                          "remark": {
+                            "tower_id": "18",
+                            "room_id": "33",
+                            "suit_id": "33",
+                            "update_time": "2016-09-28 20:50:42",
+                            "remark_id": "33",
+                            "comment_1": "",
+                            "comment_2": "可以使用；建议小机房方案；推荐使用双轮景观塔",
+                            "tower_cost": "17.03",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "21.40",
+                            "total_cost": "20.60",
+                            "total_price": "21.40"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "name": "小型机房",
+                      "city_id": "3",
+                      "tower_id": "18",
+                      "update_time": "2016-09-28 11:51:00",
+                      "room_id": "34",
+                      "cost": "3.78",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "35米美化灯杆配套",
+                          "description": "普通开关电源,综合柜,500AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "34",
+                          "update_time": "2016-09-28 11:51:44",
+                          "suit_id": "34",
+                          "cost": "4.24",
+                          "price": "26.90",
+                          "remark": {
+                            "tower_id": "18",
+                            "room_id": "34",
+                            "suit_id": "34",
+                            "update_time": "2016-09-28 14:26:59",
+                            "remark_id": "34",
+                            "comment_1": "",
+                            "comment_2": "可以使用；优选双轮景观塔",
+                            "tower_cost": "17.03",
+                            "tower_price": "0.00",
+                            "room_cost": "3.78",
+                            "room_price": "0.00",
+                            "suit_cost": "4.24",
+                            "suit_price": "26.90",
+                            "total_cost": "25.05",
+                            "total_price": "26.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "楼面塔",
+      "parent_id": "",
+      "category_id": "5",
+      "update_time": "2016-09-27 17:40:42",
+      "children": [
+        {
+          "name": "普通楼面塔",
+          "parent_id": "5",
+          "category_id": "8",
+          "update_time": "2016-09-28 11:54:25",
+          "antennas": [
+            {
+              "name": "普通楼面塔的天线挂高类型",
+              "category_id": "8",
+              "antenna_id": "12",
+              "description": "-",
+              "update_time": "2016-09-28 13:50:25",
+              "towers": [
+                {
+                  "name": "美化排气管",
+                  "city_id": "3",
+                  "category_id": "8",
+                  "antenna_id": "12",
+                  "update_time": "2016-09-28 13:43:06",
+                  "tower_id": "19",
+                  "cost": "1.23",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "19",
+                      "update_time": "2016-09-28 13:43:24",
+                      "room_id": "35",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "美化排气管配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "35",
+                          "update_time": "2016-09-28 13:48:44",
+                          "suit_id": "35",
+                          "cost": "2.99",
+                          "price": "8.70",
+                          "remark": {
+                            "tower_id": "19",
+                            "room_id": "35",
+                            "suit_id": "35",
+                            "update_time": "2016-09-28 14:26:33",
+                            "remark_id": "35",
+                            "comment_1": "",
+                            "comment_2": "可以使用，建议优选运营商提供一体化天线，节约投资",
+                            "tower_cost": "1.23",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "8.70",
+                            "total_cost": "4.80",
+                            "total_price": "8.70"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "楼面抱杆",
+          "parent_id": "5",
+          "category_id": "9",
+          "update_time": "2016-09-28 13:49:49",
+          "antennas": [
+            {
+              "name": "楼面抱杆的天线挂高类型",
+              "category_id": "9",
+              "antenna_id": "13",
+              "description": "-",
+              "update_time": "2016-09-28 13:50:50",
+              "towers": [
+                {
+                  "name": "3米女儿墙抱杆",
+                  "city_id": "3",
+                  "category_id": "9",
+                  "antenna_id": "13",
+                  "update_time": "2016-09-28 13:51:41",
+                  "tower_id": "20",
+                  "cost": "1.63",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "20",
+                      "update_time": "2016-09-28 13:52:02",
+                      "room_id": "36",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "3米女儿墙抱杆配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "36",
+                          "update_time": "2016-09-28 13:58:45",
+                          "suit_id": "36",
+                          "cost": "2.99",
+                          "price": "5.90",
+                          "remark": {
+                            "tower_id": "20",
+                            "room_id": "36",
+                            "suit_id": "36",
+                            "update_time": "2016-09-28 13:59:05",
+                            "remark_id": "36",
+                            "comment_1": "",
+                            "comment_2": "可以使用",
+                            "tower_cost": "1.63",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "5.90",
+                            "total_cost": "5.20",
+                            "total_price": "5.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "6米单抱杆",
+                  "city_id": "3",
+                  "category_id": "9",
+                  "antenna_id": "13",
+                  "update_time": "2016-09-28 14:00:07",
+                  "tower_id": "21",
+                  "cost": "2.16",
+                  "price": "0.00",
+                  "rooms": [
+                    {
+                      "name": "一体化平台",
+                      "city_id": "3",
+                      "tower_id": "21",
+                      "update_time": "2016-09-28 14:00:25",
+                      "room_id": "37",
+                      "cost": "0.58",
+                      "price": "0.00",
+                      "suits": [
+                        {
+                          "name": "6米单抱杆配套",
+                          "description": "室外一体化,200AH蓄电池,3个模块",
+                          "city_id": "3",
+                          "room_id": "37",
+                          "update_time": "2016-09-28 14:01:15",
+                          "suit_id": "37",
+                          "cost": "2.99",
+                          "price": "5.90",
+                          "remark": {
+                            "tower_id": "21",
+                            "room_id": "37",
+                            "suit_id": "37",
+                            "update_time": "2016-09-28 14:01:34",
+                            "remark_id": "37",
+                            "comment_1": "",
+                            "comment_2": "极易超标，谨慎使用",
+                            "tower_cost": "2.16",
+                            "tower_price": "0.00",
+                            "room_cost": "0.58",
+                            "room_price": "0.00",
+                            "suit_cost": "2.99",
+                            "suit_price": "5.90",
+                            "total_cost": "5.73",
+                            "total_price": "5.90"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,995 @@
+{
+	"variables": [],
+	"info": {
+		"name": "监管中心",
+		"_postman_id": "33a20bfb-0cde-0709-d41b-6b71afe3ec4b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "主播管理",
+			"description": "主播管理",
+			"item": [
+				{
+					"name": "增加主播",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/anchor/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"parentId\" : \"57b5977e5c3993263fe91ee8\",     \"status\" : \"\",     \"time\" : \"\",     \"weight\" : \"\",     \"violationCount\" : 0,     \"onlineCount\" : 0,     \"picture\" : \"\",     \"identifier\" : \"123\",     \"link\" : \"http://123\",     \"name\" : \"xx丶脑袋进水1\"   },   {     \"parentId\" : \"57b5977e5c3993263fe91ee8\",     \"status\" : \"\",     \"time\" : \"\",     \"weight\" : \"\",     \"violationCount\" : 0,     \"onlineCount\" : 0,     \"picture\" : \"\",     \"identifier\" : \"456\",     \"link\" : \"http://456\",     \"name\" : \"xx丶脑袋进水2\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加主播"
+					},
+					"response": []
+				},
+				{
+					"name": "删除主播",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/anchor/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"58809e4eb6f9ad4107f6fa17\",   \"58809e4eb6f9ad4107f6fa18\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除主播"
+					},
+					"response": []
+				},
+				{
+					"name": "修改主播",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/anchor/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"parentId\" : \"57b5977e5c3993263fe91ee8\",     \"status\" : \"\",     \"time\" : \"\",     \"id\" : \"58809e4eb6f9ad4107f6fa17\",     \"weight\" : \"\",     \"violationCount\" : \"\",     \"onlineCount\" : \"\",     \"picture\" : \"\",     \"identifier\" : \"123\",     \"link\" : \"http://123\",     \"name\" : \"xx丶脑袋进水123\"   },   {     \"parentId\" : \"57b5977e5c3993263fe91ee8\",     \"status\" : \"\",     \"time\" : \"\",     \"id\" : \"58809e4eb6f9ad4107f6fa18\",     \"weight\" : \"\",     \"violationCount\" : \"\",     \"onlineCount\" : \"\",     \"picture\" : \"\",     \"identifier\" : \"456\",     \"link\" : \"http://456\",     \"name\" : \"xx丶脑袋进水456\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改主播"
+					},
+					"response": []
+				},
+				{
+					"name": "查找主播",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/anchor/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"roomId\": \"588339f37ef37f7b252e1964\"}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找主播\n根据主播名称查找对应主播, eg: data=[\"BOOS：王者荣耀最骚赵云橘子！\", \"神话：王者荣耀第一舔神，让我来！\"]；\n根据房间ID查找对应主播, eg: data={\"roomId\": \"588339f37ef37f7b252e1964\"}；\n查找所有主播, eg: data={} 或者查找其他的条件对应主播\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "公共模块",
+			"description": "主页汇总\n同步数据",
+			"item": [
+				{
+					"name": "统计汇总",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/home/summary.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{   \"platformId\" : \"\",   \"roomId\" : \"\",   \"categoryId\" : \"\",   \"classifyId\" : \"\",   \"anchorId\" : \"\" }",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "五大块统计汇总\n支持统计数量标签设置为1: onlineCount: 1; focusCount: 1; count: 1; violationCount: 1"
+					},
+					"response": []
+				},
+				{
+					"name": "同步数据",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/home/synchronize.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{   \"identifier\" : \"douyu\" }",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "重置数据状态、"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "分类管理",
+			"description": "分类管理",
+			"item": [
+				{
+					"name": "增加分类",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/classify/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"picture\" : \"https:\\/\\/staticlive.douyucdn.cn\\/upload\\/game_cate\\/3cfb3908a431ed6994f41e507632a275_pc.jpg\",     \"identifier\" : \"douyu_wzry\",     \"name\" : \"小鲜肉1\"   },   {     \"picture\" : \"https:\\/\\/staticlive.douyucdn.cn\\/upload\\/game_cate\\/3cfb3908a431ed6994f41e507632a275_pc.jpg\",     \"identifier\" : \"douyu_wzry\",     \"name\" : \"小鲜肉2\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加分类"
+					},
+					"response": []
+				},
+				{
+					"name": "删除分类",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/classify/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"58809ee0b6f9ad4107f6fa1b\",   \"58809ee0b6f9ad4107f6fa1c\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除分类"
+					},
+					"response": []
+				},
+				{
+					"name": "修改分类",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/classify/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"weight\" : \"\",     \"status\" : \"\",     \"onlineCount\" : 0,     \"id\" : \"58809ee0b6f9ad4107f6fa1b\",     \"violationCount\" : 0,     \"time\" : \"\",     \"parentId\" : \"57b5977e5c3993263fe91ee8\",     \"picture\" : \"https:\\/\\/staticlive.douyucdn.cn\\/upload\\/game_cate\\/3cfb3908a431ed6994f41e507632a275_pc.jpg\",     \"identifier\" : \"\\/directory\\/game\\/yz\",     \"name\" : \"小鲜肉123\"   },   {     \"weight\" : \"\",     \"status\" : \"\",     \"onlineCount\" : 0,     \"id\" : \"58809ee0b6f9ad4107f6fa1c\",     \"violationCount\" : 0,     \"time\" : \"\",     \"parentId\" : \"57b5977e5c3993263fe91ee8\",     \"picture\" : \"https:\\/\\/staticlive.douyucdn.cn\\/upload\\/game_cate\\/3cfb3908a431ed6994f41e507632a275_pc.jpg\",     \"identifier\" : \"\\/directory\\/game\\/znl\",     \"name\" : \"小鲜肉456\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改分类"
+					},
+					"response": []
+				},
+				{
+					"name": "查找分类",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/classify/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"platformId\": \"588303f25f87f36c7941370d\"}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找分类\n根据分类名称查找对应分类, eg: data=[\"王者荣耀\", \"英雄联盟\"]；\n根据平台ID查找对应分类, eg: data={\"platformId\": \"588303f25f87f36c7941370c\"}；\n查找所有分类, eg: data={} 或者查找其他的条件对应分类\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\ncount 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "平台管理",
+			"description": "平台管理",
+			"item": [
+				{
+					"name": "增加平台",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/platform/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"picture\" : \"https:\\/\\/staticlive.douyucdn.cn\\/upload\\/signs\\/201610291926483131.png\",     \"parentId\" : \"58830228f5b959f37c9109f6\",     \"identifier\" : \"douyu\",     \"name\" : \"斗鱼\"   },   {     \"picture\" : \"http:\\/\\/i6.pdim.gs\\/bbffaab9bf1889c4dc37edd17e619d6c.gif\",     \"parentId\" : \"58830228f5b959f37c9109f7\",     \"identifier\" : \"panda\",     \"name\" : \"熊猫\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加平台"
+					},
+					"response": []
+				},
+				{
+					"name": "删除平台",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/platform/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"5880a0d916566f57106e40da\",   \"5880a0d916566f57106e40db\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除平台"
+					},
+					"response": []
+				},
+				{
+					"name": "修改平台",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/platform/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"weight\" : 5, \"identifier\" : \"huajiao\" ,\"parentId\":\"58830228f5b959f37c9109f6\"  } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改平台"
+					},
+					"response": []
+				},
+				{
+					"name": "查找平台",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/platform/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"status\": 1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"sort\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找平台\n根据平台名称查找对应平台, eg: data=[\"斗鱼\", \"熊猫\"]；\n根据类目ID查找对应平台, eg: data={\"categoryId\": \"58830228f5b959f37c9109f6\"}；\n查找所有平台, eg: data={} 或者查找其他的条件对应平台\n\nsort 排序, eg: data={\"time\": -1} or {\"sort\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "房间管理",
+			"description": "房间管理",
+			"item": [
+				{
+					"name": "增加房间",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/room/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"picture\" : \"https:\\/\\/rpic.douyucdn.cn\\/a1701\\/18\\/20\\/527642_170118205904.jpg\",     \"identifier\" : \"douyu_wzry_1647326\",     \"name\" : \"今天播点什么呢1\",     \"link\" : \"https:\\/\\/www.douyu.com\\/527643\"   },   {     \"picture\" : \"https:\\/\\/rpic.douyucdn.cn\\/a1701\\/18\\/20\\/527642_170118205905.jpg\",     \"identifier\" : \"douyu_wzry_1647327\",     \"name\" : \"今天播点什么呢2\",     \"link\" : \"https:\\/\\/www.douyu.com\\/527642\"   } ]",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加房间"
+					},
+					"response": []
+				},
+				{
+					"name": "删除房间",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/room/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"5880a4cb16566f57106e40e2\",   \"5880a4cb16566f57106e40e3\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除房间"
+					},
+					"response": []
+				},
+				{
+					"name": "修改房间",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/room/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"picture\" : \"https:\\/\\/rpic.douyucdn.cn\\/a1701\\/18\\/20\\/527642_170118205904.jpg\",     \"identifier\" : \"douyu_wzry_1647326\",     \"name\" : \"今天播点什么呢1\",     \"link\" : \"https:\\/\\/www.douyu.com\\/527643\"   },   {     \"picture\" : \"https:\\/\\/rpic.douyucdn.cn\\/a1701\\/18\\/20\\/527642_170118205905.jpg\",     \"identifier\" : \"douyu_wzry_1647327\",     \"name\" : \"今天播点什么呢2\",     \"link\" : \"https:\\/\\/www.douyu.com\\/527642\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改房间"
+					},
+					"response": []
+				},
+				{
+					"name": "查找房间",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/room/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"classifyId\": \"588339eb7ef37f7b252e1894\"}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找房间\n根据房间名称查找对应房间, eg: data=[\"骚陈：视频昨晚啦！今天和暖男双排\", \"Q神：小年快乐O(∩_∩)O哈哈~\"]；\n根据分类ID查找对应房间, eg: data={\"classifyId\": \"588339eb7ef37f7b252e1894\"}；\n查找所有房间, eg: data={} 或者查找其他的条件对应房间\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户管理",
+			"description": "用户管理",
+			"item": [
+				{
+					"name": "增加用户",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/account/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"status\" : \"\",     \"password\" : \"200820e3227815ed1756a6b531e7e0d2\",     \"time\" : \"\",     \"randomFlag\" : \"\",     \"role\" : \"0\",     \"sessions\" : \"\",     \"username\" : \"285625881@qq.com\",     \"tel\" : \"13532411727\",     \"name\" : \"陈植专1\"   },   {     \"status\" : \"\",     \"password\" : \"200820e3227815ed1756a6b531e7e0d2\",     \"time\" : \"\",     \"randomFlag\" : \"\",     \"role\" : \"0\",     \"sessions\" : \"\",     \"username\" : \"285625882@qq.com\",     \"tel\" : \"13532411727\",     \"name\" : \"陈植专2\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加用户"
+					},
+					"response": []
+				},
+				{
+					"name": "删除用户",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/account/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"587f4be62161e1dce37cfa29\",   \"587f4be62161e1dce37cfa29\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除用户"
+					},
+					"response": []
+				},
+				{
+					"name": "修改用户",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/account/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"status\" : \"\",     \"password\" : \"200820e3227815ed1756a6b531e7e0d2\",     \"time\" : \"\",     \"id\" : \"57b5977e5c3993263fe91ee8\",     \"randomFlag\" : \"\",     \"role\" : \"0\",     \"sessions\" : \"\",     \"username\" : \"285625881@qq.com\",     \"tel\" : \"13532411727\",     \"name\" : \"陈植专1\"   },   {     \"status\" : \"\",     \"password\" : \"200820e3227815ed1756a6b531e7e0d2\",     \"time\" : \"\",     \"id\" : \"57b5977e5c3993263fe91ee8\",     \"randomFlag\" : \"\",     \"role\" : \"0\",     \"sessions\" : \"\",     \"username\" : \"285625882@qq.com\",     \"tel\" : \"13532411727\",     \"name\" : \"陈植专2\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改用户"
+					},
+					"response": []
+				},
+				{
+					"name": "查找用户",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/account/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"1@qq.com\",   \"285625881@qq.com\" ]",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找用户\n\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "监控器管理",
+			"description": "监控器管理",
+			"item": [
+				{
+					"name": "增加监控器",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/monitor/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"taskId\" : \"581f28a99ace98ff384005e0\",     \"identifier\" : \"panda_pets_214842_214842\",     \"images\" : [      ],     \"link\" : \"http:\\/\\/www.panda.tv\\/214842\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加监控器"
+					},
+					"response": []
+				},
+				{
+					"name": "删除监控器",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/monitor/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"587f4be62161e1dce37cfa29\",   \"587f4be62161e1dce37cfa29\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除监控器"
+					},
+					"response": []
+				},
+				{
+					"name": "修改监控器",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/monitor/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"classifyId\" : \"57b5977e5c3993263fe91ee8\",     \"roomId\" : \"57b5977e5c3993263fe91ee8\",     \"images\" : {       \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\",       \"label\" : \"0\",       \"review\" : 1     },     \"id\" : \"57b5977e5c3993263fe91ee8\",     \"status\" : \"\",     \"platformId\" : \"57b5977e5c3993263fe91ee8\",     \"time\" : \"\",     \"categoryId\" : \"57b5977e5c3993263fe91ee8\",     \"link\" : \"https:\\/\\/www.douyu.com\\/527642\",     \"anchorId\" : \"57b5977e5c3993263fe91ee8\"   },   {     \"classifyId\" : \"57b5977e5c3993263fe91ee8\",     \"roomId\" : \"57b5977e5c3993263fe91ee8\",     \"images\" : {       \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\",       \"label\" : \"0\",       \"review\" : 1     },     \"id\" : \"57b5977e5c3993263fe91ee8\",     \"status\" : \"\",     \"platformId\" : \"57b5977e5c3993263fe91ee8\",     \"time\" : \"\",     \"categoryId\" : \"57b5977e5c3993263fe91ee8\",     \"link\" : \"https:\\/\\/www.douyu.com\\/527642\",     \"anchorId\" : \"57b5977e5c3993263fe91ee8\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改监控器"
+					},
+					"response": []
+				},
+				{
+					"name": "查找监控器",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/monitor/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"label\":\"2\"}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找监控器\n根据监控连接查找对应监控器, eg: data=[\"https://www.douyu.com/478253\"]；\n根据Label字段查找对应监控器, eg: data={\"label\": [0,1,2]}\n根据monitoring标识 eg: {\"monitoring\":1}；普通列表:{\"level\":0}；重点列表:{\"level\":1}, 返回按照权重排序的数据和对应级别的数据, 不支持动态排序和动态分页\n查找所有监控器, eg: data={}，根据某某字段查找对应监控器, eg: data={\"***Id\": \"1234567890\"}\\{\"status\":1}\\{\"level\":1};\n只返回已被监控过的数据, eg: data={\"monitored\":1}\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "类目管理",
+			"description": "类目管理",
+			"item": [
+				{
+					"name": "增加类目",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/category/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"picture\" : \"http:\\/\\/img2.imgtn.bdimg.com\\/it\\/u=2796030465,1450930229&fm=21&gp=0.jpg\",     \"name\" : \"游戏\"   },   {     \"picture\" : \"http:\\/\\/img2.imgtn.bdimg.com\\/it\\/u=2796030465,1450930229&fm=21&gp=0.jpg\",     \"name\" : \"美食\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加类目"
+					},
+					"response": []
+				},
+				{
+					"name": "删除类目",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/category/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"587f4be62161e1dce37cfa29\",   \"587f4be62161e1dce37cfa29\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除类目"
+					},
+					"response": []
+				},
+				{
+					"name": "修改类目",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/category/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"status\" : \"\",     \"weight\" : \"\",     \"onlineCount\" : \"\",     \"id\" : \"57b5977e5c3993263fe91ee8\",     \"violationCount\" : \"\",     \"time\" : \"\",     \"picture\" : \"http:\\/\\/img2.imgtn.bdimg.com\\/it\\/u=2796030465,1450930229&fm=21&gp=0.jpg\",     \"name\" : \"游戏1\"   },   {     \"status\" : \"\",     \"weight\" : \"\",     \"onlineCount\" : \"\",     \"id\" : \"57b5977e5c3993263fe91ee8\",     \"violationCount\" : \"\",     \"time\" : \"\",     \"picture\" : \"http:\\/\\/img2.imgtn.bdimg.com\\/it\\/u=2796030465,1450930229&fm=21&gp=0.jpg\",     \"name\" : \"游戏2\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改类目"
+					},
+					"response": []
+				},
+				{
+					"name": "查找类目",
+					"request": {
+						"url": "http://192.168.1.100:12122/api/category/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"sort\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找类目\n根据类目名称查找对应类目, eg: data=[\"游戏\", \"美食\"]；\n查找所有类目 eg: data={} 或者查找其他的条件对应类目\n\nsort 排序, eg: data={\"time\": -1} or {\"sort\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

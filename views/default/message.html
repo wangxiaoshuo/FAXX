@@ -1,0 +1,23 @@
+{{if error}}
+<h2>抱歉（{{error}}）</h2>
+{{/if}}
+
+<p>
+    {{message}}
+</p>
+
+{{if href}}
+<p id="autoGoToMsg"></p>
+<script type="text/javascript">
+    (function autoGoTo() {
+        var seconds = 5;
+        setTimeout(function () {
+            window.location.href = "{{href}}"
+        }, 1000 * seconds)
+        setInterval(function () {
+            $("#autoGoToMsg").html(seconds + '秒后自动跳转。')
+            seconds--
+        }, 1000)
+    }())
+</script>
+{{/if}}

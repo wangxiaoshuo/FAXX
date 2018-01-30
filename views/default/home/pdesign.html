@@ -1,0 +1,186 @@
+<!--=== 设计方案 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <div class="config-part">
+                            <form id="formId" name="formName">
+                                <div class="op-config">
+                                    <div class="major-pad">
+                                        <!--=== 基本信息 开始  ===-->
+                                        <div class="assist-div show notes-div">
+                                            <div class="notes item">
+                                                <b><i class="fa fa-pie-chart i-green"></i> 基本信息 : </b>
+                                                <ul>
+                                                    <li>
+                                                        <div class="scheme change">
+                                                            <p><span>站名</span> : {{record.stationName}}</p>
+                                                            <p><span>地址</span> :
+                                                                {{record.province}}{{record.city}}{{record.county}}{{record.address}}
+                                                            </p>
+                                                            <p><span>状态</span> : {{record.status | statusForLabel}}</p>
+                                                            {{if record.status == 0 && record.latestUser[0] != null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[0]}}</p>
+                                                            {{/if}}
+                                                            {{if record.status == 1 && record.latestUser[0] != null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[0]}} >> {{record.latestUser[1]}}</p>
+                                                            {{/if}}
+                                                            {{if record.status == 1 && record.latestUser[0] == null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[1]}}</p>
+                                                            {{/if}}
+                                                            {{if record.status == 2 && record.latestUser[0] != null && record.latestUser[1] != null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[0]}} >> {{record.latestUser[1]}} >> {{record.latestUser[2]}}</p>
+                                                            {{/if}}
+                                                            {{if record.status == 2 && record.latestUser[0] == null && record.latestUser[1] != null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[1]}} >> {{record.latestUser[2]}}</p>
+                                                            {{/if}}
+                                                            {{if record.status == 2 && record.latestUser[0] != null && record.latestUser[1] == null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[0]}} >> {{record.latestUser[2]}}</p>
+                                                            {{/if}}
+                                                            {{if record.status == 2 && record.latestUser[0] == null && record.latestUser[1] == null}}
+                                                            <p><span>操作人员</span> : {{record.latestUser[2]}}</p>
+                                                            {{/if}}
+                                                            <!--<p><span>经度</span> : {{record.longitude}}</p>-->
+                                                            <!--<p><span>纬度</span> : {{record.latitude}}</p>-->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--=== 基本信息 结束  ===-->
+
+                                        <!--=== 优化方案 开始  ===-->
+                                        <div class="assist-div show notes-div">
+                                            <div class="notes item">
+                                                <b><i class="fa fa-file-excel-o i-green"></i> 优化方案 : </b>
+                                                <ul>
+                                                    <li>
+                                                        <div class="scheme change">
+                                                            {{each record.optionList as option i}}
+                                                            {{if option.status == 1}}
+                                                            <p><span>铁塔</span> : {{option.tower}}</p>
+                                                            <p><span>机房</span> : {{option.room}}</p>
+                                                            <p><span>配套</span> : {{option.suit}}</p>
+                                                            <p><span>标准建设成本(万)</span> : <span class="money">&#65509; {{option.totalPrice}}</span>
+                                                            </p>
+                                                            <p><span>实际建设成本合计(万)</span> : <span class="money">&#65509; {{option.totalCost}}</span>
+                                                            </p>
+                                                            <p><span>校正后实际建设成本合计(万)</span> : <span class="money">&#65509;</span><span class="actual money">{{record.actualCost}}</span>
+                                                            </p>
+                                                            <p><span>造价综合差异率*100</span> : {{option.differenceRate}} %
+                                                            </p>
+                                                            <p><span>校正后造价综合差异率*100</span> : <span class="differenceRate" style="color:#949191"></span> %
+                                                            </p>
+                                                            <p><span>百元投资租金/年（元）</span> : <span class="money">&#65509; {{option.investmentRent}}</span>
+                                                            </p>
+                                                            <p><span>校正后百元投资租金/年（元）</span> : <span class="money">&#65509; <span class="investment money"></span></span>
+                                                            </p>
+                                                            <p><span>毛利率*100</span> : <span class="profit" style="color:#949191">{{option.profit}}</span>
+                                                            </p>
+                                                            <p><span>校正后毛利率*100</span> : <span class="correctProfit" style="color:#949191"></span>
+                                                            </p>
+                                                            {{/if}}
+                                                            {{/each}}
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--=== 优化方案 结束  ===-->
+
+                                        <!--=== 方案设计 开始  ===-->
+                                        <div class="assist-div show notes-div">
+                                            <div class="notes item">
+                                                <b><i class="fa fa-pie-chart i-green"></i> 方案设计 : </b>
+                                                <ul>
+                                                    {{each record.optionList as option o}}
+                                                    {{if option.status == 1}}
+                                                    {{each option.planList as plan p}}
+                                                    <li>
+                                                        <div class="scheme change">
+                                                            <p><span>方案序号</span> : {{p+1}}</p>
+                                                            <p><span>方案编码</span> : {{plan.recommendPlanCode}}</p>
+                                                            <p><span>方案名称</span> : {{plan.recommendPlanName}}</p>
+                                                            <p><span>方案描述</span> : {{plan.recommendPlanDescription}}</p>
+                                                        </div>
+                                                    </li>
+                                                    <li style="border-bottom: 0.5px solid #CCCCCC">
+                                                        <input type="hidden" id="index" value="{{index = 0}}">
+                                                        {{each plan.moduleList as module m}}
+                                                        {{if module.materialCount}}
+                                                        <input type="hidden" value="{{index = index + 1}}">
+                                                        <div class="scheme change j-data-module-{{m}}" style="background-color: rgba(222, 247, 255, 0.39);border-bottom: 0.5px dashed #CCCCCC">
+                                                            <p style="clear: both;"><span style="font-size: 13px;color: #333;">模块序号 :</span>{{index}}</p>
+                                                            <p style="clear: both;"><span>模块序号 :</span> {{m+1}}</p>
+                                                            <p style="clear: both;" class="j-data-module" data-type="material" data-option-index="{{o}}" data-plan-index="{{p}}" data-module-index="{{m}}"><span>物资编码 :</span> <a href="javascript:void(0);"><span class="j-material-code">{{module.materialCode}}</span></a>
+                                                            </p>
+                                                            <p style="clear: both;"><span>物资单价 :</span> <span class="j-material-price">{{module.materialPrice}}</span></p>
+                                                            <p style="clear: both;"><span>物资税率 :</span> <span class="j-material-rate">{{module.materialRate}}</span></p>
+                                                            <p style="clear: both;"><span style='float: left;'>物资数量 :</span> <span class="j-material-count caname" data-type="material" data-option-index="{{o}}" data-plan-index="{{p}}" data-module-index="{{m}}"
+                                                                                                                                   style='margin-left:8px;display: block;float: left;width: 149px;height: 24px;'>{{module.materialCount}}</span>
+                                                            </p>
+                                                            <p style="clear: both;"><span>计量单位 :</span> <span class="j-material-unit">{{module.materialUnit}}</span></p>
+                                                            <p style="clear: both;"><span>物资说明 :</span> <span class="j-material-description">{{module.materialDescription}}</span></p>
+                                                        </div>
+                                                        {{/if}}
+                                                        {{if module.serviceCount}}
+                                                        <input type="hidden" value="{{index = index + 1}}">
+                                                        <div class="scheme change j-data-module-{{m}}" style="background-color: rgba(203, 217, 249, 0.39);border-bottom: 0.5px dashed #CCCCCC">
+                                                            <p style="clear: both;"><span style="font-size: 13px;color: #333;">模块序号 :</span> {{index}}</p>
+                                                            <p style="clear: both;" class="j-data-module" data-type="service" data-option-index="{{o}}" data-plan-index="{{p}}" data-module-index="{{m}}"><span>服务编码 :</span> <a href="javascript:void(0);"><span class="j-service-code">{{module.serviceCode}}</span></a>
+                                                            </p>
+                                                            <p style="clear: both;"><span>服务单价 :</span> <span class="j-service-price">{{module.servicePrice}}</span></p>
+                                                            <p style="clear: both;"><span>服务税率 :</span> <span class="j-service-rate">{{module.serviceRate}}</span></p>
+                                                            <p style="clear: both;"><span style='float: left;'>服务数量 :</span> <span class="j-service-count caname" data-type="service" data-option-index="{{o}}" data-plan-index="{{p}}" data-module-index="{{m}}"
+                                                                                                                                   style='margin-left:8px;display: block;float: left;width: 149px;height: 24px;'>{{module.serviceCount}}</span>
+                                                            </p>
+                                                            <p style="clear: both;"><span>计量单位 :</span> <span class="j-service-unit">{{module.serviceUnit}}</span></p>
+                                                            <p style="clear: both;"><span>服务说明 :</span> <span class="j-service-description">{{module.serviceDescription}}</span></p>
+                                                        </div>
+                                                        {{/if}}
+                                                        {{/each}}
+                                                    </li>
+                                                    {{/each}}
+                                                    {{/if}}
+                                                    {{/each}}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--=== 方案设计 结束  ===-->
+                                    </div>
+
+                                    <!--=== 按钮 开始 ===-->
+                                    <div class="btns-div" style="float: left; margin-bottom: 2rem;">
+                                        <div class="btns btns-left">
+                                            <button type="button" id="btnSubmit">
+                                                <i class="fa fa-send-o i-green"></i> 推送
+                                            </button>
+                                        </div>
+                                        <div class="btns btns-right">
+                                            <button type="reset" id="btnReset">
+                                                <i class="fa fa-undo i-red"></i> 重填
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--=== 按钮 结束 ===-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="record_obj" name="record_obj" type="hidden" value="{{record | toJsonString}}"/>
+</div>
+<!--=== 设计方案 结束 ===-->
+
+<script>
+    // 通过隐藏域索取数据字符串后转为对象
+    var recordStr = $('#record_obj').val()
+    window.location.replace('/home/design.html?recordId=' + '{{recordId}}')
+</script>
+<script src="/target/js/design.js?v={{APPVersion}}"></script>
+<!--<script src="/common/js/design.js?v={{time}}"></script>-->

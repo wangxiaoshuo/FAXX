@@ -1,0 +1,406 @@
+<!--=== 选择方案 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <div class="config-part">
+                            <form id="formId" name="formName">
+                                <div class="op-config">
+                                    <div class="major-pad">
+
+                                        <!--=== 推介方案 开始  ===-->
+                                        <div class="notes-div">
+                                            <div class="notes item">
+                                                <b><i class="fa fa-send-o i-green"></i>  推介方案 : </b>
+                                                <section class="selection">
+                                                    <div>
+                                                        <ul>
+                                                            <li>
+                                                                <label>
+                                                                    <input type="radio" class="option-input radio" checked name="example" />
+                                                                </label>
+                                                                <span class="label">方案1</span>
+                                                                <div class="scheme">
+                                                                    <p><span>名称</span> : 30米外爬式单管塔一体化平台1个1.8米一体化综合柜+2组150AH蓄电池+4个电源模块</p>
+                                                                    <p><span>造价综合差异率</span> : 0.74951 %</p>
+                                                                    <p><span>百元投资租金</span> : <span class="money">&#65509; 106.997638457125</span></p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>
+                                                                    <input type="radio" class="option-input radio" name="example" />
+                                                                </label>
+                                                                <span class="label">方案2</span>
+                                                                <div class="scheme">
+                                                                    <p><span>名称</span> : 30米外爬式单管塔一体化平台1个1.8米一体化综合柜+2组150AH蓄电池+4个电源模块</p>
+                                                                    <p><span>造价综合差异率</span> : 0.74951 %</p>
+                                                                    <p><span>百元投资租金</span> : <span class="money">&#65509; 106.997638457125</span></p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <label>
+                                                                    <input type="radio" class="option-input radio" name="example" />
+                                                                </label>
+                                                                <span class="label">方案3</span>
+                                                                <div class="scheme">
+                                                                    <p><span>名称</span> : 30米外爬式单管塔一体化平台1个1.8米一体化综合柜+2组150AH蓄电池+4个电源模块</p>
+                                                                    <p><span>造价综合差异率</span> : 0.74951 %</p>
+                                                                    <p><span>百元投资租金</span> : <span class="money">&#65509; 106.997638457125</span></p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </section>
+
+
+                                            </div>
+                                        </div>
+                                        <!--=== 推介方案 结束  ===-->
+
+                                        <!--=== 基站信息 开始 ===-->
+                                        <div class="cell-pos">
+                                            <div class="explain">
+                                                <b>基站信息</b>
+                                                <span>此操作必填，请谨慎操作</span>
+                                            </div>
+
+                                            <div class="pkg-display text-field">
+                                                <div>
+                                                    <input type="text" class="data" id="name" name="name" />
+                                                    <label><b>基站名称</b><span>（必填）</span></label>
+                                                </div>
+                                            </div>
+                                            <em id="msg_name" class="msg"></em>
+
+                                            <section class="selection">
+                                                <div class="area">
+                                                    <div id="provinceId" data-type="province" data-next="city" class="picker">
+                                                        <div class="box disabled">
+                                                            <label>所在省份</label>
+                                                            <span class="js-picker-text">请选择</span>
+                                                        </div>
+                                                        <div class="container table">
+                                                            <div class="overlay"></div>
+                                                            <div class="cell">
+                                                                <div class="popup">
+                                                                    <div data-id="0" class="list-wrap">
+                                                                        <ul id="provinceItems">
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="cover upper"></div>
+                                                                    <div class="cover lower"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input class="js-picker-value" name="province_id" type="hidden" value=""/>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <section class="selection">
+                                                <div class="mode">
+                                                    <div id="cityId" data-type="city" data-next="area" class="picker">
+                                                        <div class="box disabled">
+                                                            <label>所在城市</label>
+                                                            <span class="js-picker-text">请选择</span>
+                                                        </div>
+                                                        <div class="container table">
+                                                            <div class="overlay"></div>
+                                                            <div class="cell">
+                                                                <div class="popup">
+                                                                    <div data-id="0" class="list-wrap">
+                                                                        <ul id="cityItems">
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="cover upper"></div>
+                                                                    <div class="cover lower"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input class="js-picker-value" name="city_id" type="hidden" value=""/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="dot">
+                                                    <div id="areaId" data-type="area" data-next="category1" class="picker">
+                                                        <div class="box disabled">
+                                                            <label>所在县/区</label>
+                                                            <span class="js-picker-text">请选择</span>
+                                                        </div>
+                                                        <div class="container table">
+                                                            <div class="overlay"></div>
+                                                            <div class="cell">
+                                                                <div class="popup">
+                                                                    <div data-id="0" class="list-wrap">
+                                                                        <ul id="areaItems">
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="cover upper"></div>
+                                                                    <div class="cover lower"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <input class="js-picker-value" id="area_id" name="area_id" type="hidden" value=""/>
+                                                    </div>
+                                                </div>
+                                            </section>
+
+                                            <div id="addressId" class="pkg-display text-field disabled" style="margin-top: 1.5rem;">
+                                                <div>
+                                                    <input type="text" class="data" id="address" name="address" />
+                                                    <label><b>详细地址</b><span>（必填）</span></label>
+                                                </div>
+                                            </div>
+                                            <em id="msg_address" class="msg"></em>
+
+                                            <div id="coordinateId" class="pkg-display text-field disabled" style="margin-top: 1.5rem;">
+                                                <div>
+                                                    <input type="text" class="data" id="coordinate" name="coordinate" />
+                                                    <label><b>经纬度</b><span>（必填）</span></label>
+                                                </div>
+                                            </div>
+                                            <em id="msg_coordinate" class="msg"></em>
+                                        </div>
+                                        <!--=== 基站信息 结束 ===-->
+
+                                        <!--=== 方案选型 开始 ===-->
+                                        <section class="selection">
+                                            <div class="explain">
+                                                <b>方案选型</b>
+                                                <span>此操作比较耗时，请谨慎操作</span>
+                                            </div>
+                                            <div class="area">
+                                                <div id="category1Id" data-type="category1" data-next="category2" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>应用场景</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="category1Items">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" name="category1_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="mode">
+                                                <div id="category2Id" data-type="category2" data-next="antenna" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>建设类型</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="category2Items">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="category_id" name="category2_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+
+                                            <div class="dot">
+                                                <div id="antennaId" data-type="antenna" data-next="tower" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>天线挂高</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="antennaItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="antenna_id" name="antenna_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="area">
+                                                <div id="buildId" data-type="tower" data-next="room" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>共建信息</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="buildItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="build_id" name="build_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="area">
+                                                <div id="towerId" data-type="tower" data-next="room" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>铁塔</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="towerItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="tower_id" name="tower_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="area">
+                                                <div id="roomId" data-type="room" data-next="suit" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>机房</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="roomItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="room_id" name="room_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section class="selection">
+                                            <div class="area">
+                                                <div id="suitId" data-type="suit" data-next="remark" class="picker">
+                                                    <div class="box disabled">
+                                                        <label>配套</label>
+                                                        <span class="js-picker-text">请选择</span>
+                                                    </div>
+                                                    <div class="container table">
+                                                        <div class="overlay"></div>
+                                                        <div class="cell">
+                                                            <div class="popup">
+                                                                <div data-id="0" class="list-wrap">
+                                                                    <ul id="suitItems">
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="cover upper"></div>
+                                                                <div class="cover lower"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input class="js-picker-value" id="suit_id" name="suit_id" type="hidden" value=""/>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!--=== 方案选型 结束 ===-->
+                                    </div>
+
+                                    <!--=== 差异率、投资租金 开始 ===-->
+                                    <div id="remarkId" data-type="remark" data-next="">
+                                        <div class="config-part">
+                                            <div class="op-info-line">
+                                                <label class="account account-left">
+                                                    <b>造价综合差异率*100 : </b>
+                                                    <span class="js-price-text">74.951 %</span>
+                                                </label>
+                                                <label class="account account-right">
+                                                    <b>百元投资租金/年（元）: </b>
+                                                    <span class="js-spread-text money">&#65509; 21.399527691425</span>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--=== 差异率、投资租金 结束 ===-->
+
+
+                                    <!--=== 优化方案 开始  ===-->
+                                    <div class="notes-div">
+                                        <div class="notes item">
+                                            <b><i class="fa fa-file-excel-o i-green"></i>  优化方案 : </b>
+                                            <ul>
+                                                <li>
+                                                    <div class="scheme change">
+                                                        <p><span>铁塔</span> : 30米外爬式单管塔</p>
+                                                        <p><span>机房</span> : 一体化平台</p>
+                                                        <p><span>配套</span> : 1个1.8米一体化综合柜+2组150AH蓄电池+4个电源模块</p>
+                                                        <p><span>标准建设成本(万)</span> : <span class="money">&#65509; 20</span></p>
+                                                        <p><span>实际建设成本合计(万)</span> : <span class="money">&#65509; 14.99</span></p>
+                                                        <p><span>造价综合差异率*100</span> : 74.951 %</p>
+                                                        <p><span>百元投资租金/年（元）</span> : <span class="money">&#65509; 21.399527691425</span></p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--=== 优化方案 结束  ===-->
+
+                                    <!--=== 按钮 开始 ===-->
+                                    <div class="btns-div" style="float: left; margin-bottom: 2rem;">
+                                        <div class="btns btns-left">
+                                            <button type="button" id="btnSubmit">
+                                                <i class="fa fa-send-o i-green"></i> 推送
+                                            </button>
+                                        </div>
+                                        <div class="btns btns-right">
+                                            <button type="reset" id="btnReset">
+                                                <i class="fa fa-undo i-red"></i> 重填
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--=== 按钮 结束 ===-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=== 选择方案 结束 ===-->

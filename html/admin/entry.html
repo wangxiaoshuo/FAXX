@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <![endif]-->
+  <title>中国铁塔后台管理系统</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="bookmark" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layer.css">
+</head>
+  <body>
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <!--=== logo 开始 ===-->
+        <div class="logo">
+          <img style="margin-top: 5px;margin-bottom: 11px;" src="img/base-station.png">
+          <span style="color: #fff;font-size: 18px">
+              中国铁塔 CHINA <label style="color: #d53e2f;">T</label>OWER
+          </span>
+        </div>
+        <!--=== logo 结束 ===-->
+
+        <!--=== 手机版菜单按钮 开始 ===-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--=== 手机版菜单按钮 结束 ===-->
+      </div>
+  </div>
+
+    <div class="template-page-wrapper">
+    <!--=== 菜单 开始 ===-->
+    <div class="navbar-collapse collapse templatemo-sidebar">
+      <ul class="templatemo-sidebar-menu">
+        <li><a href="javascript:d_messages('尚处于开发中，请等待更新的版本发布！');"><i class="fa fa-user"></i> admin [超级管理员]</a></li>
+        <li><a href="javascript:d_messages('尚处于开发中，请等待更新的版本发布！');"><i class="fa fa-home"></i>控制台</a></li>
+        <li><a href="account.html"><i class="fa fa-users"></i>用户管理</a></li>
+        <li class="sub open">
+          <a href="javascript:;">
+            <i class="fa fa-database"></i> 数据管理 <div class="pull-right"><span class="caret"></span></div>
+          </a>
+          <ul class="templatemo-submenu">
+            <li class="active"><a href="javascript:void(0);">数据录入</a></li>
+            <li><a href="views/plan/record.html">方案记录</a></li>
+          </ul>
+        </li>
+        <!--<li><a href="preferences.html"><i class="fa fa-cog"></i>Preferences</a></li>-->
+        <li><a href="javascript:d_messages('尚处于开发中，请等待更新的版本发布！');"><i class="fa fa-sign-out"></i>退出</a></li>
+      </ul>
+    </div>
+    <!--=== 菜单 结束 ===-->
+
+    <!--=== 数据录入 开始 ===-->
+    <div class="templatemo-content-wrapper">
+      <div class="templatemo-content">
+        <ol class="breadcrumb">
+          <li>数据管理</li>
+          <li class="active">数据录入</li>
+        </ol>
+        <h4>数据录入</h4>
+        <p>可快速根据Excel文件一键导入对应数据,轻松解决了录入数据难题。</p>
+
+        <div class="row m-top-30">
+          <!--=== 数据类型 开始 ===-->
+          <div class="col-md-12 margin-bottom-15">
+            <label for="singleSelect">数据类型 : </label>
+            <select class="form-control margin-bottom-15" id="singleSelect">
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JavaScript</option>
+              <option>jQuery</option>
+              <option>Bootstrap</option>
+            </select>
+          </div>
+          <!--=== 数据类型 结束 ===-->
+
+          <!--=== 是否覆盖 开始 ===-->
+          <div class="col-md-12 margin-bottom-15">
+            <label class="m-right-20">数据是否覆盖 :</label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked=""> 是
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 否
+            </label>
+          </div>
+          <!--=== 是否覆盖 结束 ===-->
+
+          <!--=== 文件导入 开始 ===-->
+          <div class="col-md-12">
+            <div id="pic_btn"></div>
+            <a href="javascript:void(0);" class="file">一键导入Excel文件
+              <input type="file" name="" id="">
+            </a>
+
+          </div>
+          <!--=== 文件导入 结束 ===-->
+        </div>
+      </div>
+    </div>
+    <!--=== 数据录入 结束 ===-->
+
+    <!--=== 底部菜单 开始 ===-->
+    <footer class="templatemo-footer">
+      <div class="templatemo-copyright">
+        <p>Copyright &copy; 2017 Your Company Name Collect from <a href="javascript:void(0);" title="中国铁塔" target="_blank">中国铁塔</a></p>
+      </div>
+    </footer>
+    <!--=== 底部菜单 结束 ===-->
+  </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script type="text/javascript">
+
+      // 数据管理 下拉
+      $('.templatemo-sidebar-menu li.sub a').click(function(){
+        if($(this).parent().hasClass('open')) {
+          $(this).parent().removeClass('open');
+        } else {
+          $(this).parent().addClass('open');
+        }
+      });
+
+      function d_messages(content, position) { //消息弹出层
+        var style_text = "";
+        position = arguments[1] ? arguments[1] : 2;
+        if (position == 1) { //顶部弹出
+          style_text = "border:none; background: rgba(0,0,0,.7); color:#fff; max-width:100%; top:0; position:fixed; left:0; right:0; border-radius:0;";
+        }
+        if (position == 2) { //页面中间弹出
+          style_text = "border:none; background: rgba(0,0,0,.7); color:#fff; max-width:90%; min-width:1rem; margin:0 auto; border-radius:.8rem;";
+        }
+        layer.open({
+          style: style_text,
+          type: 0,
+          anim: 3,
+          content: content,
+          shade: false,
+          time: 2
+        })
+      }
+  </script>
+</body>
+</html>

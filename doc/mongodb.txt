@@ -1,0 +1,22 @@
+db.getCollection('v20170426170857').aggregate({$match: {"status" : 1}}, {$group: {_id: {city: "$city", county: "$county", applyScene: "$applyScene", constructionType: "$constructionType", isBeautify: "$isBeautify", antennaHeight: "$antennaHeight", buildInformation: "$buildInformation"}, records: {$push: {_id: '$_id'}}}})
+
+
+#管理员数据初始化
+{
+    "username" : "285625881@qq.com",
+    "password" : "ab3754565b80db0e599af0ca657ef64f",
+    "name" : "陈植专",
+    "tel" : "13532411727",
+    "city" : "遂宁市",
+    "role" : 10,
+    "status" : 1
+}
+{
+    "username" : "278337438@qq.com",
+    "password" : "ab3754565b80db0e599af0ca657ef64f",
+    "name" : "陈植华",
+    "tel" : "15913804360",
+    "city" : "遂宁市",
+    "role" : 10,
+    "status" : 1
+}

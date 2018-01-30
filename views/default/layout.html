@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" style="height: auto; overflow: auto;">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="author" content="JSPTPD"/>
+    {{#meta}}
+    <link rel="shortcut icon" href="/common/img/favicon.ico?v={{APPVersion}}"/>
+    <link rel="bookmark" href="/common/img/favicon.ico?v={{APPVersion}}"/>
+
+    <!--=== font 图标CSS ===-->
+    <link rel="stylesheet" href="/common/css/font-awesome.min.css?v={{APPVersion}}"/>
+    <link rel="stylesheet" href="/common/css/font.css?v={{APPVersion}}"/>
+    <!--=== commonCSS ===-->
+    <link rel="stylesheet" href="/common/css/layer.css?v={{APPVersion}}"/>
+    <link rel="stylesheet" href="/target/css/tt_style.min.css?v={{APPVersion}}"/>
+
+    <!--=== 注意顺序 ===-->
+    <script src="/common/js/jquery.js?v={{APPVersion}}"></script>
+    <!--<script src="/common/js/jquery.js?v={{time}}"></script>-->
+    <script src="/common/js/template-native.js?v={{APPVersion}}"></script>
+    <script src="/common/js/layer.js?v={{APPVersion}}"></script>
+    <script src="/common/js/jquery.infinite.js?v={{APPVersion}}"></script>
+    <!--<script src="/common/js/jquery.infinite.js?v={{time}}"></script>-->
+    <script src="/target/js/base.js?v={{APPVersion}}"></script>
+   <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"> </script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script>-->
+
+    <script>
+        // 初始化全局的变量值
+        var globalTime = '{{time}}'
+        var globalRole = '{{role}}'
+        var globalApiUrl = '{{api_url}}'
+        var globalAccountId = '{{account_id}}'
+        var globalCity= '{{city}}'
+        var globalRecordId = '{{recordId}}'
+        var globalInit = true
+
+        template.helper('dateFormat', function (date, format) {
+            if (typeof date === "string") {
+                var mts = date.match(/(\/Date\((\d+)\)\/)/);
+                if (mts && mts.length >= 3) {
+                    date = parseInt(mts[2]);
+                }
+            }
+            date = new Date(date);
+            if (!date || date.toUTCString() == "Invalid Date") {
+                return "";
+            }
+
+            var map = {
+                "M": date.getMonth() + 1,
+                "d": date.getDate(),
+                "h": date.getHours(),
+                "m": date.getMinutes(),
+                "s": date.getSeconds(),
+                "q": Math.floor((date.getMonth() + 3) / 3),
+                "S": date.getMilliseconds()
+            };
+
+
+            format = format.replace(/([yMdhmsqS])+/g, function(all, t){
+                var v = map[t];
+                if(v !== undefined){
+                    if(all.length > 1){
+                        v = '0' + v;
+                        v = v.substr(v.length-2);
+                    }
+                    return v;
+                }
+                else if(t === 'y'){
+                    return (date.getFullYear() + '').substr(4 - all.length);
+                }
+                return all;
+            });
+            return format;
+        })
+    </script>
+</head>
+<body style="height: auto; overflow: auto;">
+<!--[if lt IE 10]>
+<div class="browser_notice">
+    您的浏览器版本较低，无法正确显示网站中的页面和功能，建议您使用 Chrome、Safari 或升级到 Internet Explorer 10 以上版本的浏览器。
+</div>
+<![endif]-->
+
+<!--微信分享LOGO-->
+<div style="height:0px;overflow:hidden">
+    <img src="http://tieta.1g9f.com/common/img/base-station.png?v={{APPVersion}}"/>
+</div>
+<div id="overlay"></div>
+<div id="loading" style="display: none">
+    <div class="loader-inner ball-scale-multiple">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p id="loading-text"></p>
+</div>
+
+<!--=== 主菜单 开始 ===-->
+<header>
+    <!--=== 头部 开始 ===-->
+    <div class="h_d">
+        <a class="back">
+            <img src="/common/img/base-station.png?v={{APPVersion}}">&nbsp;&nbsp;
+            <span style="color: black;">
+                中国铁塔 CHINA <label style="color: #d53e2f;">T</label>OWER
+            </span>
+        </a>
+        {{if username}}
+        <a id="btnLogout" href="javascript:void(0);" style="width: 100%;"><i class="fa fa-sign-out">登出</i></a>
+        {{else}}
+        <!--<a id="btnLogin" href="javascript:void(0);" style="width: 100%;"><i class="fa fa-sign-out">模拟登录</i></a>-->
+        {{/if}}
+    </div>
+    <!--=== 头部 结束 ===-->
+
+    <!--=== 账号信息 开始 ===-->
+    {{if username}}
+    <div class="user-info">
+        <p><b>工号: </b><span>{{username}}</span></p>
+        <p style="text-align: right;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><b>昵称: </b><span>{{name}}[{{role | statusForLabe2}}]</span>
+        </p>
+    </div>
+    {{/if}}
+    <!--=== 账号信息 结束 ===-->
+</header>
+<!--=== 主菜单 结束 ===-->
+
+{{#content}}
+
+<!--=== 底部菜单 开始 ===-->
+<!--<div class="btn3 clearfix">-->
+    <!--<div class="menu">-->
+        <!--<div class="bt-name">-->
+            <!--<a id="smart" href="/home/smart.html">-->
+                <!--<p>-->
+                    <!--<i class="fa fa-send-o"></i>-->
+                    <!--方案推送-->
+                <!--</p>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="menu">-->
+        <!--<div class="bt-name">-->
+            <!--<a id="picking" href="/home/picking.html">-->
+                <!--<p>-->
+                    <!--<i class="fa fa-check-square-o"></i>-->
+                    <!--方案选型-->
+                <!--</p>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="menu">-->
+        <!--<div class="bt-name">-->
+            <!--<a id="design" href="/home/design.html">-->
+                <!--<p>-->
+                    <!--<i class="fa fa-pie-chart"></i>-->
+                    <!--方案设计-->
+                <!--</p>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--=== 底部菜单 结束 ===-->
+
+<script src="/target/js/account.js?v={{APPVersion}}"></script>
+<script src="/target/js/ui.js?v={{APPVersion}}"></script>
+<script>
+//    $(function () {
+//        var url = window.location.href;
+//        $('.btn3 .menu .bt-name a').each(function () {
+//            if ($($(this))[0].href == String(window.location)) {
+//                $(this).addClass('active')
+//            } else if (url.indexOf("smart") > -1) {
+//                $('#smart').addClass('active')
+//            } else if (url.indexOf("picking") > -1) {
+//                $('#picking').addClass('active')
+//            } else if (url.indexOf("design") > -1) {
+//                $('#design').addClass('active')
+//            }
+//        });
+//    })
+</script>
+</body>
+</html>

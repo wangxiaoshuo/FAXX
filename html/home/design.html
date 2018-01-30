@@ -1,0 +1,1380 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>
+        基站方案选型系统 - 中国铁塔 CHINA TOWER
+    </title>
+    <meta name="keywords" content="中国铁塔,CHINA TOWER,通信基站,铁塔、机房、配套等选型与设计,分析了通信基站的构成和基本框架">
+    <meta name="description" content="中国铁塔 CHINA TOWER 基站方案选型系统 -- 铁塔 、 机房 、 配套等基础方案的计算过程,结合工程投资规模控制和现场施工中遇到的共性问题,对基站设计方案进行优化比较。">
+
+    <link rel="shortcut icon" href="images/front/favicon.ico?v=001">
+    <link rel="bookmark" href="images/front/favicon.ico?v=001">
+
+    <link rel="stylesheet" href="css/front/font-awesome.min.css?v=001">
+    <link rel="stylesheet" href="css/front/style.css?v=001">
+    <link rel="stylesheet" href="css/front/layer.css?v=001">
+
+    <style>
+        /*底部菜单*/
+        .btn3 {
+            position:fixed;
+            z-index:9999;
+            bottom:0;
+            background:#e6e6e6;
+            width:100%;
+            text-align:center;
+            box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            border-top:1px solid rgba(179, 179, 179, 0.11);
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.37);
+        }
+
+        .menu {
+            position:relative;
+            float:left;
+            width:33.33%;
+            height:50px;
+            line-height:50px;
+            background:#fff;
+            border-right:1px solid rgba(235, 235, 235, 0.12);
+            box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+        }
+
+        .menu:last-child {
+            border-right:none;
+        }
+
+        .bt-name {
+            font-size:16px;
+            color:#000;
+        }
+
+        .bt-name a {
+            display:block;
+            font-size:16px;
+            color:#000;
+            text-decoration:none;
+        }
+
+        .bt-name a.active {
+            color: #d53e2f;
+        }
+
+        .bt-name a p {
+            position: relative;
+            padding-top: 12px;
+            font-size: 13px;
+        }
+
+        .bt-name a p i {
+            position: absolute;
+            top: 8px;
+            left: 48%;
+            font-size: 18px;
+        }
+
+
+        /*单选按钮*/
+        .option-input {
+            float: left;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            position: relative;
+            top: 5px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            -webkit-transition: all 0.15s ease-out 0s;
+            -moz-transition: all 0.15s ease-out 0s;
+            transition: all 0.15s ease-out 0s;
+            background: #c0c8ce;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin-left: 18px;
+            margin-right: 0.5rem;
+            outline: none;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .option-input:hover {
+            background: #bbcada;
+        }
+
+        .option-input:checked {
+            background: #d53e2f;
+        }
+
+        .option-input:checked:before {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            content: '\2713';
+            display: inline-block;
+            font-size: 26.66667px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .option-input:checked:after {
+            -webkit-animation: click-wave 0.65s;
+            -moz-animation: click-wave 0.65s;
+            animation: click-wave 0.65s;
+            background: #d53e2f;
+            content: '';
+            display: block;
+            position: relative;
+            z-index: 100;
+        }
+
+        .option-input.radio {
+            border-radius: 50%;
+        }
+
+        .option-input.radio::after {
+            border-radius: 50%;
+        }
+
+        @-webkit-keyframes
+        click-wave {
+            0% {
+                width: 40px;
+                height: 40px;
+                opacity: 0.35;
+                position: relative;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                margin-left: -80px;
+                margin-top: -80px;
+                opacity: 0.0;
+            }
+        }
+
+        @-moz-keyframes click-wave {
+            0% {
+                width: 40px;
+                height: 40px;
+                opacity: 0.35;
+                position: relative;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                margin-left: -80px;
+                margin-top: -80px;
+                opacity: 0.0;
+            }
+        }
+
+        @-o-keyframes click-wave { 0% {
+            width: 40px;
+            height: 40px;
+            opacity: 0.35;
+            position: relative;
+        }
+            100% {
+                width: 200px;
+                height: 200px;
+                margin-left: -80px;
+                margin-top: -80px;
+                opacity: 0.0;
+            }
+        }
+
+        @keyframes click-wave {
+            0% {
+                width: 40px;
+                height: 40px;
+                opacity: 0.35;
+                position: relative;
+            }
+            100% {
+                width: 200px;
+                height: 200px;
+                margin-left: -80px;
+                margin-top: -80px;
+                opacity: 0.0;
+            }
+        }
+
+        /*方案*/
+        .notes-div ul {
+            list-style: none;
+        }
+        .notes-div ul li {
+            padding: 1rem 0;
+        }
+
+        .notes-div ul .scheme {
+            padding-left: 6rem;
+        }
+
+        .notes-div ul .scheme.change {
+            padding-left: 5px;
+        }
+
+        .notes-div ul .scheme span {
+            margin-left: 0;
+            color: #464444;
+            font-size: 15px;
+        }
+
+        .notes-div ul .scheme .money {
+            font-size: 1em;
+            color: #ff8a00;
+        }
+
+        .notes-div .item .selection {
+            padding-top: 1rem;
+        }
+
+        .notes-div .item .selection span.label {
+            float: left;
+            padding: 5px;
+            color: rgba(212, 55, 39, 0.66);
+            border: 1px solid rgba(232, 170, 164, 0.52);
+            border-radius: 5px;
+            margin-top: 2px;
+            margin-left: 0;
+        }
+
+        #remarkId .config-part .money {
+            color: #ff8a00;
+        }
+
+        @media screen and (max-width:1190px) {
+            .notes-div ul .scheme {
+                padding-left: 7rem;
+            }
+
+        }
+
+
+        @media screen and (max-width:790px) {
+            .option-input {
+                margin-left: 0;
+            }
+
+            .notes-div ul .scheme {
+                padding-left: 6rem;
+            }
+
+            .bt-name a p i {
+                left: 47%;
+            }
+
+        }
+
+        @media screen and (max-width: 414px) {
+
+            .notes-div ul .scheme {
+                padding-left: 0;
+                padding-top: 30px;
+            }
+
+            .notes-div ul .scheme.change {
+                padding-top: 0;
+            }
+
+            .notes-div ul .scheme span {
+                font-size: 12px;
+            }
+
+            .bt-name a p i {
+                left: 45%;
+            }
+
+            .list-panel .op-info-line>label b {
+                font-size: 13px;
+            }
+
+            .list-panel .page-wrap {
+                margin-bottom: 4rem;
+            }
+
+
+        }
+
+
+
+        /* TODO 自定义弹窗*/
+        div.search {
+            padding: 0 50px 0 28px;
+        }
+        div.search form {
+            position: relative;width: 100%;margin: 0 auto;
+        }
+        div.search form input {
+            width: 100%;height: 39px;font-size: 15px;background: #f8f9f9;padding-left: 15px;border: none;outline: none;border-radius: 3px;line-height: normal;
+        }
+        div.search form button {
+            height: 22px;width: 22px;position: absolute;top: 8px;right: 0px;background: #d53e2f;cursor: pointer;border: none;outline: none;border-radius: 3px;
+        }
+
+        div.search form  button:before {
+            content: "\f105";
+            font-family: FontAwesome;
+            color: #F9F0DA;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /*弹窗 关闭全部*/
+        .layermbtn {
+            border-top: 1px solid #525252 !important;
+            background-color: #323232;
+        }
+
+        .layermbtn span:first-of-type {
+            background-color: transparent !important;
+        }
+
+        .layermbtn:before {
+             width: 0 !important;
+        }
+
+
+        div.search_list {
+            /*height: 480px;*/
+            margin: 20px 8px;
+        }
+
+        div.search_list ul {
+            list-style: none
+        }
+
+        div.search_list ul li {
+            padding: 8px;
+            border-top: 1px solid rgba(85,85,85,0.9);
+        }
+
+        div.search_list ul li:hover {
+            background-color: rgba(68, 68, 68, 0.57);
+        }
+
+        div.search_list ul li p {
+            color: #b1aeae;
+            width: 543px;
+            font-size: 0.7em;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            word-break: break-word;
+        }
+
+        div.search_list ul li p span {
+            color: #fff;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .notes-div ul .scheme a{
+            text-decoration:none;
+            color: #1a7ef1;
+        }
+
+        /*<=1024的设备*/
+        @media screen and (max-width: 1024px) {
+            div.search_list ul li p {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            div.search_list ul li p {
+                width: 905px;
+            }
+        }
+
+        /*<=768的设备*/
+        @media screen and (min-width: 768px) {
+            div.search form input {
+                height: 32px;
+                font-size: 12px;
+            }
+
+            div.search_list ul li p {
+                width: 666px;
+            }
+
+            div.search form button {
+                top: 5px;
+            }
+
+        }
+
+        /*<=414的设备*/
+        @media screen and (min-width: 414px) {
+            div.search_list ul li p {
+                width: 358px;
+            }
+        }
+
+        /*<=414的设备*/
+        @media screen and (min-width: 412px) {
+            div.search_list ul li p {
+                width: 357px;
+            }
+        }
+
+        /*<=375的设备*/
+        @media screen and (max-width: 375px) {
+
+            div.search_list ul li p {
+                width: 317px;
+            }
+
+        }
+
+        /*<=320的设备*/
+        @media screen and (max-width: 320px) {
+
+            div.search_list ul li p {
+                width: 260px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+<!--微信分享LOGO-->
+<div style="height:0px;overflow:hidden">
+    <img src="images/front/base-station.png?v=001"/>
+</div>
+<div id="overlay"></div>
+<div id="loading" style="display: none">
+    <div class="loader-inner ball-scale-multiple">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p id="loading-text"></p>
+</div>
+
+<!--=== 选项 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <!--=== 头部 开始 ===-->
+                        <div>
+                            <div>
+                                <a class="back">
+                                    <img src="images/front/base-station.png?v=001">&nbsp;&nbsp;
+                                    <span style="color: black;">
+                                        中国铁塔 CHINA <label style="color: #d53e2f;">T</label>OWER
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <!--=== 头部 结束 ===-->
+
+                        <div class="config-part">
+                            <!--=== 员工信息 开始 ===-->
+                            <div class="user-info">
+                                <p><b>工号: </b><span>J8888</span></p>
+                                <p style="text-align: right; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><b>昵称: </b><span> ☦ 测试名称</span></p>
+                            </div>
+                            <!--=== 员工信息 结束 ===-->
+
+                            <form id="formId" name="formName">
+                                <div class="op-config">
+                                    <div class="major-pad">
+                                        <!--=== 优化方案 开始  ===-->
+                                        <div class="notes-div">
+                                            <div class="notes item">
+                                                <b><i class="fa fa-file-excel-o i-green"></i>  优化方案 : </b>
+                                                <ul>
+                                                    <li>
+                                                        <div class="scheme change">
+                                                            <p><span>铁塔</span> : 30米外爬式单管塔</p>
+                                                            <p><span>机房</span> : 一体化平台</p>
+                                                            <p><span>配套</span> : 1个1.8米一体化综合柜+2组150AH蓄电池+4个电源模块</p>
+                                                            <p><span>标准建设成本(万)</span> : <span class="money">&#65509; 20</span></p>
+                                                            <p><span>实际建设成本合计(万)</span> : <span class="money">&#65509; 14.99</span></p>
+                                                            <p><span>造价综合差异率*100</span> : 74.951 %</p>
+                                                            <p><span>百元投资租金/年（元）</span> : <span class="money">&#65509; 21.399527691425</span></p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!--=== 优化方案 结束  ===-->
+                                    </div>
+
+                                    <!--=== 方案设计 开始  ===-->
+                                    <div class="notes-div">
+                                        <div class="notes item">
+                                            <b><i class="fa fa-pie-chart i-green"></i>  方案设计 : </b>
+                                                <ul>
+                                                    <li>
+                                                        <div class="scheme change">
+                                                            <p><span>站名</span> : 测试基站</p>
+                                                            <p><span>经纬度</span> : 74.951</p>
+                                                            <!--TODO 点击文字input框修改-->
+                                                            <p><span style="float: left;">数量</span> :<span class="caname" style='margin-left:8px;display: block;float: left;width: 149px;height: 24px;'>111</span></p>
+                                                            <p><span>单价</span> : <span class="money">&#65509; 20</span></p>
+                                                            <p><span>合价</span> : <span class="money">&#65509; 14.99</span></p>
+                                                            <!--TODO 点击调用弹窗-->
+                                                            <p><span>物资</span> : <a href="javascript:void(0);" onclick="clickAction()">01210105020200</a></p>
+                                                            <p><span>服务</span> : 900101030400</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <!--=== 方案设计 结束  ===-->
+
+                                    <!--=== 按钮 开始 ===-->
+                                    <div class="btns-div" style="float: left; margin-bottom: 2rem;">
+                                        <div class="btns btns-left">
+                                            <button type="button" id="btnSubmit">
+                                                <i class="fa fa-send-o i-green"></i> 推送
+                                            </button>
+                                        </div>
+                                        <div class="btns btns-right">
+                                            <button type="reset" id="btnReset">
+                                                <i class="fa fa-mail-reply-all i-red"></i> 退回
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!--=== 按钮 结束 ===-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--=== 选项 结束 ===-->
+
+<!--=== 底部菜单 开始 ===-->
+<div class="btn3 clearfix">
+    <div class="menu">
+        <div class="bt-name">
+            <a href="index.html">
+                <p>
+                    <i class="fa fa-send-o"></i>
+                    方案推送
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="bt-name">
+            <a href="selection.html">
+                <p>
+                    <i class="fa fa-check-square-o"></i>
+                    方案选型
+                </p>
+            </a>
+        </div>
+    </div>
+    <div class="menu" >
+        <div class="bt-name">
+            <a class="active" href="javascript:;">
+                <p>
+                    <i class="fa fa-pie-chart"></i>
+                    方案设计
+                </p>
+            </a>
+        </div>
+    </div>
+</div>
+<!--=== 底部菜单 结束 ===-->
+
+<script src="scripts/front/jquery-1.10.2.min.js?v=001"></script>
+<!--<script src="scripts/front/common.js?v=001"></script>-->
+<!--<script src="scripts/front/utils.js?v=001"></script>-->
+<script src="scripts/front/layer.js?v=001"></script>
+<script>
+
+    // TODO 点击文字input框修改
+    $(function() {
+        //获取class为caname的元素
+        $(".caname").click(function() {
+            var td = $(this);
+            var txt = td.text();
+            var input = $("<input style='margin-left:8px;border:1px solid #fff;border-radius: 4px;' type='number'value='" + txt + "'/>");
+            td.html(input);
+            input.click(function() { return false; });
+            //获取焦点
+            input.trigger("focus");
+            //文本框失去焦点后提交内容，重新变为文本
+            input.blur(function() {
+                var newtxt = $(this).val();
+                //判断文本有没有修改
+                if (newtxt != txt) {
+                    td.html(newtxt);
+                }
+                else
+                {
+                    td.html(newtxt);
+                }
+            });
+        });
+    });
+
+
+    //TODO 弹窗
+    function clickAction() {
+        //页面层
+        layer.open({
+            type: 1,
+            btns : 1,
+            btn: ['关闭全部'],
+            btnAlign: 'c' ,//按钮居中
+            content: '<div class="scheme change" style="padding: 2rem 0 1rem;background: rgb(50, 50, 50);color: #fff">'+
+                '<div class="search">'+
+                    '<form>'+
+                        '<input type="text" placeholder="搜索从这里开始...">'+
+                        '<button type="submit"></button>'+
+                    '</form>'+
+                '</div>'+
+                '<div id="search" class="search_list">'+
+                    '<ul>'+
+                        '<li>'+
+                            '<p><span>物资编码</span> : SII4HI4LN4L2KQ1</p>'+
+                            '<p><span>物资数量</span> : 1</p>'+
+                            '<p><span>计量单位</span> : 01210105020200</p>'+
+                            '<p><span>物资说明</span> : 90010103040090010</p>'+
+                        '</li>'+
+                        '<li>'+
+                            '<p><span>物资编码</span> : SII4HI4LN4L2KQ1</p>'+
+                            '<p><span>物资数量</span> : 1</p>'+
+                            '<p><span>计量单位</span> : 01210105020200</p>'+
+                            '<p><span>物资说明</span> : 90010103040090010</p>'+
+                        '</li>'+
+                        '<li>'+
+                            '<p><span>物资编码</span> : SII4HI4LN4L2KQ1</p>'+
+                            '<p><span>物资数量</span> : 1</p>'+
+                            '<p><span>计量单位</span> : 01210105020200</p>'+
+                            '<p><span>物资说明</span> : 90010103040090010</p>'+
+                        '</li>'+
+                        '<li>'+
+                            '<p><span>物资编码</span> : SII4HI4LN4L2KQ1</p>'+
+                            '<p><span>物资数量</span> : 1</p>'+
+                            '<p><span>计量单位</span> : 01210105020200</p>'+
+                            '<p><span>物资说明</span> : 90010103040090010</p>'+
+                        '</li>'+
+                        '<li>'+
+                            '<p><span>物资编码</span> : SII4HI4LN4L2KQ1</p>'+
+                            '<p><span>物资数量</span> : 1</p>'+
+                            '<p><span>计量单位</span> : 01210105020200</p>'+
+                            '<p><span>物资说明</span> : 90010103040090010</p>'+
+                        '</li>'+
+                        '<li>'+
+                            '<p><span>物资编码</span> : SII4HI4LN4L2KQ1</p>'+
+                            '<p><span>物资数量</span> : 1</p>'+
+                            '<p><span>计量单位</span> : 01210105020200</p>'+
+                            '<p><span>物资说明</span> : 90010103040090010</p>'+
+                        '</li>'+
+                    '</ul>'+
+                '</div>'+
+                '</div>',
+            yes: function(){
+                layer.closeAll();
+            }
+
+        });
+
+        //TODO 自定义弹窗 id>search 高度大于310px 加上垂直滚动条
+        var search = document.getElementById("search")
+        if(search.offsetHeight > '310') {
+            $('#search').css('height','310px')
+            $('#search').css('overflow-y','scroll')
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 选择器 必要性的变量
+    var provinceObj = {}
+    var cityObj = {}
+    var areaObj = {}
+    var category1Obj = {}
+    var category2Obj = {}
+    var antennaObj = {}
+    var towerObj = {}
+    var roomObj = {}
+    var suitObj = {}
+    var remarkObj = {}
+    var picker_items = ['province', 'city', 'area', 'category1', 'category2', 'antenna', 'tower', 'room', 'suit', 'remark']
+    var picker_indexs = {'province':-1, 'city':-1, 'area':-1, 'category1':-1, 'category2':-1, 'antenna':-1, 'tower':-1, 'room':-1, 'suit':-1, 'remark':-1}
+    var picker_indexs_last = {}
+
+    // 树结构顶级数据的变量
+    var provinces = eval('[{"name":"\u56db\u5ddd\u7701","province_id":"2","update_time":"2016-09-27 17:34:39","cities":[{"name":"\u6210\u90fd\u5e02","city_id":"3","province_id":"2","update_time":"2016-09-27 17:35:10","areas":[{"name":"\u91d1\u725b\u533a","area_id":"6","city_id":"3","update_time":"2016-09-27 17:35:34"},{"name":"\u9ad8\u65b0\u533a","area_id":"7","city_id":"3","update_time":"2016-09-27 17:35:44"},{"name":"\u9752\u7f8a\u533a","area_id":"8","city_id":"3","update_time":"2016-09-27 17:35:52"}]}]}]')
+    var category1s = {}
+
+    // 初始化省份选项
+    if (provinces.length > 0) {
+        var provinceHtml = ''
+        for (var i=0; i<provinces.length; i++) {
+            var province = provinces[i]
+            provinceHtml += '<li data-index="' + i + '" data-value="' + province.province_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + province.name + '</li>'
+        }
+        $('#provinceId').find('.box').removeClass('disabled')
+        $('#provinceItems').html(provinceHtml)
+    } else {
+        showModal('抱歉, 地区信息不全[ref:province]', 2)
+    }
+
+    $(function () {
+        $('#name').keyup(function() {
+            if($(this).val() == '') {
+                $("#msg_name").text('请输入基站名称')
+                return;
+            }
+            $("#msg_name").text('')
+        })
+        $('#address').keyup(function() {
+            if($(this).val() == '') {
+                $("#msg_address").text('请输入详细地址')
+                return;
+            }
+            $("#msg_address").text('')
+        })
+
+        // 响应省份选项
+        var timer = null
+        var timer_available = false
+        $('#provinceId .list-wrap ul li').click(function() {
+            var height = $(this).height()
+            picker_indexs.province = parseInt($(this).attr('data-index'))
+            clearTimer()
+            handleDataForPicker($(this))
+            $('.list-wrap').animate({scrollTop:height * picker_indexs.province}, 500, function() {
+                // 动画回调函数
+                setPickerStatus()
+            })
+            return false
+        })
+        $('.list-wrap').scroll(function() {
+            // 计时器回调函数
+            if ($(this).parents('.picker').find('.container, .popup').hasClass('show')) {
+                var li_height = $(this).find('ul li').height()
+                var data_type = $(this).parents('.picker').attr('data-type')
+                picker_indexs[data_type] = Math.round(parseInt($(this).scrollTop()) / li_height)
+                if (!timer_available) return
+                timer = setTimeout(function(target) {
+                    if (!timer_available) return
+                    // 计时器回调函数
+                    if (target.parents('.picker').find('.container, .popup').hasClass('show')) {
+                        setPickerStatus()
+                        handleDataForPicker(target)
+                    }
+                }, 800, $(this))
+            }
+        })
+        $('.overlay').click(function() {
+            if ($(this).parents('.picker').find('.container, .popup').hasClass('show')) {
+                // 防止初始化-1导致下标有误
+                var data_type = $(this).parents('.picker').attr('data-type')
+                if (picker_indexs[data_type] == -1) {
+                    picker_indexs[data_type] = 0
+                }
+                clearTimer()
+                handleDataForPicker($(this))
+            }
+        })
+        function clearTimer () {
+            if (timer) {
+                clearTimeout(timer)
+            }
+            timer_available = false
+        }
+
+        // 更新界面数据
+        function handleDataForPicker (target) {
+            var data_type = target.parents('.picker').attr('data-type')
+//            console.log('处理的数据类型【' + data_type + '】picker_indexs=>' + JSON.stringify(picker_indexs) + 'picker_indexs_last=>' + JSON.stringify(picker_indexs_last))
+            if (data_type == 'province') {
+                provinceObj = provinces[picker_indexs.province]
+                // 初始化城市选项
+                if (provinceObj.cities.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+
+                    target.parents('.picker').find('.js-picker-text').html(provinceObj.name)
+                    target.parents('.picker').find('.js-picker-value').val(provinceObj.province_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    $('#addressId').addClass('disabled')
+                    $('#address').attr('disabled', 'disabled')
+                    resetDataForPicker(data_next)
+
+                    var cityHtml = ''
+                    for (var i=0; i<provinceObj.cities.length; i++) {
+                        var city = provinceObj.cities[i]
+                        cityHtml += '<li data-index="' + i + '" data-value="' + city.city_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + city.name + '</li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(cityHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.city = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.city}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 地区信息不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'city') {
+                cityObj = provinceObj.cities[picker_indexs.city]
+                // 初始化区域选项
+                if (cityObj.areas.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+
+                    target.parents('.picker').find('.js-picker-text').html(cityObj.name)
+                    target.parents('.picker').find('.js-picker-value').val(cityObj.city_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    $('#addressId').addClass('disabled')
+                    $('#address').attr('disabled', 'disabled')
+                    resetDataForPicker(data_next)
+
+                    var areaHtml = ''
+                    for (var i=0; i<cityObj.areas.length; i++) {
+                        var area = cityObj.areas[i]
+                        areaHtml += '<li data-index="' + i + '" data-value="' + area.area_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + area.name + '</li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(areaHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.area = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.area}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 地区信息不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'area') {
+                areaObj = cityObj.areas[picker_indexs.area]
+                target.parents('.picker').find('.js-picker-text').html(areaObj.name)
+                target.parents('.picker').find('.js-picker-value').val(areaObj.area_id)
+                $('#addressId').removeClass('disabled')
+                $('#address').removeAttr('disabled')
+                // 初始化建造场景选项
+                callSelections()
+            } else if (data_type == 'category1') {
+                category1Obj = category1s[picker_indexs.category1]
+                // 初始化产品类型选项
+                if (category1Obj.children.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+//                    console.log('已经处理...' + data_type)
+                    target.parents('.picker').find('.js-picker-text').html(category1Obj.name)
+                    target.parents('.picker').find('.js-picker-value').val(category1Obj.category_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+
+                    var categoryHtml = ''
+                    for (var i=0; i<category1Obj.children.length; i++) {
+                        var category = category1Obj.children[i]
+                        categoryHtml += '<li data-index="' + i + '" data-value="' + category.category_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + category.name + '</li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(categoryHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.category2 = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.category2}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'category2') {
+                category2Obj = category1Obj.children[picker_indexs.category2]
+                // 初始化天线挂高选项
+                if (category2Obj.antennas.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+//                    console.log('已经处理...' + data_type)
+                    target.parents('.picker').find('.js-picker-text').html(category2Obj.name)
+                    target.parents('.picker').find('.js-picker-value').val(category2Obj.category_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+
+                    var antennaHtml = ''
+                    for (var i=0; i<category2Obj.antennas.length; i++) {
+                        var antenna = category2Obj.antennas[i]
+                        antennaHtml += '<li data-index="' + i + '" data-value="' + antenna.antenna_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + antenna.description + '</li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(antennaHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.antenna = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.antenna}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'antenna') {
+                antennaObj = category2Obj.antennas[picker_indexs.antenna]
+                // 初始化铁塔选项
+                if (antennaObj.towers.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+//                    console.log('已经处理...' + data_type)
+                    target.parents('.picker').find('.js-picker-text').html(antennaObj.description)
+                    target.parents('.picker').find('.js-picker-value').val(antennaObj.antenna_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+
+                    var towerHtml = ''
+                    for (var i=0; i<antennaObj.towers.length; i++) {
+                        var tower = antennaObj.towers[i]
+                        towerHtml += '<li data-index="' + i + '" data-value="' + tower.tower_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;"><span class="span-left">' + tower.name + '</span><span class="span-right">' + tower.cost + '万元</span></li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(towerHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.tower = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.tower}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'tower') {
+                towerObj = antennaObj.towers[picker_indexs.tower]
+                // 初始化铁塔选项
+                if (towerObj.rooms.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+
+                    var costHtml = ''
+                    if (!Utils.isEmpty(towerObj.cost)) {
+                        costHtml += '<label> [参考造价: ' + towerObj.cost + '万元]</label>'
+                    }
+                    target.parents('.picker').find('.js-picker-text').html(towerObj.name + costHtml)
+                    target.parents('.picker').find('.js-picker-value').val(towerObj.tower_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+
+                    var roomHtml = ''
+                    for (var i=0; i<towerObj.rooms.length; i++) {
+                        var room = towerObj.rooms[i]
+                        roomHtml += '<li data-index="' + i + '" data-value="' + room.room_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;"><span class="span-left">' + room.name + '</span><span class="span-right">' + room.cost + '万元</span></li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(roomHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.room = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.room}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'room') {
+                roomObj = towerObj.rooms[picker_indexs.room]
+                // 初始化铁塔选项
+                if (roomObj.suits.length > 0) {
+                    // 防止重复点击
+                    if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                    picker_indexs_last = cloneAll(picker_indexs)
+
+                    var costHtml = ''
+                    if (!Utils.isEmpty(roomObj.cost)) {
+                        costHtml += '<label> [参考造价: ' + roomObj.cost + '万元]</label>'
+                    }
+                    target.parents('.picker').find('.js-picker-text').html(roomObj.name + costHtml)
+                    target.parents('.picker').find('.js-picker-value').val(roomObj.room_id)
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+
+                    var suitHtml = ''
+                    for (var i=0; i<roomObj.suits.length; i++) {
+                        var suit = roomObj.suits[i]
+                        suitHtml += '<li data-index="' + i + '" data-value="' + suit.suit_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;"><span class="span-left">' + suit.description + '</span><span class="span-right">' + suit.cost + '万元</span></li>'
+                    }
+                    $('#' + data_next + 'Id').find('.box').removeClass('disabled')
+                    $('#' + data_next + 'Items').html(suitHtml)
+                    // 放在HTML元素生成之后设置点击事件
+                    $('#' + data_next + 'Id .list-wrap ul li').click(function() {
+                        var height = $(this).height()
+                        picker_indexs.suit = parseInt($(this).attr('data-index'))
+                        clearTimer()
+                        handleDataForPicker($(this))
+                        $('.list-wrap').animate({scrollTop:height * picker_indexs.suit}, 500, function() {
+                            // 动画回调函数
+                            setPickerStatus()
+                        })
+                        return false
+                    })
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+                }
+            } else if (data_type == 'suit') {
+                suitObj = roomObj.suits[picker_indexs.suit]
+
+                // 防止重复点击
+                if (isObjectValueEqual(picker_indexs, picker_indexs_last)) return
+                picker_indexs_last = cloneAll(picker_indexs)
+
+                var costHtml = ''
+                if (!Utils.isEmpty(suitObj.cost)) {
+                    costHtml += '<label> [参考造价: ' + suitObj.cost + '万元]</label>'
+                }
+                target.parents('.picker').find('.js-picker-text').html(suitObj.description + costHtml)
+                target.parents('.picker').find('.js-picker-value').val(suitObj.suit_id)
+
+                // 根据铁塔、机房、配套 表的信息初始化价格 和 成本
+                var total_price = parseFloat(towerObj.price) + parseFloat(roomObj.price) + parseFloat(suitObj.price)
+                $('#remarkId').find('.js-price-text').html(parseFloat(total_price).toFixed(2) + '万元')
+                var total_cost = parseFloat(towerObj.cost) + parseFloat(roomObj.cost) + parseFloat(suitObj.cost)
+                $('#remarkId').find('.js-cost-text').html(parseFloat(total_cost).toFixed(2) + '万元')
+                var spread = total_price - total_cost
+                $('#remarkId').find('.js-spread-text').html(parseFloat(spread).toFixed(2) + '万元')
+                remarkObj = suitObj.remark
+                if (remarkObj) {
+                    var comment = ''
+                    var index = 1
+                    if (!Utils.isEmpty(remarkObj.comment_1)) {
+                        comment += index + '、' + remarkObj.comment_1 + '<br>'
+                        index++;
+                    }
+                    if (!Utils.isEmpty(remarkObj.comment_2)) {
+                        comment += index + '、' + remarkObj.comment_2 + '<br>'
+                    }
+                    $('#remarkId').find('.js-remark-text').html(comment)
+                    $('#remark_id').val(remarkObj.remark_id)
+                } else {
+                    var data_next = target.parents('.picker').attr('data-next')
+                    // 重置下一个的数据
+                    resetDataForPicker(data_next)
+                    showModal('抱歉, 方案数据不全[ref:' + data_next + ']', 2)
+                }
+            } else {
+                showModal('抱歉, 数据源类型不明[ref:' + data_type + ']', 2)
+            }
+        }
+
+        // 重置数据
+        function resetDataForPicker(next) {
+            // 重置下一个和它以下的所有节点
+            for (var i=picker_items.indexOf(next); i<picker_items.length; i++) {
+                // picker reset
+                var picker = picker_items[i]
+                $('#' + picker + 'Id').find('.box').addClass('disabled')
+                $('#' + picker + 'Items').html('')
+                $('#' + picker + 'Id').find('.js-picker-text').html('请选择')
+                $('#' + picker + 'Id').find('.js-picker-value').val('')
+                // remark reset
+                $('#remarkId').find('.js-price-text').html('--')
+                $('#remarkId').find('.js-cost-text').html('--')
+                $('#remarkId').find('.js-spread-text').html('--')
+                $('#remarkId').find('.js-remark-text').html('--')
+                picker_indexs[picker] = -1
+                picker_indexs_last[picker] = -1
+            }
+        }
+
+        // 请求方案数据接口
+        function callSelections() {
+            var city_id = $('#cityId').find('.js-picker-value').val()
+            if (Utils.isEmpty(city_id)) {
+                showModal('加载建设方案必须选择所在城市[ref:city_id]', 2)
+                return
+            }
+            $.ajax({
+                url: '/api/project/selections',
+                type: 'get',
+                data: 'city_id=' + city_id,
+                dataType: 'json',
+                beforeSend: function() {
+                    setLoading('')
+                },
+                complete: function() {
+                    hideLoading()
+                },
+                success: function(response) {
+//                    console.log('response=>' + JSON.stringify(response))
+                    // 建设方案数据响应处理
+                    if(response.status == 200) {
+                        category1s = response.data
+                        // 初始化建造场景选项
+                        if (category1s.length > 0) {
+                            showModal('成功根据城市加载建设方案', 1)
+                            var data_next = $('#category1Id').attr('data-next')
+                            // 重置下一个的数据
+                            resetDataForPicker(data_next)
+
+                            var category1Html = ''
+                            for (var i=0; i<category1s.length; i++) {
+                                var category1 = category1s[i]
+                                category1Html += '<li data-index="' + i + '" data-value="' + category1.category1_id + '" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); -webkit-user-select: none;">' + category1.name + '</li>'
+                            }
+                            $('#category1Id').find('.box').removeClass('disabled')
+                            $('#category1Items').html(category1Html)
+                            // 放在HTML元素生成之后设置点击事件
+                            $('#category1Id .list-wrap ul li').click(function() {
+                                var height = $(this).height()
+                                picker_indexs.category1 = parseInt($(this).attr('data-index'))
+                                clearTimer()
+                                handleDataForPicker($(this))
+                                $('.list-wrap').animate({scrollTop:height * picker_indexs.category1}, 500, function() {
+                                    // 动画回调函数
+                                    setPickerStatus()
+                                })
+                                return false
+                            })
+                        } else {
+                            var data_next = $('#category1Id').attr('data-next')
+                            // 重置下一个的数据
+                            resetDataForPicker(data_next)
+                            showModal('抱歉, 方案数据不全[ref:category1]', 2)
+                        }
+                    } else {
+                        showModal(response.msg, 1)
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+//                    console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                    showModal('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+                }
+            })
+        }
+
+        // 选择器控制处理
+        $('.picker .overlay').click(function () {
+            setPickerStatus()
+            return false
+        })
+        $('.popup').click(function () {
+            return false
+        })
+        $('.picker').click(function () {
+            if ($(this).find('.disabled').length <= 0) {
+                timer_available = true
+                setPickerStatus($(this))
+            }
+        })
+
+        // 请求入库接口
+        function callPostRecord() {
+            // 检查表单数据
+            var name = $('#name').val()
+            if (Utils.isEmpty(name)) {
+                showModal('上传方案必须填写基站名称[ref:name]', 2)
+                $('#name').focus()
+                return
+            }
+            var area_id = $('#area_id').val()
+            if (Utils.isEmpty(area_id)) {
+                showModal('上传方案必须选择所在县/区[ref:area_id]', 2)
+                return
+            }
+            var address = $('#address').val()
+            if (Utils.isEmpty(address)) {
+                showModal('上传方案必须填写详细地址[ref:address]', 2)
+                $('#address').focus()
+                return
+            }
+            var category_id = $('#category_id').val()
+            if (Utils.isEmpty(category_id)) {
+                showModal('上传方案必须选择产品类型[ref:category_id]', 2)
+                return
+            }
+            var antenna_id = $('#antenna_id').val()
+            if (Utils.isEmpty(antenna_id)) {
+                showModal('上传方案必须选择天线挂高[ref:antenna_id]', 2)
+                return
+            }
+            var tower_id = $('#tower_id').val()
+            if (Utils.isEmpty(tower_id)) {
+                showModal('上传方案必须选择铁塔[ref:tower_id]', 2)
+                return
+            }
+            var room_id = $('#room_id').val()
+            if (Utils.isEmpty(room_id)) {
+                showModal('上传方案必须选择机房[ref:room_id]', 2)
+                return
+            }
+            var suit_id = $('#suit_id').val()
+            if (Utils.isEmpty(suit_id)) {
+                showModal('上传方案必须选择配套[ref:suit_id]', 2)
+                return
+            }
+            var remark_id = $('#remark_id').val()
+            if (Utils.isEmpty(remark_id)) {
+                showModal('方案必须有关联的备注[ref:remark_id]', 2)
+                return
+            }
+            $('#msg_address').html('')
+            $.ajax({
+                url: '/api/Project/postRecord',
+                type: 'post',
+                data: {'name':name,'area_id':area_id,'address':address,'category_id':category_id,'antenna_id':antenna_id,'tower_id':tower_id,'room_id':room_id,'suit_id':suit_id,'remark_id':remark_id},
+                dataType: 'json',
+                beforeSend: function() {
+                    setLoading('正在上传中, 请稍候...')
+                    $("#btnSubmit").attr('disabled', 'disabled')
+                },
+                complete: function() {
+                    hideLoading()
+                    $('#btnSubmit').removeAttr('disabled')
+                },
+                success: function(response) {
+//                    console.log('response=>' + JSON.stringify(response))
+                    showModal(response.msg, 1)
+                    if(response.status == 200) {
+                        resetUI()
+                        // 完全替换当前连接为记录的连接
+                        window.location.replace('/front/record?record_id=' + response.data.record_id)
+                    } else {
+
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+//                    console.error(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText)
+                    showModal('抱歉, 请求服务器失败[ref:' + xhr.statusText + ']', 1)
+                }
+            })
+        }
+        $('#btnSubmit').click(function () {
+            // 请求api
+            callPostRecord()
+        })
+
+        function resetUI() {
+            $('#provinceId').find('.js-picker-text').html('请选择')
+            $('#provinceId').find('.js-picker-value').val('')
+            picker_indexs['province'] = -1
+            picker_indexs_last['province'] = -1
+            $('#addressId').addClass('disabled')
+            $('#address').attr('disabled', 'disabled')
+            resetDataForPicker('city')
+            $('body').animate({scrollTop:0}, 500, function() {})
+        }
+        // 实现重置按钮
+        $('#btnReset').click(function () {
+            resetUI()
+        })
+    })
+
+
+
+
+</script>
+
+</body>
+</html>

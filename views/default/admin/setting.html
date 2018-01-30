@@ -1,0 +1,76 @@
+<!--=== 基本设置 开始 ===-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li>基本设置</li>
+            <li><a href="record.html">设置</a></li>
+            <li class="active">设置修改或编辑</li>
+        </ol>
+        <h4>设置修改或编辑</h4>
+        <p>快捷查看详细或编辑设置。</p>
+
+        <div class="row m-top-30">
+            <!--=== 设置记录 开始 ===-->
+            <div class="col-md-12 plan_area">
+                <label>设置修改或编辑</label>
+
+                <div>
+                    <div class="plan_div">
+                        <label>基本设置</label>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label for="versionName" class="col-sm-2 control-label form-control-static">指定版本</label>
+                        <div class="col-sm-9 ">
+                            <select class="form-control  validate[required]" name="versionName" id="versionName"
+                                    data-bv-field="versionName">
+                                {{if versions.length <= 0}}
+                                <option value="">==请选择==</option>
+                                {{/if}}
+                                {{each versions as version}}
+                                <option value="{{version.name}}" {{if versionName == version.name}} selected="selected" {{/if}}>{{version.name}}</option>
+                                {{/each}}
+                            </select><i class="form-control-feedback" data-bv-icon-for="versionName"
+                                        style="display: none;"></i>
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="versionName" data-bv-result="NOT_VALIDATED" for="versionName">
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div>-->
+                <!--<div class="plan_div">-->
+                <!--<label>附加信息</label>-->
+                <!--</div>-->
+
+                <!--<div class="form-group has-feedback">-->
+                <!--<label for="total_cost" class="col-sm-2 control-label form-control-static">参考造价合计（万元）</label>-->
+                <!--<div class="col-sm-9 ">-->
+                <!--<input type="number" name="total_cost" id="total_cost" value="4.80" step="0.01"-->
+                <!--class="form-control" placeholder="请输入参考造价合计（万元）" data-bv-field="total_cost"><i-->
+                <!--class="form-control-feedback" data-bv-icon-for="total_cost" style="display: none;"></i>-->
+                <!--<small class="help-block" data-bv-validator="notEmpty" data-bv-for="total_cost"-->
+                <!--data-bv-result="NOT_VALIDATED" style="display: none;">参考造价合计（万元） 不符合填写要求-->
+                <!--</small>-->
+                <!--<small class="help-block" data-bv-validator="numeric" data-bv-for="total_cost"-->
+                <!--data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a valid float-->
+                <!--number-->
+                <!--</small>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--</div>-->
+
+                <div class="col-md-12">
+                    <input type="button" value="保存" class="save" id="btnSetting" {{if versions.length <= 0}}disabled{{/if}}>
+                </div>
+            </div>
+            <!--=== 设置记录 结束 ===-->
+        </div>
+
+    </div>
+</div>
+<!--=== 基本设置 结束 ===-->
+
+<script src="/common/js/admin/moment-with-locales.js?v={{APPVersion}}"></script>
+<script src="/common/js/admin/bootstrap-datetimepicker.js?v={{APPVersion}}"></script>
+<script src="/common/js/admin/setting.js?v={{APPVersion}}"></script>

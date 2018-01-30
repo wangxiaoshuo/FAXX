@@ -1,0 +1,57 @@
+<!--=== 数据管理 开始 ===-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li>数据管理</li>
+            <li class="active">数据录入</li>
+        </ol>
+        <h4>数据录入</h4>
+        <p>可快速根据Excel文件一键导入对应数据,轻松解决了录入数据难题。注意: 版本以文件名为基准, 命名格式如: v20170430154016.xlsx</p>
+
+        <div class="row m-top-30">
+            <!--=== 数据类型 开始 ===-->
+            <div class="col-md-12 margin-bottom-15">
+                <label for="dataType">数据类型: </label>
+                <select class="form-control margin-bottom-15" id="dataType">
+                    <option value="faxx" selected>建设方案</option>
+                    <!-- 用户信息录入只有追加新添加用户和覆盖同一个用户-->
+                    <option value="account">用户信息</option>
+                </select>
+                <em for="dataType" class="msg"></em>
+            </div>
+            <!--=== 数据类型 结束 ===-->
+
+            <!--=== 选择文件 开始 ===-->
+            <div class="col-md-12">
+                <div id="pic_btn"></div>
+                <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" id="fileData" name="fileData" class="file">
+                <em for="file" class="msg"></em>
+            </div>
+            <!--=== 选择文件 结束 ===-->
+
+            <!--=== 是否覆盖 开始 ===-->
+            <div class="col-md-12 margin-bottom-15" style="text-align: center;">
+                <label class="radio-inline">
+                    <input type="radio" name="inputType" id="overwrite" value="false" checked> 覆盖版本数据
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="inputType" id="additional" value="true"> 追加版本数据
+                    <em for="inputType" class="msg"></em>
+                </label>
+            </div>
+            <!--=== 是否覆盖 结束 ===-->
+
+            <!--=== 文件导入 开始 ===-->
+            <div class="col-md-12 margin-bottom-15" style="text-align: center;">
+                <input type="button" value="一键导入" class="btn btn-default" id="btnUploadFile" name="btnUploadFile">
+            </div>
+            <div class="col-md-12 margin-bottom-15" style="text-align: center;">
+                <em for="version" class="msg"></em>
+            </div>
+            <!--=== 文件导入 结束 ===-->
+        </div>
+    </div>
+</div>
+<!--=== 数据管理 结束 ===-->
+
+<script src="/common/js/admin/data.js?v={{APPVersion}}"></script>

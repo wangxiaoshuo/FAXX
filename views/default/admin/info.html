@@ -1,0 +1,61 @@
+<!--=== 控制台 开始 ===-->
+<div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+        <ol class="breadcrumb">
+            <li>用户信息</li>
+            <li class="active">管理</li>
+        </ol>
+        <h4>用户信息作用</h4>
+
+        <div class="row m-top-30">
+            <!--=== 用户信息 开始 ===-->
+            <div class="col-md-12 plan_area">
+                <label>用户信息</label>
+                <div>
+                    <div class="plan_div">
+                        <label>基本信息</label>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户名称</label>
+                        <div class="col-sm-9 ">
+                            <p>{{username}}</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户昵称</label>
+                        <div class="col-sm-9 ">
+                            <p>{{name}}</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label class="col-sm-2 control-label form-control-static">用户角色</label>
+                        <div class="col-sm-9 ">
+                            <p>
+                                {{if role == '0'}}
+                                选址人员
+                                {{else if role == '1'}}
+                                选型人员
+                                {{else if role == '2'}}
+                                设计人员
+                                {{else if role == '10'}}
+                                管理员
+                                {{/if}}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+            <!--=== 用户信息 结束 ===-->
+        </div>
+
+    </div>
+</div>
+<!--=== 控制台 结束 ===-->

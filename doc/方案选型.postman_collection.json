@@ -1,0 +1,383 @@
+{
+	"variables": [],
+	"info": {
+		"name": "方案选型",
+		"_postman_id": "732e024d-f944-fde0-6060-99c5447386ca",
+		"description": "方案选型",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "公共模块",
+			"description": "",
+			"item": [
+				{
+					"name": "检索数据",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/schema/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "schema",
+									"value": "service",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "data",
+									"value": "{\"status\": 1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "根据表名和字段检索排序限制返回列表"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户管理",
+			"description": "用户管理",
+			"item": [
+				{
+					"name": "保存用户",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/account/save.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"password\" : \"200820e3227815ed1756a6b531e7e0d2\",     \"role\" : \"0\",     \"username\" : \"J1424\",     \"tel\" : \"18116677904\",     \"name\" : \"陈植专\"   },   {     \"password\" : \"200820e3227815ed1756a6b531e7e0d2\",     \"role\" : \"10\",     \"username\" : \"285625881@qq.com\",     \"tel\" : \"13532411727\",     \"name\" : \"管理员\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "保存用户"
+					},
+					"response": []
+				},
+				{
+					"name": "删除用户",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/account/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"5881624230d4503d693e1ca2\",   \"5906a3f53abd3ca742ff31da\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除用户"
+					},
+					"response": []
+				},
+				{
+					"name": "查找用户",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/account/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"J1424\",   \"285625881@qq.com\" ]",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找用户\n\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "记录管理",
+			"description": "记录管理",
+			"item": [
+				{
+					"name": "保存记录",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/record/save.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {    \"_id\": \"59020b96b00aa614153276ee\", \"accountId\" : \"用户ID\",    \"stationName\" : \"站名\",     \"province\" : \"省份\",     \"city\" : \"地市\",     \"county\" : \"区县\",     \"address\" : \"地址\",     \"longitude\" : \"经度\",     \"latitude\" : \"纬度\",     \"planList\" : [       {         \"materialUnit\" : \"计量单位\",         \"totalPrice\" : \"标准建设成本\",         \"status\" : 1,         \"roomCost\" : \"机房成本\",         \"suit\" : \"配套\",         \"serviceCount\" : \"服务数量\",         \"applyScene\" : \"应用场景\",         \"constructionType\" : \"建设类型\",         \"serviceCode\" : \"服务编码\",         \"towerCost\" : \"铁塔成本\",         \"totalCost\" : \"实际建设成本合计\",         \"recommendPlanCode\" : \"推荐方案编码（64字以内）\",         \"tower\" : \"铁塔\",         \"buildInformation\" : \"共建信息\",         \"antennaHeight\" : \"天线挂高\",         \"suitCost\" : \"配套成本\",         \"differenceRate\" : \"造价综合差异率*100（单位%）\",         \"materialCount\" : \"物资数量\",         \"recommendPlanName\" : \"推荐方案名称（64字以内）\",         \"recommendPlanDescription\" : \"方案描述（200字以内）\",         \"isBeautify\" : \"是否美化\",         \"room\" : \"机房\",         \"investmentRent\" : \"百元投资租金\\/年（单位元）\",         \"materialCode\" : \"物资编码\",         \"output\" : \"输出\"       }     ]   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "保存记录\n此接口和保存方案不同，因为该接口保存具体的值"
+					},
+					"response": []
+				},
+				{
+					"name": "删除记录",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/record/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"5906b5d4fa0da44972319577\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除记录"
+					},
+					"response": []
+				},
+				{
+					"name": "查找记录",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/record/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"文杏酒楼\" ]",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找记录\n\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "选项模块",
+			"description": "",
+			"item": [
+				{
+					"name": "①数据加载",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/form/load.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "返回步骤一的树形结构体"
+					},
+					"response": []
+				},
+				{
+					"name": "②方案推荐",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/form/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[\"59020b96b00aa614153276ff\", \"59020b96b00aa61415327701\", \"59020b96b00aa61415327703\", \"59020b96b00aa61415327705\"]",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "99999",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "根据已选的字段值, 按权重70% 和 30%返回3条具体方案实体"
+					},
+					"response": []
+				},
+				{
+					"name": "③保存方案",
+					"request": {
+						"url": "http://tieta-api.1g9f.com/api/form/save.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{   \"accountId\" : \"5881624230d4503d693e1ca2\",    \"recordId\" : \"59020b96b00aa614153276ee\",   \"stationName\" : \"文杏酒楼站\",   \"province\" : \"四川\",   \"city\" : \"成都\",   \"county\" : \"金牛区\",   \"address\" : \"蜀兴西街26号文杏酒楼6楼\",   \"longitude\" : \"\",   \"latitude\" : \"\",   \"optionList\" : [     {       \"_id\" : \"5905cf7c55bc61a44f611fab\",       \"status\" : 1     },     {       \"_id\" : \"5905cf7c55bc61a44f611fac\",       \"status\" : 0     },     {       \"_id\" : \"5905cf7c55bc61a44f611fad\",       \"status\" : 0     }   ] }",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "提交_id和status参数值, 保存字段值能够保证记录的存档\n含修改\n\n此接口和保存记录不同，因为该接口根据_ids保存的"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

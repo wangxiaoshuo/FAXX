@@ -1,0 +1,17 @@
+<div class=" row-sm mg"
+     style="margin:0px 40px 5px 40px;border: 1px solid rgba(35,84,150,0.4); border-radius:10px;box-shadow: 0 0 3px #000">
+    <p style="width:100%; height:100%; margin:auto;">
+        测试导入数据
+        {{message}}
+        </br>
+        {{each data as d}}
+        {{if d['部门']}}
+        {{d['序号']}}
+        {{d['部门']}}
+        {{d['用户名']}}
+        {{d['工号']}}
+        {{d['姓名']}}
+        {{/if}}
+        {{/each}}
+    </p>
+</div>

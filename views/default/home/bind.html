@@ -1,0 +1,55 @@
+<!--=== 绑定工号 开始 ===-->
+<div class="bd center-block c-main-center">
+    <div id="main-content">
+        <div data-reactroot="">
+            <div class="list-panel">
+                <div class="page-wrap">
+                    <div class="inner-page operator-config false">
+                        <div class="config-part">
+                            <div class="op-config">
+                                <form id="formId" name="formName">
+                                    <div class="major-pad">
+                                        <div class="bind-text">
+                                            <div class="explain">
+                                                <b>员工信息</b>
+                                                <span>此操作必填，请谨慎操作</span>
+                                            </div>
+                                            <div class="pkg-display text-field">
+                                                <div>
+                                                    <input type="text" class="data" id="job_code" name="job_code" />
+                                                    <label><b>工号</b><span>（必填）</span></label>
+                                                </div>
+                                            </div>
+                                            <em id="msg_job_code" class="msg"></em>
+                                        </div>
+                                    </div>
+                                    <div class="explain">
+                                        <i class="fa fa-lock i-orange"></i>
+                                        <span class="explain-text">首次使用系统需把工号关联微信, 索取工号请联系管理员。</span>
+                                    </div>
+                                    <div class="btns-div">
+                                        <div class="btns btns-right">
+                                            <button id="btnSubmit" type="button">
+                                                <i class="fa fa-check i-green"></i> 绑定
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--=== 绑定工号 结束 ===-->
+
+<script>
+    var openid = '{{openid}}'
+    var nickname = '{{nickname}}'
+</script>
+<!-- TODO 模拟用户登录 -->
+<script src="/target/js/account.js?v={{APPVersion}}"></script>
+<script src="/target/js/bind.js?v={{APPVersion}}"></script>

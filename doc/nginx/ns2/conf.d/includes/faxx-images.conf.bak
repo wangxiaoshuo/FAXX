@@ -1,0 +1,44 @@
+# 访问目录, / 为根目录
+set $ROOT /;
+
+# 图片不压缩, 输出原图
+location /data/ds2_disk1 {
+    image_filter_buffer 4M;
+    root $ROOT;
+    try_files $uri $uri/ /;
+}
+# 图片压缩为512px
+location /data/ds2_disk1/big {
+    image_filter resize 512 512;
+    image_filter_buffer 4M;
+    root $ROOT;
+    try_files $uri $uri/ /;
+}
+# 图片压缩为180px
+location /data/ds2_disk1/small {
+    image_filter resize 180 180;
+    image_filter_buffer 4M;
+    root $ROOT;
+    try_files $uri $uri/ /;
+}
+
+# 图片不压缩, 输出原图
+location /data/ds3_disk1 {
+    image_filter_buffer 4M;
+    root $ROOT;
+    try_files $uri $uri/ /;
+}
+# 图片压缩为512px
+location /data/ds3_disk1/big {
+    image_filter resize 512 512;
+    image_filter_buffer 4M;
+    root $ROOT;
+    try_files $uri $uri/ /;
+}
+# 图片压缩为180px
+location /data/ds3_disk1/small {
+    image_filter resize 180 180;
+    image_filter_buffer 4M;
+    root $ROOT;
+    try_files $uri $uri/ /;
+}

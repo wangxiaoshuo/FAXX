@@ -1,0 +1,322 @@
+{
+	"variables": [],
+	"info": {
+		"name": "工具模拟",
+		"_postman_id": "1b8ae6a4-906c-f09d-0dca-087252056599",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "人工智能",
+			"description": "",
+			"item": [
+				{
+					"name": "图像处理-人物识别",
+					"request": {
+						"url": "http://192.168.1.5:6999/api/classification/picture.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "//Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer e3e171e188ac730aa5efdeb655307eeeb27ba249",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "5857c90acc0be750ff089e52",
+									"type": "text",
+									"enabled": true,
+									"warning": ""
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"enabled": true,
+									"warning": "",
+									"src": "sq.jpg",
+									"value": ""
+								}
+							]
+						},
+						"description": "图像处理-人物识别"
+					},
+					"response": []
+				},
+				{
+					"name": "图像处理-鉴黄识别",
+					"request": {
+						"url": "http://192.168.1.5:6999/api/classification/picture.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "//Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer e3e171e188ac730aa5efdeb655307eeeb27ba249",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_id",
+									"value": "581f28a99ace98ff384005e0",
+									"type": "text",
+									"enabled": true,
+									"warning": ""
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"enabled": true,
+									"warning": "",
+									"src": "sq.jpg",
+									"value": ""
+								}
+							]
+						},
+						"description": "图像处理-鉴黄识别"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "插件试用",
+			"description": "",
+			"item": [
+				{
+					"name": "百度图片搜索",
+					"request": {
+						"url": "http://image.baidu.com/app/search",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "query",
+									"value": "性感",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "rn",
+									"value": "60",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "pn",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "appversion",
+									"value": "1.3.1",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "devType",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "uid",
+									"value": "-1152921502829082401",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "version",
+									"value": "400091",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "versionName",
+									"value": "0.8",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "clientInfo",
+									"value": "model:Nexus+5;+manufacturer:LGE;+iMEI:358239057644694;+osVersion:6.0;+deviceInfo:Nexus+5_6.0_23_LGE;+versionName:0.8;+versionCode:400091;+",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "http://image.baidu.com/app/search"
+					},
+					"response": []
+				},
+				{
+					"name": "提供商短信",
+					"request": {
+						"url": "http://119.145.9.12/sendSMS.action",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "enterpriseID",
+									"value": "10320",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "loginName",
+									"value": "admin",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "7062c8e179433f7322f213e101e2143b",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "smsId",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "subPort",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "content",
+									"value": "短信测试内容",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "mobiles",
+									"value": "18116677904",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sendTime",
+									"value": "",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "http://119.145.9.12/sendSMS.action"
+					},
+					"response": []
+				},
+				{
+					"name": "微信企业号",
+					"request": {
+						"url": "https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=txJ6WuMs3LGqGBMD1h9g3TEQVj3mdUFddnoLDqtdNK311CB2e7uVHyc3ZWdtEZ-x",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "touser",
+									"value": "marco",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "toparty",
+									"value": "1",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "msgtype",
+									"value": "text",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "agentid",
+									"value": "15",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "text",
+									"value": "{\"content\":\"123\"}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "YY房间列表",
+					"request": {
+						"url": "http://www.yy.com/more/page.action?biz=sing&subBiz=pop&moduleId=476&page=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

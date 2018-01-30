@@ -1,0 +1,467 @@
+{
+	"variables": [],
+	"info": {
+		"name": "机器人",
+		"_postman_id": "7c91f49a-3303-3445-b935-957fe5790709",
+		"description": "爬虫、",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "公共模块",
+			"description": "主页汇总\n同步数据",
+			"item": [
+				{
+					"name": "统计汇总",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/home/summary.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{   \"platformId\" : \"\",   \"roomId\" : \"\",   \"categoryId\" : \"\",   \"classifyId\" : \"\",   \"anchorId\" : \"\" }",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "目标和动作 统计汇总\n支持统计数量标签设置为1: focusCount: 1; count: 1; violationCount: 1"
+					},
+					"response": []
+				},
+				{
+					"name": "同步数据",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/home/synchronize.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{   \"identifier\" : \"douyu\" }",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "重置数据状态、"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "动作管理",
+			"description": "动作管理",
+			"item": [
+				{
+					"name": "增加动作",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/action/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"protocol\" : \"http://qq.com/nihao\",     \"type\" : 1,     \"images\" : [       {         \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\",         \"label\" : 0,         \"review\" : 1,         \"score\" : 90.8       },       {         \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\"       }     ]   },   {     \"protocol\" : \"http://qq.com\",     \"type\" : 2,     \"images\" : [       {         \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\"       }     ]   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加动作"
+					},
+					"response": []
+				},
+				{
+					"name": "删除动作",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/action/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"58eb5af53abf7aeb66fc3315\",   \"58eb5af53abf7aeb66fc3314\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除动作"
+					},
+					"response": []
+				},
+				{
+					"name": "修改动作",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/action/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"protocol\" : \"http://baidu.com\",     \"type\" : 1,     \"images\" : [       {         \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\",         \"label\" : 0,         \"review\" : 1,         \"score\" : 90.8       },       {         \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\"       }     ]   },   {     \"protocol\" : \"http://qq.com\",     \"type\" : 2,     \"images\" : [       {         \"path\" : \"http:\\/\\/c.hiphotos.baidu.com\\/image\\/pic\\/item\\/0dd7912397dda1449fad6f63b6b7d0a20df486be.jpg\"       }     ]   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改动作"
+					},
+					"response": []
+				},
+				{
+					"name": "查找动作",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/action/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"type\":1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找动作\n根据动作协议查找对应动作, eg: data=[\"https://tieba.baidu.com/index.html\"]；\n根据Label字段查找对应动作, eg: data={\"label\": [0,1,2]}\n根据actioning标识 eg: {\"actioning\":1}；普通列表:{\"level\":0}；重点列表:{\"level\":1}, 返回按照权重排序的数据和对应级别的数据, 不支持动态排序和动态分页\n查找所有动作, eg: data={}，根据某某字段查找对应动作, eg: data={\"***Id\": \"1234567890\"}\\{\"status\":1}\\{\"level\":1};\n只返回已被动作过的数据, eg: data={\"actioned\":1}\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "目标管理",
+			"description": "目标管理",
+			"item": [
+				{
+					"name": "增加目标",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/target/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"protocol\" : \"baidu.com\",     \"name\" : \"百度一下，你就知道\"   },   {     \"protocol\" : \"qq.com\",     \"name\" : \"腾讯首页\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加目标"
+					},
+					"response": []
+				},
+				{
+					"name": "删除目标",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/target/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"58eb4ec2ec8eb3a74100a592\",   \"58eb4ec2ec8eb3a74100a593\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除目标"
+					},
+					"response": []
+				},
+				{
+					"name": "修改目标",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/target/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"protocol\" : \"http://baidu.com\",     \"name\" : \"百度一下，你就知道1\"   },   {     \"protocol\" : \"http://qq.com\",     \"name\" : \"腾讯首页1\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改目标"
+					},
+					"response": []
+				},
+				{
+					"name": "查找目标",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/target/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"_id\": \"58eb588f34b7f6236050c53c\"}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找目标\n根据目标名称查找对应主播, eg: data=[\"baidu.com\", \"qq.com\"]；\n查找所有目标, eg: data={} 或者查找其他的条件对应目标\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "结果管理",
+			"description": "结果管理",
+			"item": [
+				{
+					"name": "增加结果",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/result/add.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"protocol\" : \"baidu.com\",     \"path\" : \"/data/ds2_disk1/bc-api/www.panda.tv_1_7151355cf0c24d1e645a3fae6ee73152.jpg\"   },   {     \"protocol\" : \"qq.com\",     \"name\" : \"/data/ds2_disk1/bc-api/www.panda.tv_1_7151355cf0c24d1e645a3fae6ee73152.jpg\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "增加结果"
+					},
+					"response": []
+				},
+				{
+					"name": "删除结果",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/result/delete.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   \"58eb4ec2ec8eb3a74100a592\",   \"58eb4ec2ec8eb3a74100a593\" ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "删除结果"
+					},
+					"response": []
+				},
+				{
+					"name": "修改结果",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/result/update.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "[   {     \"protocol\" : \"baidu.com\",     \"path\" : \"/data/ds2_disk1/bc-api/www.panda.tv_1_7151355cf0c24d1e645a3fae6ee73152.jpg\"   },   {     \"protocol\" : \"qq.com\",     \"name\" : \"/data/ds2_disk1/bc-api/www.panda.tv_1_7151355cf0c24d1e645a3fae6ee73152.jpg\"   } ]",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "修改结果"
+					},
+					"response": []
+				},
+				{
+					"name": "查找结果",
+					"request": {
+						"url": "http://192.168.1.100:13133/api/result/find.html",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "data",
+									"value": "{\"actioned\": 1, \"targetId\": \"58ef840fed7710e72a2c1844\", \"type\": 1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "sort",
+									"value": "{\"time\": -1}",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "查找结果\n根据动作ID查找对应结果, eg: data=[\"58ef25453f5712ef5f81a24f\", \"58ef25453f5712ef5f81a24f\"];\n查找所有结果, eg: data={} 或者查找其他的条件对应结果\n\nsort 排序, eg: data={\"time\": -1}\npage 页码\nlimit 限制条数"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

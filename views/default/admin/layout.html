@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width">
+    {{#meta}}
+
+    <link rel="shortcut icon" href="/common/img/admin/favicon.ico?v={{APPVersion}}">
+    <link rel="bookmark" href="/common/img/admin/favicon.ico?v={{APPVersion}}">
+    <link rel="stylesheet" href="/common/css/admin/style.css?v={{APPVersion}}">
+    <link rel="stylesheet" href="/common/css/admin/layer.css?v={{APPVersion}}">
+
+    <script src="/common/js/admin/jquery.min.js?v={{APPVersion}}"></script>
+    <script src="/common/js/admin/bootstrap.min.js?v={{APPVersion}}"></script>
+    <script src="/common/js/admin/layer.js?v={{APPVersion}}"></script>
+
+    <script src="/common/js/admin/common.js?v={{APPVersion}}"></script>
+    <script src="/common/js/admin/utils.js?v={{APPVersion}}"></script>
+
+    <script src="/common/js/admin/template-native.js?v={{APPVersion}}"></script>
+
+    <script>
+        // 初始化全局的变量值
+        var globalTime = '{{time}}'
+        var globalRole = '{{role}}'
+        var globalApiUrl = '{{api_url}}'
+        var globalAccountId = '{{account_id}}'
+        var globalCity= '{{city}}'
+
+        template.helper('dateFormat', function (date, format) {
+            if (typeof date === "string") {
+                var mts = date.match(/(\/Date\((\d+)\)\/)/);
+                if (mts && mts.length >= 3) {
+                    date = parseInt(mts[2]);
+                }
+            }
+            date = new Date(date);
+            if (!date || date.toUTCString() == "Invalid Date") {
+                return "";
+            }
+
+            var map = {
+                "M": date.getMonth() + 1,
+                "d": date.getDate(),
+                "h": date.getHours(),
+                "m": date.getMinutes(),
+                "s": date.getSeconds(),
+                "q": Math.floor((date.getMonth() + 3) / 3),
+                "S": date.getMilliseconds()
+            };
+
+
+            format = format.replace(/([yMdhmsqS])+/g, function(all, t){
+                var v = map[t];
+                if(v !== undefined){
+                    if(all.length > 1){
+                        v = '0' + v;
+                        v = v.substr(v.length-2);
+                    }
+                    return v;
+                }
+                else if(t === 'y'){
+                    return (date.getFullYear() + '').substr(4 - all.length);
+                }
+                return all;
+            });
+            return format;
+        })
+    </script>
+</head>
+<body {{if is_hide_menu}}class="login-index"{{/if}}>
+<div id="overlay"></div>
+<div id="loading" style="display: none">
+    <div class="loader-inner ball-scale-multiple">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <p id="loading-text"></p>
+</div>
+
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <!--=== logo 开始 ===-->
+        <div class="logo">
+            <img style="margin-top: 5px;margin-bottom: 11px;" src="/common/img/admin/base-station.png?v={{APPVersion}}">
+          <span style="color: #fff;font-size: 18px">
+              中国铁塔 CHINA <label style="color: #d53e2f;">T</label>OWER
+          </span>
+        </div>
+        <!--=== logo 结束 ===-->
+
+        <!--=== 手机版菜单按钮 开始 ===-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!--=== 手机版菜单按钮 结束 ===-->
+    </div>
+</div>
+
+<div class="template-page-wrapper">
+    {{if !is_hide_menu}}
+    <!--=== 模板菜单 开始 ===-->
+    <div class="navbar-collapse collapse templatemo-sidebar">
+        <ul class="templatemo-sidebar-menu">
+            <li><a href="/admin/info.html" rel="/admin/info.html"><i class="fa fa-user"></i> {{username}} [{{role}}]</a></li>
+            <li><a href="/admin/index.html" rel="/admin/index.html"><i class="fa fa-home"></i>控制台</a></li>
+            <li><a href="/admin/account/list.html" rel="/admin/account/list.html"><i class="fa fa-users"></i>用户管理</a></li>
+            <li><a href="/admin/setting.html" rel="/admin/setting.html"><i class="fa fa-cog"></i>基本设置</a></li>
+            <li class="sub">
+                <a href="javascript:;">
+                    <i class="fa fa-database"></i> 数据管理 <div class="pull-right"><span class="caret"></span></div>
+                </a>
+                <ul class="templatemo-submenu">
+                    <li class="active"><a href="/admin/data.html">数据录入</a></li>
+                    <li><a href="/admin/record/list.html">方案记录</a></li>
+                </ul>
+            </li>
+            <!--<li><a href="preferences.html"><i class="fa fa-cog"></i>Preferences</a></li>-->
+            <li><a id="btnLogout" href="javascript:void(0);"><i class="fa fa-sign-out"></i>退出登录</a></li>
+        </ul>
+    </div>
+    <!--=== 模板菜单 结束 ===-->
+    {{/if}}
+
+    <!--=== 模板内容 开始 ===-->
+    {{#content}}
+    <!--=== 模板内容 开始 ===-->
+
+    <!--=== 模板底部 开始 ===-->
+    <footer class="templatemo-footer">
+        <div class="templatemo-copyright">
+            <p>Copyright &copy; 2017 江苏省邮电规划设计院有限责任公司四川分公司 版权所有. <a href="javascript:void(0);" title="中国铁塔"
+                                                                         target="_blank">中国铁塔</a></p>
+        </div>
+    </footer>
+    <!--=== 模板底部 结束 ===-->
+</div>
+
+<script src="/common/js/admin/account.js?v={{APPVersion}}"></script>
+<script type="text/javascript">
+
+    // 左边菜单高亮
+    var urlstr = location.href　　　　//获取浏览器的url
+    var urlstatus=false　　　　　　　　//标记
+    //遍历导航div
+    $(".templatemo-sidebar-menu li a").each(function () {
+        //判断导航里面的rel和url地址是否相等
+        if ((urlstr + '/').indexOf($(this).attr('rel')) > -1&&$(this).attr('rel')!='') {
+            $(this).parent().addClass('active')
+            urlstatus = true
+        } else {
+            $(this).parent().removeClass('active')
+        }
+    });
+    //当前样式保持
+    if (!urlstatus) {$(".templatemo-sidebar-menu li a").eq(0).addClass('active'); }
+
+
+    // 数据管理 下拉
+    $('.templatemo-sidebar-menu li.sub a').click(function () {
+        if ($(this).parent().hasClass('open')) {
+            $(this).parent().removeClass('open')
+        } else {
+            $(this).parent().addClass('open')
+        }
+    });
+    function d_messages(content, position) { //消息弹出层
+        var style_text = "";
+        position = arguments[1] ? arguments[1] : 2;
+        if (position == 1) { //顶部弹出
+            style_text = "border:none; background: rgba(0,0,0,.7); color:#fff; max-width:100%; top:0; position:fixed; left:0; right:0; border-radius:0;";
+        }
+        if (position == 2) { //页面中间弹出
+            style_text = "border:none; background: rgba(0,0,0,.7); color:#fff; max-width:90%; min-width:1rem; margin:0 auto; border-radius:.8rem;";
+        }
+        layer.open({
+            style: style_text,
+            type: 0,
+            anim: 3,
+            content: content,
+            shade: false,
+            time: 2
+        })
+    }
+</script>
+</body>
+</html>

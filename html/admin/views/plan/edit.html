@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <![endif]-->
+  <title>中国铁塔后台管理系统</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <link rel="bookmark" href="../../img/favicon.ico">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/layer.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+        <!--=== logo 开始 ===-->
+        <div class="logo">
+          <img style="margin-top: 5px;margin-bottom: 11px;" src="../../img/base-station.png">
+            <span style="color: #fff;font-size: 18px">
+                中国铁塔 CHINA <label style="color: #d53e2f;">T</label>OWER
+            </span>
+        </div>
+        <!--=== logo 结束 ===-->
+
+        <!--=== 手机版菜单按钮 开始 ===-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--=== 手机版菜单按钮 结束 ===-->
+      </div>
+    </div>
+
+    <div class="template-page-wrapper">
+    <!--=== 菜单 开始 ===-->
+    <div class="navbar-collapse collapse templatemo-sidebar">
+      <ul class="templatemo-sidebar-menu">
+        <li><a href="javascript:d_messages('尚处于开发中，请等待更新的版本发布！');"><i class="fa fa-user"></i> admin [超级管理员]</a></li>
+        <li><a href="javascript:d_messages('尚处于开发中，请等待更新的版本发布！');"><i class="fa fa-home"></i>控制台</a></li>
+        <li><a href="../../account.html"><i class="fa fa-users"></i>用户管理</a></li>
+        <li class="sub open">
+          <a href="javascript:;">
+            <i class="fa fa-database"></i> 数据管理 <div class="pull-right"><span class="caret"></span></div>
+          </a>
+          <ul class="templatemo-submenu">
+            <li><a href="../../entry.html">数据录入</a></li>
+            <li class="active"><a href="record.html">方案记录</a></li>
+          </ul>
+        </li>
+        <!--<li><a href="preferences.html"><i class="fa fa-cog"></i>Preferences</a></li>-->
+        <li><a href="javascript:d_messages('尚处于开发中，请等待更新的版本发布！');"><i class="fa fa-sign-out"></i>退出</a></li>
+      </ul>
+    </div>
+    <!--=== 菜单 结束 ===-->
+
+    <!--=== 方案记录 开始 ===-->
+    <div class="templatemo-content-wrapper">
+      <div class="templatemo-content">
+        <ol class="breadcrumb">
+          <li>数据管理</li>
+          <li><a href="record.html">方案记录</a></li>
+          <li class="active">方案修改或编辑</li>
+        </ol>
+        <h4>方案修改或编辑</h4>
+        <p>快捷查看详细或编辑方案记录。</p>
+
+        <div class="row m-top-30">
+          <!--=== 方案记录 开始 ===-->
+            <div class="col-md-12 plan_area">
+              <label>方案修改或编辑</label>
+
+              <div>
+                <div class="plan_div">
+                  <label>基本信息</label>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="username" class="col-sm-2 control-label form-control-static">用户名称</label>
+                  <div class="col-sm-9 ">
+                    <input type="text" name="username" id="username" value="test" class="form-control validate[required]" placeholder="请输入用户名称" data-bv-field="username"><i class="form-control-feedback" data-bv-icon-for="name" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="username" data-bv-result="NOT_VALIDATED" style="display: none;">基站名称 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="name" class="col-sm-2 control-label form-control-static">基站名称</label>
+                  <div class="col-sm-9 ">
+                    <input type="text" name="name" id="name" value="白云机场" class="form-control validate[required]" placeholder="请输入基站名称" data-bv-field="name"><i class="form-control-feedback" data-bv-icon-for="name" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="name" data-bv-result="NOT_VALIDATED" style="display: none;">基站名称 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="area_id" class="col-sm-2 control-label form-control-static">关联区域</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="area_id" id="area_id" data-bv-field="area_id">
+                      <option value="">==请选择==</option>
+                      <option value="6">成都市-金牛区</option>
+                      <option value="7" selected="selected">成都市-高新区</option>
+                      <option value="8">成都市-青羊区</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="area_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="area_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联区域 不符合填写要求</small>
+                  </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="name" class="col-sm-2 control-label form-control-static">详细地址</label>
+                  <div class="col-sm-9 ">
+                    <input type="text" name="address" id="address" value="白云区" class="form-control validate[required]" placeholder="请输入详细地址" data-bv-field="name"><i class="form-control-feedback" data-bv-icon-for="name" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="name" data-bv-result="NOT_VALIDATED" style="display: none;">基站名称 不符合填写要求</small></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="plan_div">
+                  <label>高级信息</label>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="category_id" class="col-sm-2 control-label form-control-static">关联类型</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="category_id" id="category_id" data-bv-field="category_id">
+                      <option value="">==请选择==</option>
+                      <option value="4">地面塔</option>
+                      <option value="5">楼面塔</option>
+                      <option value="6">地面塔-普通地面塔</option>
+                      <option value="7">地面塔-景观塔</option>
+                      <option value="8" selected="selected">楼面塔-普通楼面塔</option>
+                      <option value="9">楼面塔-楼面抱杆</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="category_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="category_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联类型 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="antenna_id" class="col-sm-2 control-label form-control-static">关联天线</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="antenna_id" id="antenna_id" data-bv-field="antenna_id">
+                      <option value="">==请选择==</option>
+                      <option value="3">普通地面塔-高度小于30米</option>
+                      <option value="4">普通地面塔-高度大于等于30并小于35米</option>
+                      <option value="5">普通地面塔-高度大于等于35并小于40米</option>
+                      <option value="7">景观塔-高度大于35米</option>
+                      <option value="8">景观塔-高度小于20米</option>
+                      <option value="9">景观塔-高度大于等于20并小于25米</option>
+                      <option value="10">景观塔-高度大于等于25并小于30米</option>
+                      <option value="11">景观塔-高度大于等于30并小于35米</option>
+                      <option value="12" selected="selected">普通楼面塔-普通楼面塔的天线挂高类型</option>
+                      <option value="13">楼面抱杆-楼面抱杆的天线挂高类型</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="antenna_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="antenna_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联天线 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="tower_id" class="col-sm-2 control-label form-control-static">关联铁塔</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="tower_id" id="tower_id" data-bv-field="tower_id">
+                      <option value="">==请选择==</option>
+                      <option value="3">成都市-普通地面塔-高度小于30米-25米三管塔</option>
+                      <option value="4">成都市-普通地面塔-高度小于30米-30米三管塔</option>
+                      <option value="5">成都市-普通地面塔-高度小于30米-30米外爬式单管塔</option>
+                      <option value="6">成都市-普通地面塔-高度小于30米-30米插接式单管塔</option>
+                      <option value="7">成都市-普通地面塔-高度大于等于30并小于35米-35米三管塔</option>
+                      <option value="8">成都市-普通地面塔-高度大于等于30并小于35米-35米外爬式单管塔</option>
+                      <option value="9">成都市-普通地面塔-高度大于等于30并小于35米-35米插接式单管塔</option>
+                      <option value="10">成都市-普通地面塔-高度大于等于35并小于40米-40米三管塔</option>
+                      <option value="12">成都市-景观塔-高度大于35米-35米双轮景观塔</option>
+                      <option value="13">成都市-景观塔-高度小于20米-12米增高架</option>
+                      <option value="14">成都市-景观塔-高度小于20米-18米增高架</option>
+                      <option value="15">成都市-景观塔-高度小于20米-20米路灯杆塔</option>
+                      <option value="16">成都市-景观塔-高度大于等于20并小于25米-25米路灯杆塔</option>
+                      <option value="17">成都市-景观塔-高度大于等于25并小于30米-30米美化灯杆</option>
+                      <option value="18">成都市-景观塔-高度大于等于30并小于35米-35米美化灯杆</option>
+                      <option value="19" selected="selected">成都市-普通楼面塔-普通楼面塔的天线挂高类型-美化排气管</option>
+                      <option value="20">成都市-楼面抱杆-楼面抱杆的天线挂高类型-3米女儿墙抱杆</option>
+                      <option value="21">成都市-楼面抱杆-楼面抱杆的天线挂高类型-6米单抱杆</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="tower_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="tower_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联铁塔 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="room_id" class="col-sm-2 control-label form-control-static">关联机房</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="room_id" id="room_id" data-bv-field="room_id">
+                      <option value="">==请选择==</option>
+                      <option value="3">成都市-25米三管塔-一体化平台</option>
+                      <option value="4">成都市-25米三管塔-小型机房</option>
+                      <option value="5">成都市-30米三管塔-一体化平台</option>
+                      <option value="6">成都市-30米三管塔-小型机房</option>
+                      <option value="7">成都市-30米外爬式单管塔-一体化平台</option>
+                      <option value="8">成都市-30米外爬式单管塔-小型机房</option>
+                      <option value="9">成都市-30米插接式单管塔-一体化平台</option>
+                      <option value="10">成都市-30米插接式单管塔-小型机房</option>
+                      <option value="11">成都市-35米三管塔-一体化平台</option>
+                      <option value="12">成都市-35米三管塔-小型机房</option>
+                      <option value="13">成都市-35米外爬式单管塔-一体化平台</option>
+                      <option value="14">成都市-35米外爬式单管塔-小型机房</option>
+                      <option value="15">成都市-35米插接式单管塔-一体化平台</option>
+                      <option value="16">成都市-35米插接式单管塔-小型机房</option>
+                      <option value="17">成都市-40米三管塔-一体化平台</option>
+                      <option value="18">成都市-40米三管塔-小型机房</option>
+                      <option value="21">成都市-35米双轮景观塔-一体化平台</option>
+                      <option value="22">成都市-35米双轮景观塔-小型机房</option>
+                      <option value="23">成都市-12米增高架-一体化平台</option>
+                      <option value="24">成都市-12米增高架-小型机房</option>
+                      <option value="25">成都市-18米增高架-一体化平台</option>
+                      <option value="26">成都市-18米增高架-小型机房</option>
+                      <option value="27">成都市-20米路灯杆塔-一体化平台</option>
+                      <option value="28">成都市-20米路灯杆塔-小型机房</option>
+                      <option value="29">成都市-25米路灯杆塔-一体化平台</option>
+                      <option value="30">成都市-25米路灯杆塔-小型机房</option>
+                      <option value="31">成都市-30米美化灯杆-一体化平台</option>
+                      <option value="32">成都市-30米美化灯杆-小型机房</option>
+                      <option value="33">成都市-35米美化灯杆-一体化平台</option>
+                      <option value="34">成都市-35米美化灯杆-小型机房</option>
+                      <option value="35" selected="selected">成都市-美化排气管-一体化平台</option>
+                      <option value="36">成都市-3米女儿墙抱杆-一体化平台</option>
+                      <option value="37">成都市-6米单抱杆-一体化平台</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="room_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="room_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联机房 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="suit_id" class="col-sm-2 control-label form-control-static">关联配套</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="suit_id" id="suit_id" data-bv-field="suit_id">
+                      <option value="">==请选择==</option>
+                      <option value="3">成都市-一体化平台-25米三管塔配套</option>
+                      <option value="4">成都市-小型机房-25米三管塔配套</option>
+                      <option value="7">成都市-一体化平台-30米外爬式单管塔配套</option>
+                      <option value="5">成都市-一体化平台-30米三管塔配套</option>
+                      <option value="6">成都市-小型机房-30米三管塔配套</option>
+                      <option value="8">成都市-小型机房-30米外爬式单管塔配套</option>
+                      <option value="9">成都市-一体化平台-30米插接式单管塔配套</option>
+                      <option value="10">成都市-小型机房-30米插接式单管塔配套</option>
+                      <option value="11">成都市-一体化平台-35米三管塔配套</option>
+                      <option value="12">成都市-小型机房-35米三管塔配套</option>
+                      <option value="13">成都市-一体化平台-35米外爬式单管塔配套</option>
+                      <option value="14">成都市-小型机房-35米外爬式单管塔配套</option>
+                      <option value="15">成都市-一体化平台-35米插接式单管塔配套</option>
+                      <option value="16">成都市-小型机房-35米插接式单管塔配套</option>
+                      <option value="17">成都市-一体化平台-40米三管塔配套</option>
+                      <option value="18">成都市-小型机房-40米三管塔配套</option>
+                      <option value="21">成都市-一体化平台-35米双轮景观塔配套</option>
+                      <option value="22">成都市-小型机房-35米双轮景观塔配套</option>
+                      <option value="23">成都市-一体化平台-12米增高架配套</option>
+                      <option value="24">成都市-小型机房-12米增高架配套</option>
+                      <option value="25">成都市-一体化平台-18米增高架配套</option>
+                      <option value="26">成都市-小型机房-18米增高架配套</option>
+                      <option value="27">成都市-一体化平台-20米路灯杆塔配套</option>
+                      <option value="28">成都市-小型机房-20米路灯杆塔配套</option>
+                      <option value="29">成都市-一体化平台-25米路灯杆塔配套</option>
+                      <option value="30">成都市-小型机房-25米路灯杆塔配套</option>
+                      <option value="31">成都市-一体化平台-30米美化灯杆配套</option>
+                      <option value="32">成都市-小型机房-30米美化灯杆配套</option>
+                      <option value="33">成都市-一体化平台-35米美化灯杆配套</option>
+                      <option value="34">成都市-小型机房-35米美化灯杆配套</option>
+                      <option value="35" selected="selected">成都市-一体化平台-美化排气管配套</option>
+                      <option value="36">成都市-一体化平台-3米女儿墙抱杆配套</option>
+                      <option value="37">成都市-一体化平台-6米单抱杆配套</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="suit_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="suit_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联配套 不符合填写要求</small></div>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="remark_id" class="col-sm-2 control-label form-control-static">关联备注</label>
+                  <div class="col-sm-9 ">
+                    <select class="form-control  validate[required]" name="remark_id" id="remark_id" data-bv-field="remark_id">
+                      <option value="">==请选择==</option>
+                      <option value="3">25米三管塔-一体化平台-25米三管塔配套-可用方案（无二搬）</option>
+                      <option value="4">25米三管塔-小型机房-25米三管塔配套-可用方案（无二搬）</option>
+                      <option value="5">30米三管塔-一体化平台-30米三管塔配套-如果挂高满足，优先选用25米，节省造价；有机房条件的，优先考虑机房；有机械组装条件的，优先考虑单管塔；有二搬情况的，谨慎可能会超</option>
+                      <option value="6">30米三管塔-小型机房-30米三管塔配套-如果挂高满足，优先选用25米，节省造价；有机房条件的，优先考虑机房；有机械组装条件的，优先考虑单管塔；有二搬情况的，谨慎可能会超</option>
+                      <option value="7">30米外爬式单管塔-一体化平台-30米外爬式单管塔配套-需机械组装条件，建议使用小机房方案，收益更高</option>
+                      <option value="8">30米外爬式单管塔-小型机房-30米外爬式单管塔配套-需机械组装条件</option>
+                      <option value="9">30米插接式单管塔-一体化平台-30米插接式单管塔配套-需机械组装条件；外爬式造价更低，建议改选；建议使用小机房方案，收益更高</option>
+                      <option value="10">30米插接式单管塔-小型机房-30米插接式单管塔配套-需机械组装条件；外爬式造价更低，建议改选</option>
+                      <option value="11">35米三管塔-一体化平台-35米三管塔配套-可以使用，有二搬情况下，谨慎使用；有机械组装条件的推选单管塔</option>
+                      <option value="12">35米三管塔-小型机房-35米三管塔配套-有机房条件的建议使用，收益更高；有机械组装条件的推选单管塔</option>
+                      <option value="13">35米外爬式单管塔-一体化平台-35米外爬式单管塔配套-有机房条件的建议使用，收益更高</option>
+                      <option value="14">35米外爬式单管塔-小型机房-35米外爬式单管塔配套-需机械组装条件；优选方案</option>
+                      <option value="15">35米插接式单管塔-一体化平台-35米插接式单管塔配套-需机械组装条件；有机房条件的建议使用，收益更高</option>
+                      <option value="16">35米插接式单管塔-小型机房-35米插接式单管塔配套-需机械组装条件；外爬式造价稍低，建议改选</option>
+                      <option value="17">40米三管塔-一体化平台-40米三管塔配套-可以使用</option>
+                      <option value="18">40米三管塔-小型机房-40米三管塔配套-可以使用</option>
+                      <option value="21">35米双轮景观塔-一体化平台-35米双轮景观塔配套-35米景观塔，双轮塔型最优，建议使用；优选机房方案</option>
+                      <option value="22">35米双轮景观塔-小型机房-35米双轮景观塔配套-35米景观塔，双轮塔型最优；建议使用</option>
+                      <option value="23">12米增高架-一体化平台-12米增高架配套-属于极容易超标方案，谨慎使用（无二搬条件下）有二搬情况下不可用</option>
+                      <option value="24">12米增高架-小型机房-12米增高架配套-属于极容易超标方案，谨慎使用（无二搬条件下）有二搬情况下不可用</option>
+                      <option value="25">18米增高架-一体化平台-18米增高架配套-不建议使用</option>
+                      <option value="26">18米增高架-小型机房-18米增高架配套-谨慎使用（无二搬条件下）有二搬情况下不可用</option>
+                      <option value="27">20米路灯杆塔-一体化平台-20米路灯杆塔配套-可以使用</option>
+                      <option value="28">20米路灯杆塔-小型机房-20米路灯杆塔配套-可用方案（无二搬）</option>
+                      <option value="29">25米路灯杆塔-一体化平台-25米路灯杆塔配套-可以使用</option>
+                      <option value="30">25米路灯杆塔-小型机房-25米路灯杆塔配套-可用方案（无二搬）</option>
+                      <option value="31">30米美化灯杆-一体化平台-30米美化灯杆配套-超标塔形，建议使用外爬式，插接式，双轮景观塔或升级成35米景观塔</option>
+                      <option value="32">30米美化灯杆-小型机房-30米美化灯杆配套-超标塔形，建议使用外爬式，插接式，双轮景观塔或升级成35米景观塔</option>
+                      <option value="33">35米美化灯杆-一体化平台-35米美化灯杆配套-可以使用；建议小机房方案；推荐使用双轮景观塔</option>
+                      <option value="34">35米美化灯杆-小型机房-35米美化灯杆配套-可以使用；优选双轮景观塔</option>
+                      <option value="35" selected="selected">美化排气管-一体化平台-美化排气管配套-可以使用，建议优选运营商提供一体化天线，节约投资</option>
+                      <option value="36">3米女儿墙抱杆-一体化平台-3米女儿墙抱杆配套-可以使用</option>
+                      <option value="37">6米单抱杆-一体化平台-6米单抱杆配套-极易超标，谨慎使用</option>
+                    </select><i class="form-control-feedback" data-bv-icon-for="remark_id" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="remark_id" data-bv-result="NOT_VALIDATED" style="display: none;">关联备注 不符合填写要求</small></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="plan_div">
+                  <label>附加信息</label>
+                </div>
+
+                <div class="form-group has-feedback">
+                  <label for="total_cost" class="col-sm-2 control-label form-control-static">参考造价合计（万元）</label>
+                  <div class="col-sm-9 ">
+                    <input type="number" name="total_cost" id="total_cost" value="4.80" step="0.01" class="form-control" placeholder="请输入参考造价合计（万元）" data-bv-field="total_cost"><i class="form-control-feedback" data-bv-icon-for="total_cost" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="total_cost" data-bv-result="NOT_VALIDATED" style="display: none;">参考造价合计（万元） 不符合填写要求</small><small class="help-block" data-bv-validator="numeric" data-bv-for="total_cost" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a valid float number</small></div>
+                </div>
+                <div class="form-group has-feedback">
+                  <label for="total_price" class="col-sm-2 control-label form-control-static">标准参考造价（万元）</label>
+                  <div class="col-sm-9 ">
+                    <input type="number" name="total_price" id="total_price" value="8.70" step="0.01" class="form-control" placeholder="请输入标准参考造价（万元）" data-bv-field="total_price"><i class="form-control-feedback" data-bv-icon-for="total_price" style="display: none;"></i>
+                    <small class="help-block" data-bv-validator="notEmpty" data-bv-for="total_price" data-bv-result="NOT_VALIDATED" style="display: none;">标准参考造价（万元） 不符合填写要求</small><small class="help-block" data-bv-validator="numeric" data-bv-for="total_price" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a valid float number</small></div>
+                </div>
+
+              </div>
+
+              <div class="col-md-12">
+                <a href="javascript:void(0);" class="save">保 存
+                </a>
+              </div>
+            </div>
+          <!--=== 方案记录 结束 ===-->
+        </div>
+
+      </div>
+    </div>
+    <!--=== 方案记录 结束 ===-->
+
+    <!--=== 底部菜单 开始 ===-->
+    <footer class="templatemo-footer">
+      <div class="templatemo-copyright">
+        <p>Copyright &copy; 2017 Your Company Name Collect from <a href="javascript:void(0);" title="中国铁塔" target="_blank">中国铁塔</a></p>
+      </div>
+    </footer>
+    <!--=== 底部菜单 结束 ===-->
+  </div>
+
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/moment-with-locales.js"></script>
+    <script src="../../js/bootstrap-datetimepicker.js"></script>
+    <script src="../../js/layer.js"></script>
+    <script type="text/javascript">
+
+      // 数据管理 下拉
+      $('.templatemo-sidebar-menu li.sub a').click(function(){
+        if($(this).parent().hasClass('open')) {
+          $(this).parent().removeClass('open');
+        } else {
+          $(this).parent().addClass('open');
+        }
+      });
+
+      //checkbox 全选/取消全选
+      var isCheckAll = false;
+      function swapCheck() {
+        if (isCheckAll) {
+          $("input[type='checkbox']").each(function() {
+            this.checked = false;
+          });
+          isCheckAll = false;
+        } else {
+          $("input[type='checkbox']").each(function() {
+            this.checked = true;
+          });
+          isCheckAll = true;
+        }
+      }
+
+
+      function d_messages(content, position) { //消息弹出层
+        var style_text = "";
+        position = arguments[1] ? arguments[1] : 2;
+        if (position == 1) { //顶部弹出
+          style_text = "border:none; background: rgba(0,0,0,.7); color:#fff; max-width:100%; top:0; position:fixed; left:0; right:0; border-radius:0;";
+        }
+        if (position == 2) { //页面中间弹出
+          style_text = "border:none; background: rgba(0,0,0,.7); color:#fff; max-width:90%; min-width:1rem; margin:0 auto; border-radius:.8rem;";
+        }
+        layer.open({
+          style: style_text,
+          type: 0,
+          anim: 3,
+          content: content,
+          shade: false,
+          time: 2
+        })
+      }
+
+      // 日期选择
+      $(function () {
+        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker();
+        $("#datetimepicker6").on("dp.change",function (e) {
+          $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change",function (e) {
+          $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });
+      });
+
+    </script>
+</body>
+</html>

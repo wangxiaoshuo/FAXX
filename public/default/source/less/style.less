@@ -1,0 +1,403 @@
+@import url(app.less);
+
+.topbar {
+  z-index: 12;
+  //padding: 8px 30px 0px 0px;
+  padding: 9px 0px 0px 1px;
+  position: relative;
+}
+
+.topbar ul.loginbar {
+  margin: 0;
+  padding: 0 5px;
+}
+
+.topbar ul li i {
+  color: #555 !important;
+}
+
+.topbar ul.loginbar > li {
+  display: inline;
+  list-style: none;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.topbar ul.loginbar li.Iota {
+  padding: 0 5px;
+  color: #555 !important;
+}
+
+.topbar ul.loginbar li a {
+  color: #555;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.topbar ul.loginbar li a:hover {
+  color: #4dbfe6;
+}
+
+.topbar ul.loginbar li i.fa {
+  color: #bbb;
+}
+
+.topbar ul.loginbar li.topbar-devider {
+  top: -1px;
+  padding: 0;
+  font-size: 8px;
+  position: relative;
+  margin: 0 9px 0 5px;
+  font-family: Tahoma;
+  border-right: solid 1px #bbb;
+}
+
+.ticket-dropdown-menu::before{
+  left:20px;
+}
+
+.ticket-dropdown-menu::after{
+  left:21px;
+}
+
+.ticket-linticket-linkk {
+  background:#fff;
+}
+
+.zclink a { color:red !important; }
+
+.user-certification {
+  color: rgba(77, 191, 230, 0.89);
+}
+
+header .container {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  margin-top: 20px;
+  padding-bottom: 0px;
+}
+
+.navbar .nav li a {
+  font-size: 15px;
+  color: #555;
+  display:block;
+  height:50px;
+}
+
+.navbar .nav li a:hover, .navbar .nav li.active a:hover{
+  background:none;
+  color: #4dbfe6 !important;
+  border-bottom:2px solid #4dbfe6;
+}
+
+.navbar .nav li.active a{
+  background:none;
+  font-size: 15px;
+  color: #4dbfe6 !important;
+  border-bottom:2px solid #4dbfe6;
+}
+
+.navbar-default {
+  background: #fff;
+  border: none;
+}
+
+.navbar {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-toggle {
+  background: #4dbfe6 !important;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  margin-right: 35px;
+  margin-top:0px;
+}
+
+.navbar-toggle:hover {
+  background: #cbd5dd !important;
+}
+
+.navbar .nav li {
+  text-align: center;
+}
+
+.navbar .nav li a:hover {
+  color: #4dbfe6;
+}
+
+@media screen and (max-width: 768px) {
+
+  .navbar .nav li a {
+    min-height: 45px;
+    line-height: 45px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    font-size: 15px;
+    color: #555;
+  }
+
+  .navbar-header {
+    padding-left:30px;
+    padding-top:10px;
+    margin-left:0px !important;
+    margin-right:0px !important;
+  }
+
+  .navbar-header a img {
+    margin-bottom:10px;
+  }
+
+  .navbar-toggle {
+    margin-right:32px !important;
+  }
+
+}
+
+.breadcrumbs {
+  overflow: hidden;
+  padding: 10px 0 6px;
+  border-bottom: solid 1px #eee;
+  background: url(/common/img/breadcrumbs.png) repeat;
+}
+
+.breadcrumbs{
+  border-top:2px solid #eee;
+}
+
+.breadcrumb {
+  top: 10px;
+  padding-right: 0;
+  background: none;
+  position: relative;
+}
+
+@media (max-width: 550px) {
+
+  .breadcrumbs h1.pull-left {
+    margin-bottom: 0;
+  }
+
+  .breadcrumbs .breadcrumb {
+    top: 0;
+    margin-bottom: 10px;
+  }
+
+}
+
+footer .container{
+  border-top:1px solid #3a3a3a;
+  padding:0px;
+  padding-top:15px;
+  padding-bottom:10px;
+}
+
+footer p {
+  font-size: 14px !important;
+  color:#555 !important;
+}
+
+#filing{
+  margin-top: 25px;
+  display:inline-block
+}
+
+@media screen and (max-width: 414px)  {
+
+  #filing{
+    margin-top: 17px;
+    margin-right: 10px;
+  }
+
+  #footer_logo img{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 320px)  {
+
+  #filing{
+    margin-top: 8px;
+    margin-right: 7px;
+  }
+
+  #footer_logo img{
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes rotate {
+
+  0% {
+    -webkit-transform:rotate(0);
+    transform:rotate(0)
+  }
+
+  100% {
+    -webkit-transform:rotate(360deg);
+    transform:rotate(360deg)
+  }
+
+}
+@keyframes rotate {
+
+  0% {
+    -webkit-transform:rotate(0);
+    transform:rotate(0)
+  }
+
+  100% {
+    -webkit-transform:rotate(360deg);
+    transform:rotate(360deg)
+  }
+
+}
+
+.loading {
+  display:none;
+  background-color: transparent;
+  width:45px;
+  height:45px;
+  border: 1px solid #4dbfe6;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  -webkit-animation: rotate .6s linear infinite;
+  animation: rotate .6s linear infinite
+}
+
+.browser_notice {
+  background-color:#d9534f;
+  padding: 10px;
+  color: #fff;
+  text-align:center;
+}
+
+
+.breadcrumbs h1 {
+  color: #666;
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.breadcrumb a {
+  color: #777;
+}
+.breadcrumb li.active,
+.breadcrumb li a:hover {
+  color: #4dbfe6;
+  text-decoration: none;
+}
+
+@media (max-width: 550px) {
+  .breadcrumbs h1.pull-left,
+  .breadcrumbs ul.pull-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .breadcrumbs h1.pull-left {
+    margin-bottom: 0;
+  }
+
+  .breadcrumbs .breadcrumb {
+    top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.pading-b80{
+  padding-bottom:80px;
+}
+
+.font-18{
+  font-size:18px;
+}
+
+.mt-10{
+  margin-top:10px;
+}
+
+.mt-70{
+  margin-top:70px;
+}
+
+.color-wthite{
+  color:#fff !important;
+}
+
+.color-777{
+  color:#777 !important;
+}
+
+a.color-1abc9c{
+  color:#4dbfe6;
+  text-decoration:none !important;
+}
+
+.back-2f2f2f{
+  background:#2f2f2f;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+a{
+  color:#4dbfe6;
+  text-decoration:none
+}
+
+
+.sdk-item a{
+  color:#585f69;
+}
+
+.sdk-item a:hover,.sidebar-nav-v1 ul li:hover a, .sidebar-nav-v1 ul li.active a {
+  color:#4dbfe6;
+}
+
+.sdk-row{
+  margin:10px 0px 20px 0px;
+}
+
+.code{
+  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  font-size: 12px;
+}
+
+pre {
+  padding-left:20px;
+}
+
+a.on{
+  color:#4dbfe6;
+}
+
+.sidebar-nav-v1 li ul a.on,.sdk-item a.on{
+  color:#4dbfe6;
+}
+
+.sidebar-submenu {
+  background: none repeat scroll 0 0 #717984;
+  color:#fff;
+}
+.sidebar-nav-v1 > li.sidebar-submenu > a {
+  color: #fff;
+}
+
+.list-toggle::after {
+  color: #fff;
+}
+
+.btn-u:hover, .btn-u:focus, .btn-u:active, .btn-u.active, .open .dropdown-toggle.btn-u {
+  background: #4cadd4;
+}
